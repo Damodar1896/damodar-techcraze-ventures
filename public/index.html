@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damodar Techcraze Ventures | Institutional AI Capital Network</title>
+    <title>Damodar Techcraze Ventures | Sovereign Institutional Infrastructure</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-obsidian: #030406;
-            --surface-metallic: #0A0D12;
-            --border-glow: rgba(255, 255, 255, 0.04);
-            --border-premium: rgba(255, 255, 255, 0.18);
+            --bg-sovereign: #010204;
+            --glass-core: rgba(10, 15, 26, 0.7);
+            --border-glow: rgba(255, 255, 255, 0.05);
+            --border-premium: rgba(255, 255, 255, 0.25);
             --text-pure: #FFFFFF;
-            --text-secondary: #9499A6;
+            --text-muted: #7E8494;
             --neon-signal: #00FFCC;
+            --neon-alert: #FF3366;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
         }
 
         body {
-            background-color: var(--bg-obsidian);
+            background-color: var(--bg-sovereign);
             color: var(--text-pure);
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -32,13 +37,13 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Premium Glow Backdrop */
+        /* Ambient Global Cyber Background Layering */
         body::before {
             content: '';
             position: absolute;
-            top: -10%; left: 50%; transform: translateX(-50%);
-            width: 800px; height: 600px;
-            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            top: -20%; left: 50%; transform: translateX(-50%);
+            width: 1400px; height: 900px;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.02) 0%, rgba(255, 51, 102, 0.01) 50%, transparent 80%);
             z-index: -2;
             pointer-events: none;
         }
@@ -47,30 +52,36 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
-            background-size: 80px 80px;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+            background-size: 100px 100px;
             z-index: -1;
             pointer-events: none;
         }
 
         header {
-            width: 85%;
-            max-width: 1200px;
-            padding: 45px 0;
+            width: 90%;
+            max-width: 1400px;
+            padding: 50px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .logo {
             font-weight: 900;
-            font-size: 24px;
-            letter-spacing: 4px;
+            font-size: 26px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            background: linear-gradient(180deg, #FFFFFF 0%, #8A8F9D 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #6C717E 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        .header-nodes {
+            display: flex;
+            gap: 20px;
+            align-items: center;
         }
 
         .secure-node {
@@ -79,98 +90,190 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--neon-signal);
-            background: rgba(0, 255, 204, 0.03);
-            padding: 10px 22px;
-            border-radius: 6px;
-            border: 1px solid rgba(0, 255, 204, 0.12);
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.05);
+            background: rgba(0, 255, 204, 0.02);
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 204, 0.15);
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.05);
         }
 
         .hero {
             text-align: center;
-            max-width: 1050px;
-            margin: 120px auto 90px auto;
+            max-width: 1150px;
+            margin: 140px auto 70px auto;
             padding: 0 20px;
         }
 
         .status-ticker {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
-            letter-spacing: 7px;
+            letter-spacing: 9px;
             text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 28px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
         }
 
         .headline {
-            font-size: 72px;
+            font-size: 82px;
             font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -2.5px;
-            margin: 0 0 32px 0;
-            background: linear-gradient(180deg, #FFFFFF 20%, #767B88 100%);
+            line-height: 1.05;
+            letter-spacing: -3.5px;
+            margin: 0 0 35px 0;
+            background: linear-gradient(180deg, #FFFFFF 30%, #525661 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .sub-hook {
-            font-size: 20px;
-            font-weight: 400;
-            color: #A6ABB7;
-            line-height: 1.75;
-            max-width: 760px;
+            font-size: 22px;
+            font-weight: 300;
+            color: #B1B6C4;
+            line-height: 1.8;
+            max-width: 840px;
             margin: 0 auto;
         }
 
-        /* Grid Framework with Multi-Dimensional Metallic Surface */
+        /* MONOCHROMATIC TRUST SOCIAL PROOF TICKER */
+        .trust-ticker-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 40px 0 100px 0;
+            text-align: center;
+        }
+        
+        .trust-lbl {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #4C505C;
+            margin-bottom: 20px;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #3D404A;
+            letter-spacing: 4px;
+        }
+
+        /* TIERS CONTROLLER SLIDER TOGGLE */
+        .toggle-container {
+            margin-bottom: 60px;
+            display: flex;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 12px 30px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border-radius: 6px;
+        }
+
+        .toggle-btn.active {
+            background: #FFFFFF;
+            color: #000000;
+        }
+
+        /* Multi-Layered Glassmorphic Core Matrix Layout */
         .grid-system {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 36px;
-            width: 85%;
-            max-width: 1200px;
-            margin-bottom: 120px;
+            gap: 40px;
+            width: 90%;
+            max-width: 1400px;
+            margin-bottom: 140px;
         }
 
         .premium-card {
-            background: linear-gradient(145deg, #0C0F14 0%, #06080B 100%);
+            background: var(--glass-core);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-glow);
-            border-radius: 20px;
-            padding: 55px 45px;
+            border-radius: 24px;
+            padding: 60px 50px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
         }
 
         .premium-card:hover {
             border-color: var(--border-premium);
-            transform: translateY(-10px);
-            box-shadow: 0 50px 90px rgba(255, 255, 255, 0.015);
+            transform: translateY(-12px);
+            box-shadow: 0 60px 110px rgba(0, 255, 204, 0.02);
+        }
+
+        /* Simulated Terminal Output Windows */
+        .card-preview-terminal {
+            background: #040609;
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 10px;
+            padding: 16px;
+            font-family: monospace;
+            font-size: 11px;
+            color: #515866;
+            margin-bottom: 35px;
+            overflow: hidden;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .terminal-dot {
+            width: 6px; height: 6px;
+            background: #FF5F56;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 4px;
+            box-shadow: 0 0 8px #FF5F56;
         }
 
         .meta-tag {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: #7B808C;
-            margin-bottom: 26px;
+            color: #616675;
+            margin-bottom: 24px;
         }
 
         .card-title {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
-            margin: 0 0 18px 0;
-            line-height: 1.25;
-            letter-spacing: -0.5px;
+            margin: 0 0 20px 0;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
         .card-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.7;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.75;
             margin-bottom: 50px;
             font-weight: 300;
         }
@@ -179,8 +282,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 35px;
         }
 
         .price-wrapper {
@@ -189,66 +292,100 @@
         }
 
         .price-lbl {
-            font-size: 9px;
+            font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #5E6370;
+            color: #505461;
         }
 
         .price-amt {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
             margin-top: 4px;
             font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(180deg, #FFF 0%, #A0A5B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* 🫨 SHAKING ACTION BUTTON WITH HOVER RESET */
+        /* 🫨 SEVERE PSYCHOLOGICAL TRIGGER HIGH-STATUS CONVERT BUTTON */
         .btn-acquire {
             background-color: #FFFFFF;
             color: #000000;
             border: none;
-            padding: 16px 36px;
+            padding: 18px 40px;
             font-size: 13px;
             font-weight: 700;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             letter-spacing: 0.5px;
-            animation: subtleShake 3.5s infinite ease-in-out;
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            animation: intensePulse 4s infinite ease-in-out;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-acquire:hover {
-            background-color: #E5E8EE;
-            transform: scale(1.04);
-            animation-play-state: paused; /* Halts shaking on intense hover focal point */
+            background-color: #00FFCC;
+            color: #000000;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.4);
+            animation-play-state: paused;
         }
 
-        @keyframes subtleShake {
-            0%, 85%, 100% { transform: translateX(0) scale(1); }
-            90% { transform: translateX(-4px) scale(1.02); }
-            93% { transform: translateX(4px) scale(1.02); }
-            96% { transform: translateX(-2px) scale(1.02); }
-            98% { transform: translateX(2px) scale(1.02); }
+        @keyframes intensePulse {
+            0%, 80%, 100% { transform: translateX(0) scale(1); }
+            85% { transform: translateX(-5px) scale(1.03); }
+            88% { transform: translateX(5px) scale(1.03); }
+            91% { transform: translateX(-3px) scale(1.03); }
+            94% { transform: translateX(3px) scale(1.03); }
+            97% { transform: translateX(0) scale(1.03); }
         }
 
-        /* MASSIVE LENGTH EXPANSION 01: ARCHITECTURE PROTOCOLS */
+        /* LENGTH EXPANSION 01: SOVEREIGN PHILOSOPHY MANIFESTO */
+        .manifesto-container {
+            width: 90%;
+            max-width: 1400px;
+            padding: 140px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            text-align: center;
+        }
+
+        .manifesto-title {
+            font-size: 13px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--neon-signal);
+            margin-bottom: 30px;
+        }
+
+        .manifesto-text {
+            font-size: 38px;
+            font-weight: 300;
+            line-height: 1.5;
+            max-width: 1000px;
+            margin: 0 auto;
+            letter-spacing: -1px;
+            color: #D2D6E1;
+        }
+
+        /* LENGTH EXPANSION 02: TECHNICAL DEEP ARCHITECTURE BLOCKS */
         .feature-expansion {
-            width: 85%;
-            max-width: 1200px;
+            width: 90%;
+            max-width: 1400px;
             padding: 120px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 100px;
         }
 
         .expansion-sidebar h2 {
-            font-size: 46px;
+            font-size: 52px;
             font-weight: 900;
-            letter-spacing: -2px;
+            letter-spacing: -2.5px;
             line-height: 1.15;
             margin: 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #6E727C 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #4D515B 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -256,62 +393,67 @@
         .expansion-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            gap: 50px;
         }
 
         .feature-node-box {
-            background: linear-gradient(180deg, #090C10 0%, #040507 100%);
+            background: linear-gradient(180deg, #090C12 0%, #030508 100%);
             border: 1px solid rgba(255, 255, 255, 0.02);
-            padding: 40px;
-            border-radius: 16px;
+            padding: 45px;
+            border-radius: 20px;
+            transition: border 0.3s;
+        }
+
+        .feature-node-box:hover {
+            border-color: rgba(255,255,255,0.08);
         }
 
         .node-box-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             letter-spacing: -0.5px;
         }
 
         .node-box-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.7;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.75;
             font-weight: 300;
         }
 
-        /* MASSIVE LENGTH EXPANSION 02: GLOBAL MAP STATUS NODES */
+        /* LENGTH EXPANSION 03: LIVE BACKBONE STATUS MAP */
         .global-status-section {
-            width: 85%;
-            max-width: 1200px;
-            padding: 100px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            width: 90%;
+            max-width: 1400px;
+            padding: 120px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             text-align: center;
         }
 
         .global-title {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 40px;
+            letter-spacing: -1.5px;
+            margin-bottom: 50px;
         }
 
         .node-cluster-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            gap: 30px;
         }
 
         .cluster-node {
             background: rgba(255,255,255,0.01);
             border: 1px solid rgba(255,255,255,0.02);
-            padding: 24px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 16px;
             text-align: left;
         }
 
         .cluster-location {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -322,44 +464,44 @@
             width: 8px; height: 8px;
             background-color: var(--neon-signal);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--neon-signal);
+            box-shadow: 0 0 15px var(--neon-signal);
         }
 
         .cluster-status {
-            font-size: 11px;
-            color: var(--text-secondary);
-            margin-top: 8px;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 10px;
             font-family: 'Space Grotesk', sans-serif;
         }
 
-        /* Hypnotic Conversion Banner */
+        /* IMPERIOUS INSTITUTIONAL FOMO CONVERSION PANEL */
         .scarcity-panel {
-            width: 85%;
-            max-width: 1200px;
-            background: linear-gradient(180deg, #0A0D12 0%, #030507 100%);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 24px;
-            padding: 70px;
+            width: 90%;
+            max-width: 1400px;
+            background: linear-gradient(135deg, #090E17 0%, #020406 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 28px;
+            padding: 80px;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 60px;
             align-items: center;
             margin-bottom: 140px;
-            box-shadow: 0 50px 120px rgba(0,0,0,0.85);
+            box-shadow: 0 60px 140px rgba(0,0,0,0.9);
         }
 
         .scarcity-title {
-            font-size: 42px;
+            font-size: 46px;
             font-weight: 700;
-            letter-spacing: -1.5px;
-            line-height: 1.2;
+            letter-spacing: -2px;
+            line-height: 1.15;
         }
 
         .scarcity-desc {
-            font-size: 16px;
-            color: var(--text-secondary);
-            line-height: 1.75;
-            margin-top: 18px;
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-top: 20px;
             font-weight: 300;
         }
 
@@ -367,48 +509,49 @@
             display: flex;
             justify-content: space-around;
             text-align: center;
-            background: rgba(255, 255, 255, 0.01);
-            padding: 35px;
-            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 40px;
+            border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.02);
         }
 
         .metric-val {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 52px;
+            font-size: 58px;
             font-weight: 700;
-            color: #FF3366;
-            text-shadow: 0 0 30px rgba(255, 51, 102, 0.35);
+            color: var(--neon-alert);
+            text-shadow: 0 0 35px rgba(255, 51, 102, 0.4);
         }
 
         .metric-lbl {
             font-size: 11px;
             letter-spacing: 2px;
-            color: #6C727F;
-            margin-top: 6px;
+            color: #5A5F6E;
+            margin-top: 8px;
             text-transform: uppercase;
         }
 
         footer {
-            width: 85%;
-            max-width: 1200px;
+            width: 90%;
+            max-width: 1400px;
             padding: 60px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             display: flex;
             justify-content: space-between;
             font-size: 12px;
-            color: #5E6370;
+            color: #4C505C;
             letter-spacing: 0.5px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1100px) {
             .grid-system, .node-cluster-grid { grid-template-columns: 1fr 1fr; }
+            .feature-expansion { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            .grid-system, .scarcity-panel, .feature-expansion, .expansion-grid, .node-cluster-grid { grid-template-columns: 1fr; }
-            .headline { font-size: 48px; }
-            header, footer { width: 90%; }
+            .grid-system, .scarcity-panel, .expansion-grid, .node-cluster-grid { grid-template-columns: 1fr; }
+            .headline { font-size: 52px; }
+            .scarcity-panel { padding: 40px; }
         }
     </style>
 </head>
@@ -416,160 +559,72 @@
 
     <header>
         <div class="logo">Damodar Techcraze Ventures</div>
-        <div class="secure-node">GLOBAL FRAME NODE: ACTIVE</div>
+        <div class="header-nodes">
+            <div class="secure-node" style="color: #FFF; border-color: rgba(255,255,255,0.1);">SOVEREIGN TIER V2.9.0</div>
+            <div class="secure-node">NETWORK PROTOCOL: ACTIVE</div>
+        </div>
     </header>
 
     <main class="hero">
-        <div class="status-ticker">Institutional Digital Capital Engines</div>
-        <h1 class="headline">Command Control of Your Network With High-Income Assets</h1>
-        <p class="sub-hook">Immediate integration pipelines deploying silent, automated conversion systems engineered directly for high-status cashflow velocity in the US, UK, and Global economic markets.</p>
+        <div class="status-ticker">Sovereign Asset & Computational Infrastructure</div>
+        <h1 class="headline">Command Control of Institutional Digital Capital</h1>
+        <p class="sub-hook">Immediate cryptographic validation pipelines deploying automated high-status cashflow velocity units engineered strictly for tier-1 sovereign markets.</p>
     </main>
 
-    <!-- Balanced Cards Layout with Shaking Triggers -->
+    <section class="trust-ticker-container">
+        <div class="trust-lbl">Institutional Networks Validated Within</div>
+        <div class="trust-logos">
+            <span>BLOOMBERG</span>
+            <span>TECHCRUNCH</span>
+            <span>FORBES</span>
+            <span>REUTERS</span>
+        </div>
+    </section>
+
+    <div class="toggle-container">
+        <button class="toggle-btn active" id="tier-inst">Institutional Allocation</button>
+        <button class="toggle-btn" id="tier-vent">Venture Capital Pool</button>
+    </div>
+
     <div class="grid-system">
         <div class="premium-card">
             <div>
-                <div class="meta-tag">Infrastructure Tier 01</div>
-                <h3 class="card-title">Secret 4K Cinematic AI Video Editing Suite</h3>
+                <div class="meta-tag">Infrastructure Cluster 01</div>
+                <h3 class="card-title">Secret 4K Cinematic AI Video Suite</h3>
+                <div class="card-preview-terminal">
+                    <span class="terminal-dot"></span> rendering_pipeline.cfg<br>
+                    > Loading core visual layers... OK<br>
+                    > B-Roll coordinate matrices... LOCKED
+                </div>
                 <p class="card-desc">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
             </div>
             <div class="card-footer">
                 <div class="price-wrapper">
-                    <span class="price-lbl">Instant Allocation</span>
-                    <span class="price-amt">$49.00</span>
+                    <span class="price-lbl">Allocation Token</span>
+                    <span class="price-amt" id="p1">$4,900</span>
                 </div>
-                <button class="btn-acquire">Acquire Asset</button>
+                <button class="btn-acquire">Request Key</button>
             </div>
         </div>
 
         <div class="premium-card">
             <div>
-                <div class="meta-tag">Strategic Frame Tier 02</div>
-                <h3 class="card-title">The Faceless YouTube Growth Blueprints</h3>
+                <div class="meta-tag">Strategic Frame Cluster 02</div>
+                <h3 class="card-title">The Faceless YouTube Blueprints</h3>
+                <div class="card-preview-terminal">
+                    <span class="terminal-dot"></span> network_bypass_root.sh<br>
+                    > Initializing proxy arrays... OK<br>
+                    > Cryptographic identity hidden... TRUE
+                </div>
                 <p class="card-desc">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
             </div>
             <div class="card-footer">
                 <div class="price-wrapper">
-                    <span class="price-lbl">Instant Allocation</span>
-                    <span class="price-amt">$99.00</span>
+                    <span class="price-lbl">Allocation Token</span>
+                    <span class="price-amt" id="p2">$9,900</span>
                 </div>
-                <button class="btn-acquire">Acquire Asset</button>
+                <button class="btn-acquire">Request Key</button>
             </div>
         </div>
 
-        <div class="premium-card">
-            <div>
-                <div class="meta-tag">Autonomous Protocol Tier 03</div>
-                <h3 class="card-title">Advanced Instagram Reels Scaling Bot</h3>
-                <p class="card-desc">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
-            </div>
-            <div class="card-footer">
-                <div class="price-wrapper">
-                    <span class="price-lbl">Instant Allocation</span>
-                    <span class="price-amt">$39.00</span>
-                </div>
-                <button class="btn-acquire">Acquire Asset</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- EXPANSION SECTION 01: DETAILS DEFINITION -->
-    <section class="feature-expansion">
-        <div class="expansion-sidebar">
-            <h2>The Protocol Architecture</h2>
-        </div>
-        <div class="expansion-grid">
-            <div class="feature-node-box">
-                <div class="node-box-title">01 / Pure Anonymity</div>
-                <div class="node-box-desc">Systems are built to run independently without personal identity strings. Maximum cloud operational security.</div>
-            </div>
-            <div class="feature-node-box">
-                <div class="node-box-title">02 / High Velocity</div>
-                <div class="node-box-desc">Automated interaction clusters scale matrix retention graphs without linear time friction.</div>
-            </div>
-            <div class="feature-node-box">
-                <div class="node-box-title">03 / Cross Border</div>
-                <div class="node-box-desc">Native international configurations instantly localized for prime US, UK, and Euro tier-1 audiences.</div>
-            </div>
-            <div class="feature-node-box">
-                <div class="node-box-title">04 / Zero Overhead</div>
-                <div class="node-box-desc">Eliminate development setups. Run pre-coded deployment sequences on complete autopilot loops.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPANSION SECTION 02: LIVE NODES STATUS FOR REAL TIME PRESENCE -->
-    <section class="global-status-section">
-        <div class="global-title">Operational Validation Networks</div>
-        <div class="node-cluster-grid">
-            <div class="cluster-node">
-                <div class="cluster-location"><span>US-EAST Node</span> <div class="cluster-ping"></div></div>
-                <div class="cluster-status">LOAD: 88.4% // ACTIVE</div>
-            </div>
-            <div class="cluster-node">
-                <div class="cluster-location"><span>UK-LONDON Node</span> <div class="cluster-ping"></div></div>
-                <div class="cluster-status">LOAD: 91.2% // ACTIVE</div>
-            </div>
-            <div class="cluster-node">
-                <div class="cluster-location"><span>AU-SYDNEY Node</span> <div class="cluster-ping"></div></div>
-                <div class="cluster-status">LOAD: 76.9% // ACTIVE</div>
-            </div>
-            <div class="cluster-node">
-                <div class="cluster-location"><span>EU-FRANKFURT Node</span> <div class="cluster-ping"></div></div>
-                <div class="cluster-status">LOAD: 94.1% // ACTIVE</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scarcity Panel With LIVE 10-Minute Timer -->
-    <section class="scarcity-panel">
-        <div>
-            <div class="scarcity-title">98.4% of Network Assets Allocated for Current Global Run</div>
-            <div class="scarcity-desc">
-                Damodar Techcraze Ventures operates under strict worldwide server thresholds. Secure system components at current validation rates before current pipeline locks automatically.
-            </div>
-        </div>
-        <div class="metrics-container">
-            <div>
-                <div class="metric-val">03</div>
-                <div class="metric-lbl">Licenses Left</div>
-            </div>
-            <div>
-                <div class="metric-val" id="countdown-clock">10:00</div>
-                <div class="metric-lbl">Offer Expiry</div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div>©️ 2026 Damodar Techcraze Ventures. Global Operations Inc.</div>
-        <div>SECURE PIPELINE CONTEXT V2.1.0</div>
-    </footer>
-
-    <script>
-        function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
-        }
-
-        window.onload = function () {
-            var tenMinutes = 60 * 10,
-                display = document.querySelector('#countdown-clock');
-            startTimer(tenMinutes, display);
-        };
-    </script>
-
-</body>
-</html>
+        <di
