@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damodar Techcraze Ventures</title>
+    <title>Damodar Techcraze Ventures | Elite AI Capital Systems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-canvas: #07080A;
-            --card-surface: #0E1013;
-            --border-glow: rgba(255, 255, 255, 0.03);
-            --border-hover: rgba(255, 255, 255, 0.12);
+            --bg-deep: #030405;
+            --surface-elite: #0A0C0F;
+            --accent-gold: #D4AF37;
+            --neon-glow: rgba(255, 255, 255, 0.02);
             --text-pure: #FFFFFF;
-            --text-secondary: #8E939E;
+            --text-muted: #6C727F;
         }
 
         body {
-            background-color: var(--bg-canvas);
+            background-color: var(--bg-deep);
             color: var(--text-pure);
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -28,198 +28,265 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Hypnotic Background Grid */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            pointer-events: none;
         }
 
         header {
             width: 85%;
-            max-width: 1140px;
+            max-width: 1200px;
             padding: 40px 0;
-            display: flex;
-            justify-content: flex-start;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .brand-identity {
-            font-weight: 900;
-            font-size: 22px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            background: linear-gradient(180deg, #FFFFFF 0%, #9DA2AE 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-block {
-            text-align: center;
-            max-width: 950px;
-            margin: 90px auto 60px auto;
-            padding: 0 20px;
-        }
-
-        .luxury-label {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        .headline-premium {
-            font-size: 64px;
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin: 0 0 28px 0;
-            background: linear-gradient(180deg, #FFFFFF 20%, #A8ADBA 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .sub-description {
-            font-size: 18px;
-            font-weight: 400;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            max-width: 680px;
-            margin: 0 auto;
-        }
-
-        /* Perfectly Symmetrical Equal Height Grid */
-        .premium-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            width: 85%;
-            max-width: 1140px;
-            margin-bottom: 100px;
-        }
-
-        .asset-card {
-            background-color: var(--card-surface);
-            border: 1px solid var(--border-glow);
-            border-radius: 16px;
-            padding: 45px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Ensures content pushes buttons to exact same line */
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .asset-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-5px);
-        }
-
-        .architecture-tag {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: #A8ADBA;
-            margin-bottom: 20px;
-        }
-
-        .asset-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 0 16px 0;
-            line-height: 1.3;
-        }
-
-        .asset-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-
-        .asset-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding-top: 25px;
-            margin-top: auto; /* Locks footer to the bottom of the card */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        .license-container {
+        .logo {
+            font-weight: 900;
+            font-size: 22px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #FFFFFF 0%, #A2A7B5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .secure-node {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00FFCC;
+            background: rgba(0, 255, 204, 0.05);
+            padding: 8px 18px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 255, 204, 0.15);
+        }
+
+        /* Hero Elite Block */
+        .hero {
+            text-align: center;
+            max-width: 1000px;
+            margin: 100px auto 80px auto;
+            padding: 0 20px;
+        }
+
+        .status-ticker {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .headline {
+            font-size: 68px;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2.5px;
+            margin: 0 0 30px 0;
+            background: linear-gradient(180deg, #FFFFFF 15%, #848995 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .headline span {
+            color: var(--text-pure);
+            text-shadow: 0 0 40px rgba(255,255,255,0.1);
+        }
+
+        .sub-hook {
+            font-size: 19px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 720px;
+            margin: 0 auto;
+            color: #A2A7B5;
+        }
+
+        /* Premium Symmetrical Grid Architecture */
+        .grid-system {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            width: 85%;
+            max-width: 1200px;
+            margin-bottom: 120px;
+        }
+
+        .premium-card {
+            background-color: var(--surface-elite);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .premium-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 40px 80px rgba(255, 255, 255, 0.02);
+        }
+
+        .meta-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8E939E;
+            margin-bottom: 24px;
+        }
+
+        .card-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #8E939E;
+            line-height: 1.65;
+            margin-bottom: 45px;
+            font-weight: 300;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding-top: 28px;
+            margin-top: auto;
+        }
+
+        .price-wrapper {
             display: flex;
             flex-direction: column;
         }
 
-        .license-label {
+        .price-lbl {
             font-size: 9px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-secondary);
+            letter-spacing: 2px;
+            color: var(--text-muted);
         }
 
-        .license-price {
-            font-size: 22px;
+        .price-amt {
+            font-size: 24px;
             font-weight: 700;
             margin-top: 4px;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .acquire-action {
+        .btn-acquire {
             background-color: #FFFFFF;
             color: #000000;
             border: none;
-            padding: 14px 28px;
+            padding: 14px 32px;
             font-size: 13px;
             font-weight: 700;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
         }
 
-        .acquire-action:hover {
+        .btn-acquire:hover {
             background-color: #E5E8EE;
+            transform: scale(1.03);
         }
 
-        /* Extended Enterprise Features - Making the page big & legitimate */
-        .infosection {
+        /* Psychological Conversion Counter Section */
+        .scarcity-panel {
             width: 85%;
-            max-width: 1140px;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 80px 0;
+            max-width: 1200px;
+            background: linear-gradient(180deg, #090B0E 0%, #050607 100%);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 60px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 60px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 120px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
         }
 
-        .info-title {
-            font-size: 36px;
+        .scarcity-title {
+            font-size: 38px;
             font-weight: 700;
             letter-spacing: -1px;
             line-height: 1.2;
         }
 
-        .info-text {
+        .scarcity-desc {
             font-size: 16px;
-            color: var(--text-secondary);
+            color: #8E939E;
             line-height: 1.7;
+            margin-top: 15px;
+        }
+
+        .metrics-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.01);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .metric-val {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #FF3366;
+            text-shadow: 0 0 20px rgba(255, 51, 102, 0.2);
+        }
+
+        .metric-lbl {
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-top: 5px;
+            text-transform: uppercase;
         }
 
         footer {
             width: 85%;
-            max-width: 1140px;
-            padding: 40px 0;
+            max-width: 1200px;
+            padding: 50px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
             display: flex;
             justify-content: space-between;
             font-size: 12px;
-            color: var(--text-secondary);
-            letter-spacing: 1px;
+            color: var(--text-muted);
         }
 
         @media (max-width: 968px) {
-            .premium-grid, .infosection { grid-template-columns: 1fr; }
-            .headline-premium { font-size: 42px; }
+            .grid-system, .scarcity-panel { grid-template-columns: 1fr; }
+            .headline { font-size: 46px; }
             header, footer { width: 90%; }
         }
     </style>
@@ -227,74 +294,87 @@
 <body>
 
     <header>
-        <div class="brand-identity">Damodar Techcraze Ventures</div>
+        <div class="logo">Damodar Techcraze Ventures</div>
+        <div class="secure-node">SYSTEM NODE: ACTIVE</div>
     </header>
 
-    <main class="hero-block">
-        <div class="luxury-label">Institutional Digital Infrastructure</div>
-        <h1 class="headline-premium">Scale Your Brand Instantly<br>With High-Income AI Assets</h1>
-        <p class="sub-description">Instant deployment to 100% automated monetization matrices, premium developer systems, and custom automated distribution loops engineered for the 2026 economy.</p>
+    <main class="hero">
+        <div class="status-ticker">Institutional Digital Capital Engines</div>
+        <h1 class="headline">Command Control of Your Network With <span>High-Income Assets</span></h1>
+        <p class="sub-hook">Immediate integration pipelines deploying silent, automated conversion systems engineered directly for high-status cashflow velocity in the 2026 economic environment.</p>
     </main>
 
-    <!-- Balanced and Aligned Cards -->
-    <div class="premium-grid">
-        <div class="asset-card">
+    <!-- Symmetrical Hyper-Dopamine Cards Layout -->
+    <div class="grid-system">
+        <div class="premium-card">
             <div>
-                <div class="architecture-tag">Premium Pack Architecture</div>
-                <h3 class="asset-title">Secret 4K Cinematic AI Video Editing Suite</h3>
-                <p class="asset-desc">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
+                <div class="meta-tag">Infrastructure Tier 01</div>
+                <h3 class="card-title">Secret 4K Cinematic AI Video Editing Suite</h3>
+                <p class="card-desc">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
             </div>
-            <div class="asset-footer">
-                <div class="license-container">
-                    <span class="license-label">One-Time License</span>
-                    <span class="license-price">₹299</span>
+            <div class="card-footer">
+                <div class="price-wrapper">
+                    <span class="price-lbl">Instant Allocation</span>
+                    <span class="price-amt">₹299</span>
                 </div>
-                <button class="acquire-action">Acquire System</button>
+                <button class="btn-acquire">Acquire System</button>
             </div>
         </div>
 
-        <div class="asset-card">
+        <div class="premium-card">
             <div>
-                <div class="architecture-tag">Strategic Architecture</div>
-                <h3 class="asset-title">The Faceless YouTube Growth Blueprints</h3>
-                <p class="asset-desc">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
+                <div class="meta-tag">Strategic Frame Tier 02</div>
+                <h3 class="card-title">The Faceless YouTube Growth Blueprints</h3>
+                <p class="asset-desc" style="color: #8E939E; line-height: 1.65; font-size: 14px; margin-bottom: 45px; font-weight: 300;">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
             </div>
-            <div class="asset-footer">
-                <div class="license-container">
-                    <span class="license-label">Full Access Framework</span>
-                    <span class="license-price">₹499</span>
+            <div class="card-footer">
+                <div class="price-wrapper">
+                    <span class="price-lbl">Instant Allocation</span>
+                    <span class="price-amt">₹499</span>
                 </div>
-                <button class="acquire-action">Acquire System</button>
+                <button class="btn-acquire">Acquire System</button>
             </div>
         </div>
 
-        <div class="asset-card">
+        <div class="premium-card">
             <div>
-                <div class="architecture-tag">Automation System</div>
-                <h3 class="asset-title">Advanced Instagram Reels Scaling Bot</h3>
-                <p class="asset-desc">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
+                <div class="meta-tag">Autonomous Protocol Tier 03</div>
+                <h3 class="card-title">Advanced Instagram Reels Scaling Bot</h3>
+                <p class="card-desc">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
             </div>
-            <div class="asset-footer">
-                <div class="license-container">
-                    <span class="license-label">Enterprise Daemon</span>
-                    <span class="license-price">₹199</span>
+            <div class="card-footer">
+                <div class="price-wrapper">
+                    <span class="price-lbl">Instant Allocation</span>
+                    <span class="price-amt">₹199</span>
                 </div>
-                <button class="acquire-action">Acquire System</button>
+                <button class="btn-acquire">Acquire System</button>
             </div>
         </div>
     </div>
 
-    <!-- Extra Extended Corporate Grid for Full Page Premium Vibe -->
-    <section class="infosection">
-        <div class="info-title">Engineered to Build High-Performance Digital Capital</div>
-        <div class="info-text">
-            Damodar Techcraze Ventures provides highly scalable architectural assets to entrepreneurs ready to capitalize on systems designed for modern digital economics. No technical complexity, no scaling friction—pure infrastructure execution.
+    <!-- The Dark Psychology Closing Trap -->
+    <section class="scarcity-panel">
+        <div>
+            <div class="scarcity-title">98.4% of Network Assets Allocated for Current Engine Run</div>
+            <div class="scarcity-desc">
+                Damodar Techcraze Ventures operates under strict throughput thresholds. Once bandwidth cap resets, token allocation values scale automatically. Secure institutional system components before pipeline locks.
+            </div>
+        </div>
+        <div class="metrics-container">
+            <div>
+                <div class="metric-val">04</div>
+                <div class="metric-lbl">Licenses Left</div>
+            </div>
+            <div>
+                <div class="metric-val">12m</div>
+                <div class="metric-lbl">Node Reset</div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div>©️ 2026 Damodar Techcraze Ventures. All Rights Reserved.</div>
-        <div>PREMIUM DIGITAL ASSETS SYSTEM V1.0</div>
+        <div>©️ 2026 Damodar Techcraze Ventures. Systems Operations Inc.</div>
+        <div>SECURE PIPELINE CONTEXT V1.9.4</div>
     </footer>
 
 </body>
