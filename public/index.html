@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damodar Techcraze Ventures | Elite AI Capital Systems</title>
+    <title>Damodar Techcraze Ventures | Institutional AI Capital Network</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-deep: #020304;
-            --surface-elite: #080A0D;
-            --border-glow: rgba(255, 255, 255, 0.03);
-            --border-hover: rgba(255, 255, 255, 0.15);
+            --bg-obsidian: #030406;
+            --surface-metallic: #0A0D12;
+            --border-glow: rgba(255, 255, 255, 0.04);
+            --border-premium: rgba(255, 255, 255, 0.18);
             --text-pure: #FFFFFF;
-            --text-secondary: #8E939E;
+            --text-secondary: #9499A6;
+            --neon-signal: #00FFCC;
         }
 
         body {
-            background-color: var(--bg-deep);
+            background-color: var(--bg-obsidian);
             color: var(--text-pure);
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -31,12 +32,23 @@
             overflow-x: hidden;
         }
 
+        /* Ambient Premium Glow Backdrop */
         body::before {
             content: '';
             position: absolute;
+            top: -10%; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
-            background-size: 60px 60px;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
+            background-size: 80px 80px;
             z-index: -1;
             pointer-events: none;
         }
@@ -44,7 +56,7 @@
         header {
             width: 85%;
             max-width: 1200px;
-            padding: 40px 0;
+            padding: 45px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -53,10 +65,10 @@
 
         .logo {
             font-weight: 900;
-            font-size: 22px;
+            font-size: 24px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            background: linear-gradient(180deg, #FFFFFF 0%, #A2A7B5 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #8A8F9D 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -66,73 +78,76 @@
             font-size: 11px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #00FFCC;
-            background: rgba(0, 255, 204, 0.05);
-            padding: 8px 18px;
-            border-radius: 4px;
-            border: 1px solid rgba(0, 255, 204, 0.15);
+            color: var(--neon-signal);
+            background: rgba(0, 255, 204, 0.03);
+            padding: 10px 22px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 255, 204, 0.12);
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.05);
         }
 
         .hero {
             text-align: center;
-            max-width: 1000px;
-            margin: 100px auto 80px auto;
+            max-width: 1050px;
+            margin: 120px auto 90px auto;
             padding: 0 20px;
         }
 
         .status-ticker {
             font-size: 12px;
             font-weight: 700;
-            letter-spacing: 6px;
+            letter-spacing: 7px;
             text-transform: uppercase;
             color: var(--text-secondary);
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .headline {
-            font-size: 68px;
+            font-size: 72px;
             font-weight: 900;
             line-height: 1.1;
-            letter-spacing: -2px;
-            margin: 0 0 30px 0;
-            background: linear-gradient(180deg, #FFFFFF 15%, #848995 100%);
+            letter-spacing: -2.5px;
+            margin: 0 0 32px 0;
+            background: linear-gradient(180deg, #FFFFFF 20%, #767B88 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .sub-hook {
-            font-size: 19px;
+            font-size: 20px;
             font-weight: 400;
-            color: #A2A7B5;
-            line-height: 1.7;
-            max-width: 720px;
+            color: #A6ABB7;
+            line-height: 1.75;
+            max-width: 760px;
             margin: 0 auto;
         }
 
+        /* Grid Framework with Multi-Dimensional Metallic Surface */
         .grid-system {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 36px;
             width: 85%;
             max-width: 1200px;
-            margin-bottom: 100px;
+            margin-bottom: 120px;
         }
 
         .premium-card {
-            background-color: var(--surface-elite);
+            background: linear-gradient(145deg, #0C0F14 0%, #06080B 100%);
             border: 1px solid var(--border-glow);
-            border-radius: 16px;
-            padding: 50px 40px;
+            border-radius: 20px;
+            padding: 55px 45px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
         }
 
         .premium-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-8px);
+            border-color: var(--border-premium);
+            transform: translateY(-10px);
+            box-shadow: 0 50px 90px rgba(255, 255, 255, 0.015);
         }
 
         .meta-tag {
@@ -140,23 +155,23 @@
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #8E939E;
-            margin-bottom: 24px;
+            color: #7B808C;
+            margin-bottom: 26px;
         }
 
         .card-title {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
-            margin: 0 0 16px 0;
+            margin: 0 0 18px 0;
             line-height: 1.25;
             letter-spacing: -0.5px;
         }
 
         .card-desc {
             font-size: 14px;
-            color: #8E939E;
-            line-height: 1.65;
-            margin-bottom: 45px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 50px;
             font-weight: 300;
         }
 
@@ -164,8 +179,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 30px;
         }
 
         .price-wrapper {
@@ -177,101 +192,175 @@
             font-size: 9px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #6C727F;
+            color: #5E6370;
         }
 
         .price-amt {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
             margin-top: 4px;
             font-family: 'Space Grotesk', sans-serif;
         }
 
+        /* 🫨 SHAKING ACTION BUTTON WITH HOVER RESET */
         .btn-acquire {
             background-color: #FFFFFF;
             color: #000000;
             border: none;
-            padding: 14px 32px;
+            padding: 16px 36px;
             font-size: 13px;
             font-weight: 700;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             letter-spacing: 0.5px;
+            animation: subtleShake 3.5s infinite ease-in-out;
             transition: all 0.3s ease;
         }
 
-        /* MASSIVE EXPANSION SECTION FOR ENTERPRISE LOOK */
+        .btn-acquire:hover {
+            background-color: #E5E8EE;
+            transform: scale(1.04);
+            animation-play-state: paused; /* Halts shaking on intense hover focal point */
+        }
+
+        @keyframes subtleShake {
+            0%, 85%, 100% { transform: translateX(0) scale(1); }
+            90% { transform: translateX(-4px) scale(1.02); }
+            93% { transform: translateX(4px) scale(1.02); }
+            96% { transform: translateX(-2px) scale(1.02); }
+            98% { transform: translateX(2px) scale(1.02); }
+        }
+
+        /* MASSIVE LENGTH EXPANSION 01: ARCHITECTURE PROTOCOLS */
         .feature-expansion {
             width: 85%;
             max-width: 1200px;
-            padding: 100px 0;
+            padding: 120px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 60px;
+            gap: 80px;
         }
 
         .expansion-sidebar h2 {
-            font-size: 42px;
+            font-size: 46px;
             font-weight: 900;
-            letter-spacing: -1.5px;
-            line-height: 1.2;
+            letter-spacing: -2px;
+            line-height: 1.15;
             margin: 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #6E727C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .expansion-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 48px;
         }
 
         .feature-node-box {
-            background: rgba(255, 255, 255, 0.01);
+            background: linear-gradient(180deg, #090C10 0%, #040507 100%);
             border: 1px solid rgba(255, 255, 255, 0.02);
-            padding: 30px;
-            border-radius: 12px;
+            padding: 40px;
+            border-radius: 16px;
         }
 
         .node-box-title {
             font-size: 18px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
 
         .node-box-desc {
             font-size: 14px;
-            color: #8E939E;
-            line-height: 1.6;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
         }
 
-        /* Scarcity Panel With LIVE Timer Trigger */
+        /* MASSIVE LENGTH EXPANSION 02: GLOBAL MAP STATUS NODES */
+        .global-status-section {
+            width: 85%;
+            max-width: 1200px;
+            padding: 100px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            text-align: center;
+        }
+
+        .global-title {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+        }
+
+        .node-cluster-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .cluster-node {
+            background: rgba(255,255,255,0.01);
+            border: 1px solid rgba(255,255,255,0.02);
+            padding: 24px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .cluster-location {
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cluster-ping {
+            width: 8px; height: 8px;
+            background-color: var(--neon-signal);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-signal);
+        }
+
+        .cluster-status {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Hypnotic Conversion Banner */
         .scarcity-panel {
             width: 85%;
             max-width: 1200px;
-            background: linear-gradient(180deg, #07090C 0%, #040506 100%);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 60px;
+            background: linear-gradient(180deg, #0A0D12 0%, #030507 100%);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 24px;
+            padding: 70px;
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
-            margin-bottom: 120px;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            margin-bottom: 140px;
+            box-shadow: 0 50px 120px rgba(0,0,0,0.85);
         }
 
         .scarcity-title {
-            font-size: 38px;
+            font-size: 42px;
             font-weight: 700;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
             line-height: 1.2;
         }
 
         .scarcity-desc {
             font-size: 16px;
-            color: #8E939E;
-            line-height: 1.7;
-            margin-top: 15px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-top: 18px;
+            font-weight: 300;
         }
 
         .metrics-container {
@@ -279,41 +368,47 @@
             justify-content: space-around;
             text-align: center;
             background: rgba(255, 255, 255, 0.01);
-            padding: 30px;
-            border-radius: 12px;
+            padding: 35px;
+            border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.02);
         }
 
         .metric-val {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 46px;
+            font-size: 52px;
             font-weight: 700;
             color: #FF3366;
-            text-shadow: 0 0 25px rgba(255, 51, 102, 0.3);
+            text-shadow: 0 0 30px rgba(255, 51, 102, 0.35);
         }
 
         .metric-lbl {
             font-size: 11px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             color: #6C727F;
-            margin-top: 5px;
+            margin-top: 6px;
             text-transform: uppercase;
         }
 
         footer {
             width: 85%;
             max-width: 1200px;
-            padding: 50px 0;
+            padding: 60px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
             display: flex;
             justify-content: space-between;
             font-size: 12px;
-            color: #6C727F;
+            color: #5E6370;
+            letter-spacing: 0.5px;
         }
 
-        @media (max-width: 968px) {
-            .grid-system, .scarcity-panel, .feature-expansion, .expansion-grid { grid-template-columns: 1fr; }
-            .headline { font-size: 46px; }
+        @media (max-width: 1024px) {
+            .grid-system, .node-cluster-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .grid-system, .scarcity-panel, .feature-expansion, .expansion-grid, .node-cluster-grid { grid-template-columns: 1fr; }
+            .headline { font-size: 48px; }
+            header, footer { width: 90%; }
         }
     </style>
 </head>
@@ -321,7 +416,7 @@
 
     <header>
         <div class="logo">Damodar Techcraze Ventures</div>
-        <div class="secure-node">GLOBAL NODE: ACTIVE</div>
+        <div class="secure-node">GLOBAL FRAME NODE: ACTIVE</div>
     </header>
 
     <main class="hero">
@@ -330,8 +425,8 @@
         <p class="sub-hook">Immediate integration pipelines deploying silent, automated conversion systems engineered directly for high-status cashflow velocity in the US, UK, and Global economic markets.</p>
     </main>
 
+    <!-- Balanced Cards Layout with Shaking Triggers -->
     <div class="grid-system">
-        <!-- Asset 1 -->
         <div class="premium-card">
             <div>
                 <div class="meta-tag">Infrastructure Tier 01</div>
@@ -347,7 +442,6 @@
             </div>
         </div>
 
-        <!-- Asset 2 -->
         <div class="premium-card">
             <div>
                 <div class="meta-tag">Strategic Frame Tier 02</div>
@@ -363,7 +457,6 @@
             </div>
         </div>
 
-        <!-- Asset 3 -->
         <div class="premium-card">
             <div>
                 <div class="meta-tag">Autonomous Protocol Tier 03</div>
@@ -380,7 +473,7 @@
         </div>
     </div>
 
-    <!-- NEW EXPANDED FULL-PAGE SYSTEM SECTION -->
+    <!-- EXPANSION SECTION 01: DETAILS DEFINITION -->
     <section class="feature-expansion">
         <div class="expansion-sidebar">
             <h2>The Protocol Architecture</h2>
@@ -405,7 +498,30 @@
         </div>
     </section>
 
-    <!-- Scarcity Panel With REAL DYNAMIC TICKING TIMER -->
+    <!-- EXPANSION SECTION 02: LIVE NODES STATUS FOR REAL TIME PRESENCE -->
+    <section class="global-status-section">
+        <div class="global-title">Operational Validation Networks</div>
+        <div class="node-cluster-grid">
+            <div class="cluster-node">
+                <div class="cluster-location"><span>US-EAST Node</span> <div class="cluster-ping"></div></div>
+                <div class="cluster-status">LOAD: 88.4% // ACTIVE</div>
+            </div>
+            <div class="cluster-node">
+                <div class="cluster-location"><span>UK-LONDON Node</span> <div class="cluster-ping"></div></div>
+                <div class="cluster-status">LOAD: 91.2% // ACTIVE</div>
+            </div>
+            <div class="cluster-node">
+                <div class="cluster-location"><span>AU-SYDNEY Node</span> <div class="cluster-ping"></div></div>
+                <div class="cluster-status">LOAD: 76.9% // ACTIVE</div>
+            </div>
+            <div class="cluster-node">
+                <div class="cluster-location"><span>EU-FRANKFURT Node</span> <div class="cluster-ping"></div></div>
+                <div class="cluster-status">LOAD: 94.1% // ACTIVE</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scarcity Panel With LIVE 10-Minute Timer -->
     <section class="scarcity-panel">
         <div>
             <div class="scarcity-title">98.4% of Network Assets Allocated for Current Global Run</div>
@@ -427,10 +543,9 @@
 
     <footer>
         <div>©️ 2026 Damodar Techcraze Ventures. Global Operations Inc.</div>
-        <div>SECURE PIPELINE CONTEXT V1.9.4</div>
+        <div>SECURE PIPELINE CONTEXT V2.1.0</div>
     </footer>
 
-    <!-- LIVE TIMER TRIGGER JAVASCRIPT -->
     <script>
         function startTimer(duration, display) {
             var timer = duration, minutes, seconds;
@@ -444,7 +559,7 @@
                 display.textContent = minutes + ":" + seconds;
 
                 if (--timer < 0) {
-                    timer = duration; // Loops back or freezes as needed
+                    timer = duration;
                 }
             }, 1000);
         }
