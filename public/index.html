@@ -27,7 +27,6 @@
             font-family: 'Montserrat', sans-serif; 
             min-height: 100vh; 
             overflow-x: hidden; 
-            -webkit-font-smoothing: antialiased;
             position: relative;
         }
         
@@ -36,157 +35,81 @@
             background-image: linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px); 
             background-size: 60px 60px; pointer-events: none; z-index: 1; 
         }
-        
-        .ambient-radial-glow { 
-            position: absolute; width: 1300px; height: 750px; 
-            background: radial-gradient(circle, rgba(0, 243, 255, 0.05) 0%, transparent 75%); 
-            filter: blur(120px); pointer-events: none; z-index: 0; 
-        }
-        .glow-top { top: -200px; left: 50%; transform: translateX(-50%); }
-        .glow-center { top: 2400px; right: -200px; background: radial-gradient(circle, rgba(255, 42, 95, 0.04) 0%, transparent 70%); }
-        .glow-bottom { bottom: 0; left: -200px; }
 
-        .layout-frame { width: 92%; max-width: 1340px; margin: 0 auto; position: relative; z-index: 2; }
+        .layout-frame { width: 92%; max-width: 1340px; margin: 0 auto; position: relative; z-index: 2; padding-bottom: 100px; }
 
-        /* Navigation Header */
         header { padding: 45px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-premium); }
         .identity-logo { font-weight: 900; font-size: 25px; letter-spacing: 5px; text-transform: uppercase; background: linear-gradient(180deg, #ffffff 30%, #555e70 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .nav-links-row { display: flex; gap: 40px; list-style: none; font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
-        .nav-links-row a { color: var(--slate-muted); text-decoration: none; transition: 0.3s; }
-        .nav-links-row a:hover { color: var(--cyan); text-shadow: 0 0 8px var(--cyan-glow); }
         .status-badge-token { font-family: 'Space Grotesk', monospace; font-size: 11px; color: var(--cyan); background: rgba(0, 243, 255, 0.03); border: 1px solid rgba(0, 243, 255, 0.15); padding: 8px 16px; border-radius: 6px; }
 
-        /* Hero Console Section */
-        .hero-section { text-align: center; max-width: 1100px; margin: 150px auto 100px auto; }
+        .hero-section { text-align: center; max-width: 1100px; margin: 120px auto 80px auto; }
         .ticker-layer { font-size: 12px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: var(--cyan); margin-bottom: 25px; }
-        .headline-text { font-size: 82px; font-weight: 900; line-height: 1.1; letter-spacing: -2px; margin-bottom: 35px; background: linear-gradient(180deg, #ffffff 50%, #444c5a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .headline-text { font-size: 72px; font-weight: 900; line-height: 1.1; letter-spacing: -2px; margin-bottom: 35px; background: linear-gradient(180deg, #ffffff 50%, #444c5a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .subhook-text { font-size: 20px; font-weight: 300; color: #a3acba; line-height: 1.75; max-width: 860px; margin: 0 auto; }
 
-        /* Corporate Authority Strip */
-        .authority-strip { width: 100%; padding: 45px 0; border-bottom: 1px solid rgba(255,255,255,0.02); margin-bottom: 120px; }
+        .authority-strip { width: 100%; padding: 45px 0; border-bottom: 1px solid rgba(255,255,255,0.02); margin-bottom: 100px; }
         .strip-row-flex { display: flex; justify-content: center; gap: 95px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #434c5c; letter-spacing: 6px; font-weight: 700; text-transform: uppercase; }
 
-        /* Dynamic 125 Asset Product Grid Controls */
-        .catalog-header-panel { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; border-top: 1px solid var(--border-premium); padding-top: 80px; }
-        .catalog-main-title { font-size: 36px; font-weight: 900; letter-spacing: -1px; }
-        .tabs-pill-rail { background: rgba(255, 255, 255, 0.02); padding: 6px; border-radius: 12px; border: 1px solid var(--border-premium); display: flex; gap: 5px; }
-        .tab-trigger-btn { background: transparent; border: none; color: var(--slate-muted); padding: 12px 24px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 8px; transition: 0.3s; }
-        .tab-trigger-btn.active { background: #ffffff; color: #000000; }
+        .catalog-header-panel { margin-bottom: 50px; border-top: 1px solid var(--border-premium); padding-top: 80px; text-align: left; }
+        .catalog-main-title { font-size: 36px; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; }
+        .catalog-subtitle { color: var(--slate-muted); font-size: 14px; font-weight: 300; margin-bottom: 40px; }
 
         /* Solid Dense Layout Grid Matrix (Will Not Collapse) */
-        .matrix-grid-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 50px; min-height: 450px; }
-        .luxury-product-card { background: var(--panel-solid); border: 1px solid var(--border-premium); border-radius: 20px; padding: 45px 35px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .luxury-product-card:hover { border-color: rgba(0, 243, 255, 0.35); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0, 243, 255, 0.06); }
+        .matrix-grid-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 80px; }
+        .luxury-product-card { background: var(--panel-solid); border: 1px solid var(--border-premium); border-radius: 20px; padding: 45px 35px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
         
         .card-top-meta-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .card-index-serial { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: var(--cyan); letter-spacing: 2px; font-weight: 700; }
         .card-tier-badge { font-family: 'Space Grotesk', sans-serif; font-size: 9px; background: rgba(255,255,255,0.03); padding: 4px 8px; border-radius: 4px; color: var(--slate-muted); border: 1px solid rgba(255,255,255,0.05); }
         .card-core-heading { font-size: 23px; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.5px; line-height: 1.25; }
         
-        .card-terminal-log-panel { background: #040812; border-radius: 10px; padding: 16px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #64748b; margin-bottom: 20px; line-height: 1.5; border: 1px solid rgba(255,255,255,0.01); }
+        .card-terminal-log-panel { background: #040812; border-radius: 10px; padding: 16px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #64748b; margin-bottom: 20px; line-height: 1.5; }
         .pulse-node-indicator { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 8px var(--cyan); }
         .card-narrative-desc { font-size: 13.5px; color: var(--slate-muted); line-height: 1.65; margin-bottom: 35px; font-weight: 300; }
         
         .card-footer-action-block { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 20px; }
         .card-price-display { font-size: 26px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
-        .card-gate-cta-btn { background: #ffffff; color: #000000; border: none; padding: 12px 28px; font-size: 11px; font-weight: 700; border-radius: 8px; cursor: pointer; text-transform: uppercase; transition: 0.2s; }
-        .card-gate-cta-btn:hover { background: var(--cyan); box-shadow: 0 0 20px var(--cyan-glow); }
+        .card-gate-cta-btn { background: #ffffff; color: #000000; border: none; padding: 12px 28px; font-size: 11px; font-weight: 700; border-radius: 8px; cursor: pointer; text-transform: uppercase; }
 
-        /* Pagination Matrix Button */
-        .pagination-container-row { display: flex; justify-content: center; margin-bottom: 140px; }
-        .matrix-expand-trigger-btn { background: rgba(255,255,255,0.01); color: var(--white); border: 1px solid var(--border-silver); padding: 18px 45px; border-radius: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
-        .matrix-expand-trigger-btn:hover { background: #ffffff; color: #000000; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
-
-        /* Realtime High Velocity Corporate Metrics Counters Block */
-        .counters-grid-matrix { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-bottom: 140px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
-        .counter-card-shell { background: linear-gradient(180deg, #070e20 0%, #040814 100%); border-radius: 18px; padding: 45px; text-align: center; border: 1px solid rgba(255,255,255,0.01); }
-        .counter-digits-val { font-family: 'Space Grotesk', sans-serif; font-size: 50px; font-weight: 700; color: #ffffff; letter-spacing: -1px; }
-        .counter-caption-lbl { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--slate-muted); margin-top: 12px; font-weight: 500; }
-
-        /* Deep Structural Protocols (No More Empty Spaces) */
-        .protocols-structural-section { display: grid; grid-template-columns: 1fr 2.5fr; gap: 80px; margin-bottom: 140px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
-        .protocol-sticky-left h2 { font-size: 48px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; background: linear-gradient(180deg, #ffffff, #4a5463); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* Corporate Structural Protocols */
+        .protocols-structural-section { display: grid; grid-template-columns: 1fr 2.5fr; gap: 80px; margin-bottom: 120px; border-top: 1px solid var(--border-premium); padding-top: 80px; }
+        .protocol-sticky-left h2 { font-size: 44px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; background: linear-gradient(180deg, #ffffff, #4a5463); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .protocol-grid-right { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .protocol-node-box { background: linear-gradient(180deg, #08132b 0%, #030612 100%); border: 1px solid rgba(255,255,255,0.02); padding: 40px; border-radius: 20px; }
         .protocol-node-flag { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--cyan); margin-bottom: 15px; font-weight: 700; }
         .protocol-node-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
         .protocol-node-desc { font-size: 14px; color: var(--slate-muted); line-height: 1.7; font-weight: 300; }
 
-        /* 🔄 Infinite High Velocity Double-Track Review Marquee */
-        .marquee-viewport-shuttle { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 100px 0; border-top: 1px solid var(--border-silver); border-bottom: 1px solid var(--border-silver); margin-bottom: 140px; }
-        .marquee-viewport-title { font-size: 42px; font-weight: 900; text-align: center; margin-bottom: 70px; background: linear-gradient(180deg, #ffffff 30%, #47505e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .marquee-track-rail-wrap { display: flex; width: max-content; margin-bottom: 30px; }
-        .marquee-track-rail-wrap.reverse-motion .marquee-hardware-track { animation-direction: reverse; animation-duration: 40s; }
-        .marquee-hardware-track { display: flex; animation: marqueeGlowScrollLoop 35s linear infinite; will-change: transform; }
-        .marquee-viewport-shuttle:hover .marquee-hardware-track { animation-play-state: paused; }
+        /* High Velocity Reviews Section */
+        .reviews-static-panel { border-top: 1px solid var(--border-premium); padding-top: 80px; margin-bottom: 120px; }
+        .reviews-title { font-size: 36px; font-weight: 900; text-align: center; margin-bottom: 60px; }
+        .reviews-row-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .evaluation-card { background: #060c19; border: 1px solid var(--border-premium); border-radius: 20px; padding: 40px; }
+        .stars-row { color: var(--cyan); font-size: 12px; margin-bottom: 15px; letter-spacing: 2px; }
+        .quote-text { font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 25px; font-weight: 300; }
+        .profile-row { display: flex; align-items: center; gap: 12px; }
+        .avatar-circle { width: 38px; height: 38px; background: #1e293b; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: var(--cyan); }
 
-        .marquee-evaluation-box { width: 420px; background: linear-gradient(180deg, #081329 0%, #030611 100%); border: 1px solid rgba(255, 255, 255, 0.02); border-radius: 20px; padding: 45px; margin-right: 30px; flex-shrink: 0; box-shadow: 0 40px 90px rgba(0,0,0,0.5); }
-        .stars-matrix-string { color: var(--cyan); font-size: 13px; margin-bottom: 20px; letter-spacing: 2px; }
-        .quote-narrative-text { font-size: 14px; color: #e2e8f0; line-height: 1.7; font-weight: 300; margin-bottom: 30px; height: 75px; overflow: hidden; }
-        .profile-node-row { display: flex; align-items: center; gap: 15px; }
-        .avatar-shell-circle { width: 42px; height: 42px; background: #121b2d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 11px; color: var(--cyan); border: 1px solid rgba(0, 243, 255, 0.15); }
-        .profile-meta-details h4 { font-size: 15px; font-weight: 700; }
-        .profile-meta-details p { font-size: 11px; color: var(--slate-muted); text-transform: uppercase; margin-top: 2px; }
-
-        @keyframes marqueeGlowScrollLoop { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
-
-        /* Feature Dense Integrated Onboarding Panel */
-        .onboarding-feature-panel { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; margin-bottom: 140px; background: linear-gradient(180deg, rgba(10,20,42,0.3) 0%, transparent 100%); border: 1px solid rgba(255,255,255,0.02); padding: 75px; border-radius: 30px; }
-        .onboarding-title-header { font-size: 38px; font-weight: 700; margin-bottom: 20px; letter-spacing: -1px; }
-        .onboarding-subtext-para { font-size: 15.5px; color: var(--slate-muted); line-height: 1.75; font-weight: 300; margin-bottom: 40px; }
-        .sub-features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-        .sub-feature-card { background: #060e1f; border: 1px solid rgba(255,255,255,0.03); padding: 25px; border-radius: 14px; }
-        .sub-feature-card h5 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--cyan); }
-        .sub-feature-card p { font-size: 13px; color: var(--slate-muted); line-height: 1.6; font-weight: 300; }
-        .metrics-visual-glow-box { background: linear-gradient(145deg, #09132a 0%, #02050d 100%); border: 1px solid var(--border-silver); border-radius: 20px; padding: 45px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .percentage-dashed-ring { width: 130px; height: 130px; background: radial-gradient(circle, rgba(0, 243, 255, 0.1) 0%, transparent 70%); border: 2px dashed rgba(0, 243, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--cyan); text-shadow: 0 0 10px var(--cyan-glow); }
-
-        /* Cross-Border Security Compliance Audit Ledger */
-        .compliance-regulatory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 140px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
-        .compliance-node-card { background: rgba(255,255,255,0.002); border: 1px solid rgba(255,255,255,0.01); padding: 40px; border-radius: 16px; }
-        .compliance-node-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-        .compliance-status-dot { width: 7px; height: 7px; background: #00ffcc; border-radius: 50%; display: inline-block; }
-        .compliance-node-card p { font-size: 13.5px; color: var(--slate-muted); line-height: 1.65; font-weight: 300; }
-
-        /* Scarcity Countdown Area */
-        .scarcity-lockdown-panel { background: linear-gradient(135deg, #08142c 0%, #01040a 100%); border: 1px solid var(--border-silver); border-radius: 28px; padding: 65px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 120px; }
-        .scarcity-left-text h3 { font-size: 36px; font-weight: 700; letter-spacing: -1px; }
+        /* Scarcity Component Dashboard Panel */
+        .scarcity-lockdown-panel { background: linear-gradient(135deg, #08142c 0%, #01040a 100%); border: 1px solid var(--border-premium); border-radius: 28px; padding: 60px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 100px; }
+        .scarcity-left-text h3 { font-size: 34px; font-weight: 700; letter-spacing: -1px; }
         .scarcity-left-text p { font-size: 14.5px; color: var(--slate-muted); margin-top: 12px; font-weight: 300; max-width: 680px; line-height: 1.65; }
         .scarcity-timer-display-box { display: flex; gap: 35px; background: rgba(0, 0, 0, 0.5); padding: 20px 50px; border-radius: 16px; }
-        .scarcity-digits-val { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: var(--rose); text-shadow: 0 0 25px rgba(255, 42, 95, 0.25); }
+        .scarcity-digits-val { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: var(--rose); }
         .scarcity-digits-lbl { font-size: 9px; letter-spacing: 2px; color: #4b5563; margin-top: 6px; text-transform: uppercase; font-weight: 700; }
 
-        /* Activation Gate Popup Modal Layout Component */
-        .modal-terminal-overlay { position: fixed; inset: 0; background: rgba(1, 3, 6, 0.96); z-index: 99999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-        .modal-terminal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-terminal-box { background: #0a1224; border: 1px solid var(--cyan); max-width: 500px; width: 90%; padding: 45px; border-radius: 24px; text-align: center; box-shadow: 0 0 50px rgba(0,243,255,0.15); }
-        .modal-terminal-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 15px; color: var(--cyan); letter-spacing: 1px; }
-        .modal-terminal-desc { font-size: 14px; color: var(--slate-muted); line-height: 1.6; margin-bottom: 30px; font-weight: 300; }
-        .modal-terminal-input { width: 100%; background: #02040a; border: 1px solid var(--border-silver); padding: 16px; border-radius: 10px; color: #fff; font-family: 'Space Grotesk', monospace; font-size: 13px; margin-bottom: 25px; outline: none; text-align: center; }
-        .modal-terminal-btn { background: var(--cyan); color: #000000; border: none; padding: 14px 35px; border-radius: 10px; font-size: 11px; font-weight: 700; text-transform: uppercase; cursor: pointer; transition: 0.2s; }
-        .modal-terminal-btn:hover { box-shadow: 0 0 20px var(--cyan-glow); }
+        footer { padding: 50px 0; border-top: 1px solid var(--border-premium); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #434c5c; font-family: 'Space Grotesk', sans-serif; }
 
-        footer { padding: 50px 0; border-top: 1px solid var(--border-silver); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #434c5c; font-family: 'Space Grotesk', sans-serif; }
-
-        @media (max-width: 1200px) { .matrix-grid-layout, .counters-grid-matrix, .protocols-structural-section, .onboarding-feature-panel, .compliance-regulatory-grid { grid-template-columns: repeat(2, 1fr); } .scarcity-lockdown-panel { flex-direction: column; text-align: center; gap: 35px; } .onboarding-feature-panel { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .matrix-grid-layout, .counters-grid-matrix, .protocol-grid-right, .sub-features-grid, .compliance-regulatory-grid { grid-template-columns: 1fr; } .hero-headline { font-size: 42px; } .marquee-evaluation-box { width: 330px; } .protocols-structural-section { grid-template-columns: 1fr; } .catalog-header-panel { flex-direction: column; gap: 20px; } }
+        @media (max-width: 1100px) { .matrix-grid-layout, .reviews-row-grid, .protocols-structural-section { grid-template-columns: repeat(2, 1fr); } .scarcity-lockdown-panel { flex-direction: column; text-align: center; gap: 35px; } }
+        @media (max-width: 728px) { .matrix-grid-layout, .reviews-row-grid, .protocol-grid-right { grid-template-columns: 1fr; } .headline-text { font-size: 42px; } .protocols-structural-section { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <div class="ambient-radial-glow glow-top"></div>
-    <div class="ambient-radial-glow glow-center"></div>
-    <div class="ambient-radial-glow glow-bottom"></div>
-
     <div class="layout-frame">
         <header>
             <div class="identity-logo">Damodar Techcraze Ventures</div>
-            <ul class="nav-links">
-                <li><a href="#assets-catalog-hub">125 Assets Network</a></li>
-                <li><a href="#sovereign-protocols-hub">Sovereign Protocol</a></li>
-                <li><a href="#trust-ledger-hub">Global Audit</a></li>
-            </ul>
-            <div class="status-badge-token">DAMODAR SECURE PLATINUM PIPELINE // RUNNING</div>
+            <div class="status-badge-token">PLATINUM INFRASTRUCTURE ENGINE // LIVE</div>
         </header>
 
         <main class="hero-section">
@@ -201,6 +124,140 @@
             </div>
         </section>
 
-        <!-- 📊 Dynamic Inventory Matrix Controls -->
+        <!-- Product Inventory Grid Hub -->
         <section id="assets-catalog-hub" class="catalog-header-panel">
-            <div class
+            <div class="catalog-main-title">Sovereign Asset Grid Matrix</div>
+            <div class="catalog-subtitle">Production-ready system bundles optimized explicitly for deep network exploration and automated volume velocity.</div>
+        </section>
+
+        <!-- Robust Non-Collapsible Core Products Display Grid -->
+        <div class="matrix-grid-layout">
+            <!-- Card 1 -->
+            <div class="luxury-product-card">
+                <div>
+                    <div class="card-top-meta-row">
+                        <div class="card-index-serial">System Matrix 01</div>
+                        <div class="card-tier-badge">Tier-1 Asset</div>
+                    </div>
+                    <h3 class="card-core-heading">Secret 4K Cinematic AI Video Suite</h3>
+                    <div class="card-terminal-log-panel">
+                        <span class="pulse-node-indicator"></span> layer_render.sh<br>
+                        > Binding stream hooks... READY
+                    </div>
+                    <p class="card-narrative-desc">Automated hyper-retention cinematic execution pipelines deploying organic visual hooks optimized explicitly for maximum algorithmic visibility platforms.</p>
+                </div>
+                <div class="card-footer-action-block">
+                    <div class="card-price-display">$4,900</div>
+                    <button class="card-gate-cta-btn">Request Key</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="luxury-product-card">
+                <div>
+                    <div class="card-top-meta-row">
+                        <div class="card-index-serial">System Matrix 02</div>
+                        <div class="card-tier-badge">Sovereign Node</div>
+                    </div>
+                    <h3 class="card-core-heading">The Faceless YouTube Blueprints</h3>
+                    <div class="card-terminal-log-panel">
+                        <span class="pulse-node-indicator"></span> anonymity_bypass.cfg<br>
+                        > Masking execution path... SECURE
+                    </div>
+                    <p class="card-narrative-desc">Multi-threaded shadow cloud configuration maps engineered to scale high-ticket global media channels under absolute anonymous operational telemetry parameters.</p>
+                </div>
+                <div class="card-footer-action-block">
+                    <div class="card-price-display">$9,900</div>
+                    <button class="card-gate-cta-btn">Request Key</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="luxury-product-card">
+                <div>
+                    <div class="card-top-meta-row">
+                        <div class="card-index-serial">System Matrix 03</div>
+                        <div class="card-tier-badge">High Velocity</div>
+                    </div>
+                    <h3 class="card-core-heading">Advanced Instagram Scaling Bot</h3>
+                    <div class="card-terminal-log-panel">
+                        <span class="pulse-node-indicator"></span> interactive_matrix.py<br>
+                        > Mapping active API bridges... OK
+                    </div>
+                    <p class="card-narrative-desc">Custom concurrent automation script maps designed to scale high-volume target audience engagement loops without hitting systemic interaction cap limits.</p>
+                </div>
+                <div class="card-footer-action-block">
+                    <div class="card-price-display">$3,900</div>
+                    <button class="card-gate-cta-btn">Request Key</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Corporate System Protocols -->
+        <section class="protocols-structural-section">
+            <div class="protocol-sticky-left"><h2>Sovereign Architecture</h2></div>
+            <div class="protocol-grid-right">
+                <div class="protocol-node-box">
+                    <div class="protocol-node-flag">PROTOCOL // 01</div>
+                    <div class="protocol-node-title">Decentralized Telemetry Scrubbing</div>
+                    <div class="protocol-node-desc">All incoming data flows drop telemetry headers completely at proxy boundaries, blocking public tracking metrics.</div>
+                </div>
+                <div class="protocol-node-box">
+                    <div class="protocol-node-flag">PROTOCOL // 02</div>
+                    <div class="protocol-node-title">Concurrent Cross-Region Failovers</div>
+                    <div class="protocol-node-desc">Computational nodes maintain synchronized parallel data tunnels across Germany, London, and Singapore clusters instantly.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Static Verification Reviews Panel -->
+        <section class="reviews-static-panel">
+            <h2 class="reviews-title">Verified Network Evaluations</h2>
+            <div class="reviews-row-grid">
+                <div class="evaluation-card">
+                    <div class="stars-row">★★★★★</div>
+                    <p class="quote-text">"The Faceless media systems completely decentralized our operational pipelines. Hit over 14 proxy channels within 30 days flawlessly."</p>
+                    <div class="profile-row">
+                        <div class="avatar-circle">AM</div>
+                        <div class="profile-meta-details"><h4>Alexander M.</h4><p>Venture Partner</p></div>
+                    </div>
+                </div>
+                <div class="evaluation-card">
+                    <div class="stars-row">★★★★★</div>
+                    <p class="quote-text">"Outstanding structural speed. The concurrent scaling scripts bypass standard interface rate limitations cleanly. A definitive asset update."</p>
+                    <div class="profile-row">
+                        <div class="avatar-circle">HK</div>
+                        <div class="profile-meta-details"><h4>Helena Kael</h4><p>Operations Principal</p></div>
+                    </div>
+                </div>
+                <div class="evaluation-card">
+                    <div class="stars-row">★★★★★</div>
+                    <p class="quote-text">"Damodar Techcraze Ventures has entirely removed heavy infrastructure setup debt for our platforms. These bundles execute on autopilot."</p>
+                    <div class="profile-row">
+                        <div class="avatar-circle">DR</div>
+                        <div class="profile-meta-details"><h4>David R.</h4><p>Managing Director</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scarcity Area Dashboard Panel -->
+        <section class="scarcity-lockdown-panel">
+            <div class="scarcity-left-text">
+                <h3>94.2% International Infrastructure Cap Reached</h3>
+                <p>Corporate allocation capacity functions under strict regional distribution rules. Request execution security keys immediately before automatic lockdown terms apply.</p>
+            </div>
+            <div class="scarcity-timer-display-box">
+                <div><div class="scarcity-digits-val">94.2%</div><div class="scarcity-digits-label">Allocation Cap</div></div>
+                <div><div class="scarcity-digits-val">15:00</div><div class="scarcity-label">Bypass Window</div></div>
+            </div>
+        </section>
+
+        <footer>
+            <div>©️ 2026 Damodar Techcraze Ventures Engineering Layer. Global Systems Operations Inc. All Rights Reserved.</div>
+            <div>STATUS: ACCREDITED SECURE ACCREDITED MATRIX // LOCK ID-7731X</div>
+        </footer>
+    </div>
+
+</body>
+</html>
