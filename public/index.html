@@ -9,222 +9,203 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #02040a;
-            --panel-glass: rgba(6, 11, 23, 0.8);
-            --border-glow: rgba(255, 255, 255, 0.04);
-            --neon-cyan: #00ffcc;
-            --neon-rose: #ff3366;
-            --text-muted: #848b9c;
-            --pure-white: #ffffff;
+            --bg: #010307;
+            --panel: rgba(6, 12, 24, 0.8);
+            --border-silver: rgba(255, 255, 255, 0.04);
+            --cyan: #00ffcc;
+            --cyan-glow: rgba(0, 255, 204, 0.25);
+            --rose: #ff3366;
+            --rose-glow: rgba(255, 51, 102, 0.25);
+            --slate-muted: #7e8796;
+            --white: #ffffff;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { background-color: var(--bg-dark); color: var(--pure-white); font-family: 'Montserrat', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg); color: var(--white); font-family: 'Montserrat', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         
-        /* Ambient Lighting Matrix (Massive Depth) */
-        .ambient-glow { position: absolute; width: 1000px; height: 1000px; background: radial-gradient(circle, rgba(0, 255, 204, 0.04) 0%, transparent 70%); filter: blur(120px); pointer-events: none; z-index: 0; }
-        .glow-1 { top: -200px; left: 50%; transform: translateX(-50%); }
-        .glow-2 { top: 2500px; left: -200px; background: radial-gradient(circle, rgba(255, 51, 102, 0.03) 0%, transparent 70%); }
-        .glow-3 { top: 500px; right: -200px; }
+        /* Grid Overlay Matrix System */
+        body::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 1; }
+        
+        /* Ambient Volumetric Glow Systems */
+        .ambient-layer { position: absolute; width: 1200px; height: 800px; background: radial-gradient(circle, rgba(0, 255, 204, 0.05) 0%, transparent 70%); filter: blur(130px); pointer-events: none; z-index: 0; }
+        .g-1 { top: -200px; left: 50%; transform: translateX(-50%); }
+        .g-2 { top: 2200px; left: -200px; background: radial-gradient(circle, rgba(255, 51, 102, 0.04) 0%, transparent 70%); }
+        .g-3 { top: 4400px; right: -200px; }
 
-        .main-wrapper { width: 90%; max-width: 1340px; margin: 0 auto; position: relative; z-index: 2; }
+        .app-container { width: 90%; max-width: 1300px; margin: 0 auto; position: relative; z-index: 2; }
 
-        /* Navigation */
-        header { padding: 40px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.03); }
-        .logo-core { font-weight: 900; font-size: 26px; letter-spacing: 4px; text-transform: uppercase; background: linear-gradient(180deg, #fff 30%, #555 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .nav-links-system { display: flex; gap: 40px; list-style: none; font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
-        .nav-links-system a { color: var(--text-muted); text-decoration: none; transition: 0.3s; }
-        .nav-links-system a:hover { color: var(--neon-cyan); }
+        /* Corporate Professional Header */
+        header { padding: 45px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-silver); }
+        .brand-logo { font-weight: 900; font-size: 24px; letter-spacing: 5px; text-transform: uppercase; background: linear-gradient(180deg, #ffffff 0%, #6c7282 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-menu { display: flex; gap: 40px; list-style: none; font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+        .nav-menu a { color: var(--slate-muted); text-decoration: none; transition: 0.3s; }
+        .nav-menu a:hover { color: var(--cyan); }
 
-        /* Hero Terminal Block */
-        .hero-terminal { text-align: center; margin: 150px auto 100px auto; max-width: 1000px; }
-        .status-badge { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 6px; color: var(--neon-cyan); text-transform: uppercase; margin-bottom: 30px; }
-        .hero-title { font-size: 76px; font-weight: 900; line-height: 1.1; letter-spacing: -2px; margin-bottom: 35px; background: linear-gradient(180deg, #ffffff 40%, #2e323d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-desc { font-size: 20px; font-weight: 300; color: #a5adb3; line-height: 1.8; max-width: 850px; margin: 0 auto; }
+        /* Hero Terminal Section */
+        .hero-section { text-align: center; max-width: 1050px; margin: 150px auto 90px auto; }
+        .system-ticker { font-size: 13px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: var(--slate-muted); margin-bottom: 25px; }
+        .hero-headline { font-size: 82px; font-weight: 900; line-height: 1.05; letter-spacing: -2.5px; margin-bottom: 35px; background: linear-gradient(180deg, #ffffff 30%, #3d414d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subhook { font-size: 21px; font-weight: 300; color: #b0b7c7; line-height: 1.8; max-width: 880px; margin: 0 auto; }
 
-        /* Infinite Brands Ticker */
-        .brand-strip { display: flex; justify-content: space-between; padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.02); margin-bottom: 120px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #353942; letter-spacing: 5px; font-weight: 700; }
+        /* Verified Institutional Network Strips */
+        .trust-ticker { width: 100%; margin: 60px 0 120px 0; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.02); padding-bottom: 50px; }
+        .trust-logos-row { display: flex; justify-content: center; gap: 90px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #3a3e4a; letter-spacing: 6px; font-weight: 700; }
 
-        /* 🔄 Dynamic Catalog System (Handles 125 variations) */
-        .catalog-control-panel { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.04); }
-        .section-headline { font-size: 36px; font-weight: 900; letter-spacing: -1.5px; }
-        .tabs-rail { background: rgba(255, 255, 255, 0.01); padding: 6px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.04); display: flex; gap: 8px; }
-        .tab-trigger { background: transparent; border: none; color: var(--text-muted); padding: 12px 26px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 9px; transition: 0.3s; }
-        .tab-trigger.active { background: #ffffff; color: #000000; }
+        /* 📦 DYNAMIC 125 INVENTORY MULTI-SWITCHER HUB */
+        .catalog-control-center { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; border-top: 1px solid var(--border-silver); padding-top: 60px; }
+        .catalog-headline { font-size: 34px; font-weight: 900; letter-spacing: -1.5px; }
+        .tabs-wrapper-rail { background: rgba(255, 255, 255, 0.01); padding: 5px; border-radius: 12px; border: 1px solid var(--border-silver); display: flex; gap: 6px; }
+        .filter-btn { background: transparent; border: none; color: var(--slate-muted); padding: 12px 26px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 8px; transition: 0.3s; }
+        .filter-btn.active { background: #ffffff; color: #000000; }
 
-        /* Products Grid Layout */
-        .products-grid-matrix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px; }
-        .premium-card-node { background: var(--panel-glass); backdrop-filter: blur(25px); border: 1px solid var(--border-glow); border-radius: 20px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.4s ease; }
-        .premium-card-node:hover { border-color: rgba(0, 255, 204, 0.25); transform: translateY(-6px); }
-        .card-meta-tag { font-family: 'Space Grotesk', sans-serif; font-size: 10px; color: var(--neon-cyan); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
-        .card-title { font-size: 22px; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.5px; }
-        .terminal-log-box { background: #04070e; padding: 14px; border-radius: 8px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #515866; margin-bottom: 20px; line-height: 1.4; border: 1px solid rgba(255,255,255,0.01); }
-        .card-body-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 30px; font-weight: 300; }
-        .card-footer-action { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.02); padding-top: 20px; }
-        .price-tag-value { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; }
-        .action-gate-btn { background: #ffffff; color: #000000; border: none; padding: 12px 24px; font-size: 11px; font-weight: 700; border-radius: 8px; cursor: pointer; text-transform: uppercase; transition: 0.2s; }
-        .action-gate-btn:hover { background: var(--neon-cyan); box-shadow: 0 0 20px rgba(0,255,204,0.3); }
+        /* Symmetrical Layout Grid Matrix */
+        .catalog-grid-matrix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 50px; min-height: 400px; }
+        .luxury-product-card { background: var(--panel); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border: 1px solid var(--border-silver); border-radius: 24px; padding: 50px 40px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .luxury-product-card:hover { border-color: rgba(0, 255, 204, 0.3); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0, 255, 204, 0.05); }
+        
+        .product-meta-tag { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: var(--cyan); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; }
+        .product-card-title { font-size: 24px; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .product-terminal-logs { background: #04070f; border-radius: 10px; padding: 16px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #575f6e; margin-bottom: 20px; line-height: 1.5; }
+        .pulse-node-dot { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 8px var(--cyan); }
+        .product-card-desc { font-size: 14px; color: var(--slate-muted); line-height: 1.65; margin-bottom: 35px; font-weight: 300; }
+        
+        .product-card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 25px; }
+        .product-price-amt { font-size: 26px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
+        .product-cta-btn { background: #ffffff; color: #000000; border: none; padding: 14px 32px; font-size: 11px; font-weight: 700; border-radius: 10px; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        .product-cta-btn:hover { background: var(--cyan); box-shadow: 0 0 25px var(--cyan-glow); }
 
-        .load-more-center-node { display: flex; justify-content: center; margin-bottom: 150px; }
-        .mega-pagination-btn { background: rgba(255,255,255,0.01); color: #fff; border: 1px solid rgba(255,255,255,0.04); padding: 16px 40px; border-radius: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
-        .mega-pagination-btn:hover { background: #fff; color: #000; }
+        /* Pagination Matrix Module Center */
+        .load-more-center-node { display: flex; justify-content: center; margin-bottom: 160px; }
+        .pagination-action-trigger { background: rgba(255,255,255,0.01); color: var(--white); border: 1px solid var(--border-silver); padding: 18px 50px; border-radius: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
+        .pagination-action-trigger:hover { background: #ffffff; color: #000000; box-shadow: 0 0 40px rgba(255,255,255,0.1); }
 
-        /* Global Matrix Hardware Counters */
-        .hardware-counters-section { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-bottom: 150px; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 80px; }
-        .counter-card { background: linear-gradient(180deg, #050a14 0%, #020408 100%); border: 1px solid rgba(255,255,255,0.01); padding: 40px; border-radius: 16px; text-align: center; }
-        .counter-big-num { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; color: #fff; }
-        .counter-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-top: 10px; }
+        /* Hardware System Live Counters */
+        .system-counters-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 160px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
+        .counter-tile-box { background: rgba(255,255,255,0.001); border-radius: 20px; padding: 45px; text-align: center; border: 1px solid rgba(255,255,255,0.005); }
+        .counter-matrix-digits { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: #ffffff; letter-spacing: -1px; }
+        .counter-matrix-caption { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--slate-muted); margin-top: 14px; font-weight: 500; }
 
-        /* Deep Multi-Scroll Specifications Grid (Extends Height To 10 Scrolls) */
-        .extended-spec-section { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; margin-bottom: 150px; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 80px; }
-        .spec-left h2 { font-size: 42px; font-weight: 900; line-height: 1.2; background: linear-gradient(180deg, #fff, #3a3e47); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .spec-right-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .spec-item-box { background: rgba(255,255,255,0.005); border: 1px solid rgba(255,255,255,0.02); padding: 35px; border-radius: 16px; }
-        .spec-number { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--neon-cyan); margin-bottom: 15px; }
-        .spec-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-        .spec-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
+        /* Corporate Structural Protocols (Extends Depth Scroll To 10 Full Waves) */
+        .system-protocols-block { display: grid; grid-template-columns: 1fr 2.5fr; gap: 80px; margin-bottom: 160px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
+        .protocol-aside h2 { font-size: 48px; font-weight: 900; letter-spacing: -2px; background: linear-gradient(180deg, #ffffff, #444957); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .protocol-sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .protocol-node-card { background: linear-gradient(180deg, #060b14 0%, #020408 100%); border: 1px solid rgba(255,255,255,0.02); padding: 45px; border-radius: 24px; }
+        .protocol-card-index { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: var(--cyan); margin-bottom: 15px; }
+        .protocol-card-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+        .protocol-card-desc { font-size: 14px; color: var(--slate-muted); line-height: 1.7; font-weight: 300; }
 
-        /* 🔄 Non-Stop Infinity Review Marquee Engine (15 Verified Evaluators) */
-        .marquee-viewport-container { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); margin-bottom: 150px; }
-        .marquee-rail-wrap { display: flex; width: max-content; }
-        .marquee-track-mover { display: flex; animation: infinityScrollLoop 40s linear infinite; }
-        .marquee-viewport-container:hover .marquee-track-mover { animation-play-state: paused; }
+        /* 🔄 ⭐ THE 100% BULLETPROOF DOUBLE-TRACK 15 NODES REVIEW MARQUEE SYSTEM */
+        .marquee-viewport-shuttle { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 100px 0; border-top: 1px solid var(--border-silver); border-bottom: 1px solid var(--border-silver); margin-bottom: 160px; }
+        .marquee-viewport-headline { font-size: 42px; font-weight: 900; text-align: center; margin-bottom: 70px; background: linear-gradient(180deg, #ffffff 20%, #4c5261 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -1.5px; }
+        
+        .marquee-flex-rail-wrapper { display: flex; width: max-content; margin-bottom: 35px; }
+        .marquee-flex-rail-wrapper.reverse-track .marquee-independent-engine-track { animation-direction: reverse; animation-duration: 40s; }
+        .marquee-independent-engine-track { display: flex; animation: structuralHardwareGlide 35s linear infinite; will-change: transform; }
+        .marquee-viewport-shuttle:hover .marquee-independent-engine-track { animation-play-state: paused; }
 
-        .review-card-shell { width: 400px; background: #060b14; border: 1px solid rgba(255,255,255,0.02); border-radius: 20px; padding: 40px; margin-right: 30px; flex-shrink: 0; }
-        .stars-row { color: var(--neon-cyan); font-size: 13px; margin-bottom: 15px; }
-        .review-quote { font-size: 14px; color: #cbd2e0; line-height: 1.7; font-weight: 300; margin-bottom: 25px; height: 70px; overflow: hidden; }
-        .user-profile-row { display: flex; align-items: center; gap: 15px; }
-        .avatar-circle { width: 42px; height: 42px; background: #111a2b; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 11px; color: var(--neon-cyan); border: 1px solid rgba(0,255,204,0.1); }
-        .profile-info h4 { font-size: 14px; font-weight: 700; }
-        .profile-info p { font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; letter-spacing: 0.5px; }
+        .evaluation-node-box { width: 420px; background: linear-gradient(180deg, #060c17 0%, #020409 100%); border: 1px solid rgba(255, 255, 255, 0.02); border-radius: 24px; padding: 45px; margin-right: 35px; flex-shrink: 0; box-shadow: 0 40px 90px rgba(0,0,0,0.6); }
+        .stars-string-matrix { color: var(--cyan); font-size: 14px; margin-bottom: 20px; letter-spacing: 2px; }
+        .evaluation-quote-block { font-size: 14px; color: #d1d8e6; line-height: 1.75; font-weight: 300; margin-bottom: 30px; height: 75px; overflow: hidden; }
+        .identity-meta-row { display: flex; align-items: center; gap: 15px; }
+        .avatar-initials-shell { width: 44px; height: 44px; background: #132036; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15); }
+        .profile-strings h4 { font-size: 15px; font-weight: 700; color: #ffffff; }
+        .profile-strings p { font-size: 11px; color: var(--slate-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
 
-        @keyframes infinityScrollLoop { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
+        @keyframes structuralHardwareGlide { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
 
-        /* Live Scarcity Lockdown Engine */
-        .scarcity-lockdown-bar { background: linear-gradient(135deg, #060c19 0%, #010307 100%); border: 1px solid rgba(255,255,255,0.04); border-radius: 24px; padding: 60px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 120px; }
-        .scarcity-text h3 { font-size: 32px; font-weight: 700; letter-spacing: -1px; }
-        .scarcity-text p { font-size: 14px; color: var(--text-muted); margin-top: 10px; font-weight: 300; }
-        .countdown-digits-box { display: flex; gap: 40px; background: rgba(0,0,0,0.4); padding: 20px 45px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.01); font-family: 'Space Grotesk', sans-serif; text-align: center; }
-        .timer-val { font-size: 42px; font-weight: 700; color: var(--neon-rose); text-shadow: 0 0 20px rgba(255,51,102,0.2); }
-        .timer-lbl { font-size: 9px; letter-spacing: 1px; color: #505666; text-transform: uppercase; margin-top: 4px; }
+        /* Strategic Integration Sandbox Layer */
+        .strategic-onboarding-panel { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; margin-bottom: 160px; background: rgba(255,255,255,0.005); border: 1px solid rgba(255,255,255,0.02); padding: 70px; border-radius: 32px; }
+        .strat-title { font-size: 38px; font-weight: 700; margin-bottom: 20px; letter-spacing: -1px; }
+        .strat-desc { font-size: 15px; color: var(--slate-muted); line-height: 1.75; font-weight: 300; margin-bottom: 40px; }
+        .strat-sub-nodes { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .strat-mini-node-card { background: #050912; border: 1px solid rgba(255,255,255,0.03); padding: 25px; border-radius: 14px; }
+        .strat-mini-node-card h5 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--cyan); }
+        .strat-mini-node-card p { font-size: 13px; color: var(--slate-muted); line-height: 1.5; }
+        .strat-visual-shell { background: linear-gradient(145deg, #070d19 0%, #020306 100%); border: 1px solid var(--border-silver); border-radius: 20px; padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .visual-glow-circle { width: 120px; height: 120px; background: radial-gradient(circle, rgba(0, 255, 204, 0.1) 0%, transparent 70%); border: 1px solid rgba(0, 255, 204, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--cyan); }
 
-        footer { padding: 50px 0; border-top: 1px solid rgba(255,255,255,0.04); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #3d424d; font-family: 'Space Grotesk', sans-serif; }
+        /* Active Scarcity Clock Dashboard Component */
+        .scarcity-lockdown-board { background: linear-gradient(135deg, #060b17 0%, #020307 100%); border: 1px solid var(--border-silver); border-radius: 28px; padding: 65px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 140px; }
+        .scarcity-headline-text { font-size: 36px; font-weight: 700; letter-spacing: -1.5px; }
+        .scarcity-sub-narrative { font-size: 15px; color: var(--slate-muted); margin-top: 14px; font-weight: 300; max-width: 680px; line-height: 1.65; }
+        .countdown-digits-wrapper { display: flex; gap: 35px; background: rgba(0, 0, 0, 0.5); padding: 25px 55px; border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.01); }
+        .countdown-digits-val { font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 700; color: var(--rose); text-shadow: 0 0 25px rgba(255, 51, 102, 0.25); }
+        .countdown-digits-lbl { font-size: 10px; letter-spacing: 2px; color: #565d6e; margin-top: 6px; text-transform: uppercase; }
 
-        @media(max-width: 1024px) { .products-grid-matrix, .hardware-counters-section, .extended-spec-section { grid-template-columns: repeat(2, 1fr); } .scarcity-lockdown-bar { flex-direction: column; text-align: center; gap: 30px; } .extended-spec-section { grid-template-columns: 1fr; } }
-        @media(max-width: 700px) { .products-grid-matrix, .hardware-counters-section, .spec-right-grid { grid-template-columns: 1fr; } .hero-title { font-size: 38px; } }
+        /* Secure Functional Popup Verification Matrix Modals */
+        .modal-terminal-overlay { position: fixed; inset: 0; background: rgba(1, 3, 7, 0.95); z-index: 999999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.3s ease; backdrop-filter: blur(20px); }
+        .modal-terminal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-terminal-box { background: #060c19; border: 1px solid var(--cyan); max-width: 500px; width: 90%; padding: 45px; border-radius: 24px; text-align: center; box-shadow: 0 0 50px rgba(0,255,204,0.15); }
+        .modal-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 15px; color: var(--cyan); }
+        .modal-desc { font-size: 14px; color: var(--slate-muted); line-height: 1.6; margin-bottom: 30px; }
+        .modal-input { width: 100%; background: #020409; border: 1px solid var(--border-silver); padding: 16px; border-radius: 10px; color: #fff; font-family: 'Space Grotesk', monospace; font-size: 14px; margin-bottom: 25px; outline: none; text-align: center; }
+        .modal-input:focus { border-color: var(--cyan); }
+        .modal-close-btn { background: var(--cyan); color: #000; border: none; padding: 14px 35px; border-radius: 10px; font-size: 12px; font-weight: 700; text-transform: uppercase; cursor: pointer; transition: 0.2s; }
+        .modal-close-btn:hover { transform: scale(1.02); box-shadow: 0 0 20px var(--cyan-glow); }
+
+        footer { padding: 55px 0; border-top: 1px solid var(--border-silver); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #434854; font-family: 'Space Grotesk', sans-serif; }
+
+        @media (max-width: 1100px) { .catalog-grid-matrix, .system-counters-row, .system-protocols-block, .strategic-onboarding-panel { grid-template-columns: repeat(2, 1fr); } .scarcity-lockdown-board { flex-direction: column; text-align: center; gap: 40px; } .strategic-onboarding-panel { grid-template-columns: 1fr; } }
+        @media (max-width: 728px) { .catalog-grid-matrix, .system-counters-row, .protocol-sub-grid, .strat-sub-nodes { grid-template-columns: 1fr; } .hero-headline { font-size: 42px; } .evaluation-node-box { width: 330px; } .system-protocols-block { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow glow-1"></div>
-    <div class="ambient-glow glow-2"></div>
-    <div class="ambient-glow glow-3"></div>
+    <div class="ambient-layer g-1"></div>
+    <div class="ambient-layer g-2"></div>
+    <div class="ambient-layer g-3"></div>
 
-    <div class="main-wrapper">
+    <div class="app-container">
         <header>
-            <div class="logo-core">Damodar Techcraze Ventures</div>
-            <ul class="nav-links-system">
-                <li><a href="#inventory">125 Assets Grid</a></li>
-                <li><a href="#architecture">Core Architecture</a></li>
-                <li><a href="#feedback">Evaluations Matrix</a></li>
+            <div class="brand-logo">Damodar Techcraze Ventures</div>
+            <ul class="nav-menu">
+                <li><a href="#inventory-block">125 Assets Grid</a></li>
+                <li><a href="#protocols-block">Sovereign Architecture</a></li>
+                <li><a href="#evaluations-block">Evaluations Matrix</a></li>
             </ul>
+            <div class="secure-node">ENGINE CODENAME: SOVEREIGN_V8.0</div>
         </header>
 
-        <section class="hero-terminal">
-            <div class="status-badge">// PROTOCOL LAYER ACTIVE // INTERNAL STABLE v8.0.0</div>
-            <h1 class="hero-title">High Status Infrastructure For Digital Asset Pools</h1>
-            <p class="hero-desc">Deploying multi-threaded corporate content engines, automated verification loops, and private sandbox frameworks built for global validation networks.</p>
-        </section>
+        <main class="hero-section">
+            <div class="system-ticker">Global Allocation & Infrastructure Layer</div>
+            <h1 class="hero-headline">Command Control of Global Distribution Capital</h1>
+            <p class="hero-subhook">Immediate validation frameworks deploying automated cloud asset grids engineered explicitly for tier-1 high-status institutional networks.</p>
+        </main>
 
-        <section class="brand-strip">
-            <span>NETWORK INSTANCE: ONLINE</span><span>SERVER MATRIX: CALIBRATED</span><span>DATA RETENTION: MAXIMUM</span>
-        </section>
-
-        <section id="inventory" class="catalog-control-panel">
-            <div class="section-headline">Sovereign Asset Inventory (125 Variations)</div>
-            <div class="tabs-rail">
-                <button class="tab-trigger active" id="tab-institutional">Institutional Core</button>
-                <button class="tab-trigger" id="tab-venture">Venture Portfolio</button>
+        <section class="trust-ticker">
+            <div class="trust-logos-row">
+                <span>BLOOMBERG</span><span>TECHCRUNCH</span><span>FORBES</span><span>REUTERS</span>
             </div>
         </section>
 
-        <div class="products-grid-matrix" id="dynamic-injection-grid">
+        <!-- Dynamic Catalog Hub Controls Area -->
+        <section id="inventory-block" class="catalog-control-center">
+            <div class="catalog-headline">Sovereign Asset Inventory (125 Variations)</div>
+            <div class="tabs-wrapper-rail">
+                <button class="filter-btn active" id="btn-institutional-trigger">Institutional Core</button>
+                <button class="filter-btn" id="btn-venture-trigger">Venture Portfolio</button>
             </div>
+        </section>
 
-        <div class="load-more-center-node">
-            <button class="mega-pagination-btn" id="pagination-trigger-node">Load Next Matrix Arrays (Remaining 125 Items)</button>
+        <!-- 📦 FAIL-PROOF RECURSIVE RE-INJECTION ENGINE CONTAINER GRID -->
+        <div class="catalog-grid-matrix" id="hardware-matrix-grid-root">
+            <!-- Dynamic compilation nodes append perfectly on runtime via pure JS script locks below -->
         </div>
 
-        <section class="hardware-counters-section">
-            <div class="counter-card"><div class="counter-big-num">84,102</div><div class="counter-label">Validated Core Keys</div></div>
-            <div class="counter-card"><div class="counter-big-num">$91.4M</div><div class="counter-label">Settled Assets Pool</div></div>
-            <div class="counter-card"><div class="counter-big-num">99.99%</div><div class="counter-label">Operational Sync Uptime</div></div>
-            <div class="counter-card"><div class="counter-big-num">180+</div><div class="counter-label">Connected Cloud Zones</div></div>
+        <div class="load-more-center-node">
+            <button class="pagination-action-trigger" id="pagination-load-more-trigger">Load Next Matrix Arrays (Remaining 125 Items)</button>
+        </div>
+
+        <!-- Realtime Computational Systems Counters -->
+        <section class="system-counters-row">
+            <div class="counter-tile-box"><div class="counter-matrix-digits" id="live-count-1">0</div><div class="counter-matrix-caption">Active System Keys</div></div>
+            <div class="counter-tile-box"><div class="counter-matrix-digits" id="live-count-2">0</div><div class="counter-matrix-caption">Processed Liquidity</div></div>
+            <div class="counter-tile-box"><div class="counter-matrix-digits">99.99%</div><div class="counter-matrix-caption">Core Sync Uptime</div></div>
+            <div class="counter-tile-box"><div class="counter-matrix-digits">180+</div><div class="counter-matrix-caption">Connected Cloud Zones</div></div>
         </section>
 
-        <section id="architecture" class="extended-spec-section">
-            <div class="spec-left"><h2>Sovereign Core Architectural Standards</h2></div>
-            <div class="spec-right-grid">
-                <div class="spec-item-box">
-                    <div class="spec-number">DATA PROXY // 01</div>
-                    <div class="spec-item-box-title spec-title">Isolated Telemetry Buffers</div>
-                    <div class="spec-desc">Data transmission pipes automatically drop telemetry tracking headers to operate outside public monitoring indexes.</div>
-                </div>
-                <div class="spec-item-box">
-                    <div class="spec-number">ENGINE NODES // 02</div>
-                    <div class="spec-item-box-title spec-title">High Ticket Sync Networks</div>
-                    <div class="spec-desc">Server instances run concurrent parallel clusters across UK, Frankfurt, and Singapore data facilities for maximum latency resistance.</div>
-                </div>
-                <div class="spec-item-box">
-                    <div class="spec-number">LIQUID MATRIX // 03</div>
-                    <div class="spec-item-box-title spec-title">Automated Value Clearing</div>
-                    <div class="spec-desc">Dynamic pricing indices evaluate cross border asset flow changes instantly without typical legacy gateway delays.</div>
-                </div>
-                <div class="spec-item-box">
-                    <div class="spec-number">SANDBOX LAYER // 04</div>
-                    <div class="spec-item-box-title spec-title">Cold Memory Vault Containers</div>
-                    <div class="spec-desc">Private network access configurations are isolated inside deep cryptographic offline files with continuous handshake logs.</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="feedback" class="marquee-viewport-container">
-            <div class="marquee-rail-wrap">
-                <div class="marquee-track-mover" id="marquee-injection-track">
-                    </div>
-            </div>
-        </section>
-
-        <section class="scarcity-lockdown-bar">
-            <div class="scarcity-text">
-                <h3>94.2% Regional Node Allocation Reached</h3>
-                <p>Corporate computational pipelines function under tight global distribution caps. Secure execution codes immediately.</p>
-            </div>
-            <div class="countdown-digits-box">
-                <div><div class="timer-val">94.2%</div><div class="timer-lbl">Cap Index</div></div>
-                <div><div class="timer-val" id="countdown-clock-digits">15:00</div><div class="timer-lbl">Bypass Window</div></div>
-            </div>
-        </section>
-
-        <footer>
-            <div>©️ 2026 Damodar Techcraze Ventures. Global Operations Group. Unified Legal Logs Matrix Locked.</div>
-            <div>STATUS SYSTEM CONTROL LAYER // ID: 894-X</div>
-        </footer>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const assetCatalogData = [
-                { title: "Secret 4K Cinematic AI Video Suite", unit: "Asset Matrix 01", desc: "Complete automated rendering pipeline setups and algorithmic organic conversion hooks optimized for extreme audience retention.", logging: "Binding stream hooks... READY", priceInst: "$4,900", priceVent: "$49,000" },
-                { title: "The Faceless YouTube Blueprints", unit: "Asset Matrix 02", desc: "Multi-threaded shadow cloud configuration maps engineered to scale organic networks under absolute global anonymity matrices.", logging: "Masking execution path... SECURE", priceInst: "$9,900", priceVent: "$99,000" },
-                { title: "Advanced Instagram Scaling Bot", unit: "Asset Matrix 03", desc: "Custom script arrays built to maintain extensive target engagement sequences without hitting strict platform rate triggers.", logging: "Mapping active API bridges... OK", priceInst: "$3,900", priceVent: "$39,000" },
-                { title: "Programmatic Cloud Arbitrage Matrix", unit: "Asset Matrix 04", desc: "Automated distribution loops intercepting digital liquidity pools across separate international cloud server instances.", logging: "Parsing arbitrage arrays... OK", priceInst: "$5,900", priceVent: "$59,000" },
-                { title: "Sovereign Audience Graph Multiplexer", unit: "Asset Matrix 05", desc: "High velocity telemetry adjustments analyzing visual demographic signals to deploy precise algorithmic hook patterns.", logging: "Injecting conversion tokens... 100%", priceInst: "$7,500", priceVent: "$75,000" },
-                { title: "Faceless Viral Distribution Node", unit: "Asset Matrix 06", desc: "Isolated instances driving hyper viral media pools across target regions with encrypted proxy authentication tracking.", logging: "Spawning validation loops... ACTIVE", priceInst: "$6,200", priceVent: "$62,000" }
-            ];
-
-            const customerReviewsData = [
-                { ini: "AM", user: "Alexander M.", status: "Venture Principal", txt: "The Faceless architecture completely decentralized our organic channels. Hit 14 active proxy pipelines within 30 days cleanly." },
-                { ini: "HK", user: "Helena K.", status: "Operations Partner", txt: "Incredible structural velocity. The Instagram loop scripts bypass standard threshold blocks effortlessly. A true system upgrade." },
-                { ini: "DR", user: "David R.", status: "Managing Director", txt: "Damodar Techcraze has entirely removed heavy operational setup debt for our platforms. These bundles execute on absolute autopilot." },
-                { ini: "TB", user: "Thomas B.", status: "Media Infrastructure Lead", txt: "The security validation framework is robust. Scaled our platform asset distributions
+        <!-- Corporate System Protocols Area (Scroll Depth Extension Component) -->
+        <section id="protocols-block" class="system-protocols-block">
+            <div class="protocol-aside"><h2>Sovereign Architecture</h2></div>
+            <div class="protocol-sub-grid">
+                <div class="protocol-node-card">
