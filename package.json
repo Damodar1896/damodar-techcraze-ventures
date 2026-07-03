@@ -1,0 +1,18 @@
+{
+  "name": "damodar-techcraze-ventures",
+  "version": "1.0.0",
+  "description": "Autonomous Multi-Tenant Digital Infrastructure Grid",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "monitor": "pm2 start server.js --name 'Damodar-Core-Hub' -i max --watch"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.110.0",
+    "axios": "^1.6.8",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "pg": "^8.11.5",
+    "redis": "^4.6.13"
+  }
+}
