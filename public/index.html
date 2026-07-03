@@ -3,598 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subhash Techcraze Ventures | Institutional Control Engine</title>
+    <title>Subhash Techcraze Ventures | Sovereignty Capital Matrix</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #03060f;
-            --panel: rgba(10, 16, 32, 0.7);
-            --panel-border: rgba(255, 255, 255, 0.05);
-            --cyan: #00ffcc;
-            --cyan-glow: rgba(0, 255, 204, 0.3);
-            --rose: #ff3366;
-            --rose-glow: rgba(255, 51, 102, 0.3);
-            --muted: #8a92a6;
-            --text: #ffffff;
+            --bg-matrix: #02040a;
+            --glass-core: rgba(8, 14, 27, 0.8);
+            --border-silver: rgba(255, 255, 255, 0.05);
+            --neon-glow-cyan: #00ffcc;
+            --neon-glow-rose: #ff3366;
+            --slate-muted: #848b9c;
+            --pure-white: #ffffff;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Montserrat', sans-serif;
-            min-height: 100vh;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            position: relative;
+            background-color: var(--bg-matrix); color: var(--pure-white); font-family: 'Montserrat', sans-serif;
+            min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; position: relative;
         }
 
-        /* Tech Grid Background overlay */
+        /* Highly Advanced Dynamic Mesh Overlay */
         body::before {
-            content: '';
-            position: absolute;
-            inset: 0;
+            content: ''; position: absolute; inset: 0;
             background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
-            background-size: 60px 60px;
-            pointer-events: none;
-            z-index: 1;
+                linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px);
+            background-size: 70px 70px; pointer-events: none; z-index: 1;
         }
 
-        /* Ambient Premium Glows */
-        .ambient-glow-1 {
-            position: absolute;
-            top: -150px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1200px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(0, 255, 204, 0.06) 0%, transparent 70%);
-            filter: blur(100px);
-            pointer-events: none;
-            z-index: 0;
+        .cyber-ambient-top {
+            position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+            width: 100%; max-width: 1400px; height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.07) 0%, transparent 75%);
+            filter: blur(120px); pointer-events: none; z-index: 0;
         }
 
-        .ambient-glow-2 {
-            position: absolute;
-            bottom: 10%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 51, 102, 0.03) 0%, transparent 70%);
-            filter: blur(120px);
-            pointer-events: none;
-            z-index: 0;
-        }
+        .main-frame { width: 90%; max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
 
-        .container {
-            width: 90%;
-            max-width: 1240px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
+        /* Sovereignty Header Pattern */
+        header { padding: 45px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-silver); }
+        .brand-logo { font-weight: 900; font-size: 24px; letter-spacing: 6px; text-transform: uppercase; background: linear-gradient(180deg, #ffffff 0%, #6c7282 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .secure-ticker-node { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2.5px; color: var(--neon-glow-cyan); background: rgba(0, 255, 204, 0.02); padding: 12px 24px; border-radius: 10px; border: 1px solid rgba(0, 255, 204, 0.2); text-shadow: 0 0 15px rgba(0, 255, 204, 0.4); }
 
-        /* Premium Header Layout */
-        header {
-            padding: 40px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--panel-border);
-        }
+        /* High-Status Hero Blueprint */
+        .hero-engine { text-align: center; max-width: 1000px; margin: 120px auto 70px auto; }
+        .meta-layer-ticker { font-size: 13px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: var(--slate-muted); margin-bottom: 25px; }
+        .main-headline { font-size: 76px; font-weight: 900; line-height: 1.05; letter-spacing: -2.5px; margin-bottom: 30px; background: linear-gradient(180deg, #ffffff 30%, #3d414d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hook-description { font-size: 20px; font-weight: 300; color: #b0b7c7; line-height: 1.75; max-width: 850px; margin: 0 auto; }
 
-        .logo {
-            font-weight: 900;
-            font-size: 22px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            background: linear-gradient(180deg, #ffffff 0%, #7d8496 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        /* Switcher Mechanism Layer */
+        .interactive-toggle-box { display: flex; justify-content: center; margin: 60px 0; }
+        .switcher-rail { background: rgba(255, 255, 255, 0.015); padding: 6px; border-radius: 14px; border: 1px solid var(--border-silver); display: flex; gap: 6px; }
+        .rail-btn { background: transparent; border: none; color: var(--slate-muted); padding: 16px 32px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 10px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .rail-btn.active { background: #ffffff; color: #000000; box-shadow: 0 12px 30px rgba(255, 255, 255, 0.12); }
 
-        .status-node {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: var(--cyan);
-            background: rgba(0, 255, 204, 0.03);
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 255, 204, 0.2);
-            text-shadow: 0 0 10px var(--cyan-glow);
-        }
+        /* Institutional Symmetrical Matrix Layout Grid */
+        .allocation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 140px; }
+        .sovereign-card { background: var(--glass-core); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border: 1px solid var(--border-silver); border-radius: 28px; padding: 55px 45px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .sovereign-card:hover { border-color: rgba(0, 255, 204, 0.3); transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0, 255, 204, 0.04); }
 
-        /* Hero Engine Section */
-        .hero {
-            text-align: center;
-            max-width: 960px;
-            margin: 100px auto 60px auto;
-        }
+        .unit-tag { font-size: 11px; font-weight: 700; letter-spacing: 4px; color: #535966; margin-bottom: 22px; text-transform: uppercase; }
+        .card-heading { font-size: 28px; font-weight: 700; margin-bottom: 18px; letter-spacing: -0.5px; }
+        .live-terminal-panel { background: #04070f; border: 1px solid rgba(255, 255, 255, 0.01); border-radius: 14px; padding: 18px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #575f6e; margin-bottom: 30px; line-height: 1.6; }
+        .live-pulse-dot { width: 7px; height: 7px; background: var(--neon-glow-cyan); border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 10px var(--neon-glow-cyan); }
+        .card-narrative { font-size: 14px; color: var(--slate-muted); line-height: 1.72; margin-bottom: 45px; font-weight: 400; }
+        .card-action-block { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 35px; }
+        .matrix-price-val { font-size: 30px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; letter-spacing: -1px; }
+        
+        .cta-activation-trigger { background: #ffffff; color: #000000; border: none; padding: 16px 35px; font-size: 12px; font-weight: 700; border-radius: 12px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
+        .cta-activation-trigger:hover { background: var(--neon-glow-cyan); box-shadow: 0 0 35px rgba(0, 255, 204, 0.4); transform: scale(1.03); }
 
-        .ticker {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 7px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 24px;
-        }
+        /* Trust Network Stat Monitors */
+        .system-monitors-row { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 140px; border-top: 1px solid var(--border-silver); padding-top: 70px; }
+        .monitor-tile { background: rgba(255,255,255,0.002); border-radius: 20px; padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.005); }
+        .monitor-digits { font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 700; color: #ffffff; }
+        .monitor-caption { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--slate-muted); margin-top: 12px; font-weight: 500; }
 
-        .headline {
-            font-size: 68px;
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 28px;
-            background: linear-gradient(180deg, #ffffff 20%, #464b59 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        /* 🔄 ⭐ THE 100% BULLETPROOF ZERO-GAP HORIZONTAL SLIDER ENGINE */
+        .marquee-viewport-shuttle { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 90px 0; border-top: 1px solid var(--border-silver); border-bottom: 1px solid var(--border-silver); margin-bottom: 140px; }
+        .marquee-section-headline { font-size: 42px; font-weight: 900; text-align: center; margin-bottom: 65px; background: linear-gradient(180deg, #ffffff 20%, #4c5261 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -1.5px; }
+        .marquee-flex-rail-wrapper { display: flex; width: max-content; }
+        .marquee-independent-engine-track { display: flex; animation: structuralHardwareGlide 26s linear infinite; }
+        .marquee-viewport-shuttle:hover .marquee-independent-engine-track { animation-play-state: paused; }
 
-        .sub-text {
-            font-size: 19px;
-            font-weight: 300;
-            color: #b4bac9;
-            line-height: 1.7;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .evaluation-node-box { width: 420px; background: linear-gradient(180deg, #0a111f 0%, #03050b 100%); border: 1px solid rgba(255, 255, 255, 0.02); border-radius: 24px; padding: 45px; margin-right: 35px; flex-shrink: 0; box-shadow: 0 40px 90px rgba(0,0,0,0.6); }
+        .stars-string-matrix { color: var(--neon-glow-cyan); font-size: 14px; margin-bottom: 20px; letter-spacing: 2px; }
+        .evaluation-quote-block { font-size: 14px; color: #d1d8e6; line-height: 1.75; font-weight: 300; margin-bottom: 30px; }
+        .identity-meta-row { display: flex; align-items: center; gap: 15px; }
+        .avatar-initials-shell { width: 44px; height: 44px; background: #132036; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: var(--neon-glow-cyan); border: 1px solid rgba(0, 255, 204, 0.15); }
+        .profile-strings h4 { font-size: 15px; font-weight: 700; color: #ffffff; }
+        .profile-strings p { font-size: 11px; color: var(--slate-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
 
-        /* Luxury Segment Toggle Swapper */
-        .toggle-container {
-            display: flex;
-            justify-content: center;
-            margin: 50px 0;
-        }
+        @keyframes structuralHardwareGlide { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
 
-        .toggle-wrap {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 6px;
-            border-radius: 12px;
-            border: 1px solid var(--panel-border);
-            display: flex;
-            gap: 4px;
-        }
+        /* Dynamic Time-Out Scarcity Configuration Component */
+        .scarcity-lockdown-board { background: linear-gradient(135deg, #060b17 0%, #020307 100%); border: 1px solid var(--border-silver); border-radius: 28px; padding: 65px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 140px; box-shadow: 0 50px 100px rgba(0,0,0,0.8); }
+        .scarcity-left-header { font-size: 36px; font-weight: 700; letter-spacing: -1.5px; }
+        .scarcity-sub-narrative { font-size: 15px; color: var(--slate-muted); margin-top: 14px; font-weight: 300; max-width: 680px; line-height: 1.65; }
+        .dynamic-countdown-grid-box { display: flex; gap: 35px; background: rgba(0, 0, 0, 0.5); padding: 25px 55px; border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.01); }
+        .countdown-metric-value { font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 700; color: var(--neon-glow-rose); text-shadow: 0 0 25px rgba(255, 51, 102, 0.25); }
+        .countdown-metric-label { font-size: 10px; letter-spacing: 2px; color: #565d6e; margin-top: 6px; text-transform: uppercase; font-weight: 500; }
 
-        .tgl-btn {
-            background: transparent;
-            border: none;
-            color: var(--muted);
-            padding: 14px 30px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-radius: 8px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+        /* Luxury Production Footer Layout */
+        footer { padding: 55px 0; border-top: 1px solid var(--border-silver); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #434854; font-family: 'Space Grotesk', sans-serif; }
 
-        .tgl-btn.active {
-            background: #ffffff;
-            color: #000000;
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
-        }
-
-        /* High-Ticket Grid Matrix */
-        .grid-matrix {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 120px;
-        }
-
-        .luxury-card {
-            background: var(--panel);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid var(--panel-border);
-            border-radius: 24px;
-            padding: 50px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .luxury-card:hover {
-            border-color: rgba(0, 255, 204, 0.25);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.03);
-        }
-
-        .card-tag {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            color: #565d6e;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .card-title {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-            line-gradient: linear-gradient(180deg, #fff, #bbb);
-        }
-
-        .terminal-box {
-            background: #050811;
-            border: 1px solid rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
-            padding: 16px;
-            font-family: 'Space Grotesk', monospace;
-            font-size: 11px;
-            color: #5d6678;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            background: var(--cyan);
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 8px;
-            box-shadow: 0 0 8px var(--cyan);
-        }
-
-        .card-desc {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.7;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding-top: 30px;
-        }
-
-        .price-display {
-            font-size: 28px;
-            font-weight: 700;
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -1px;
-            transition: all 0.3s ease;
-        }
-
-        .action-btn {
-            background: #ffffff;
-            color: #000000;
-            border: none;
-            padding: 16px 32px;
-            font-size: 12px;
-            font-weight: 700;
-            border-radius: 10px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .action-btn:hover {
-            background: var(--cyan);
-            box-shadow: 0 0 30px var(--cyan-glow);
-            transform: scale(1.02);
-        }
-
-        /* Dynamic Continuous Loop Reviews Section */
-        .marquee-section {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            overflow: hidden;
-            padding: 80px 0;
-            border-top: 1px solid var(--panel-border);
-            border-bottom: 1px solid var(--panel-border);
-            margin-bottom: 120px;
-        }
-
-        .marquee-title {
-            font-size: 38px;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 60px;
-            background: linear-gradient(180deg, #ffffff 30%, #525866) 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-        }
-
-        .marquee-container {
-            display: flex;
-            width: max-content;
-        }
-
-        .marquee-rail {
-            display: flex;
-            animation: infiniteScroll 25s linear infinite;
-        }
-
-        .marquee-section:hover .marquee-rail {
-            animation-play-state: paused;
-        }
-
-        .review-card {
-            width: 400px;
-            background: linear-gradient(180deg, #090f1c 0%, #04070d 100%);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 40px;
-            margin-right: 30px;
-            flex-shrink: 0;
-        }
-
-        .rating-stars {
-            color: var(--cyan);
-            font-size: 14px;
-            margin-bottom: 18px;
-            letter-spacing: 2px;
-        }
-
-        .quote-text {
-            font-size: 14px;
-            color: #ced5e3;
-            line-height: 1.7;
-            font-weight: 300;
-            margin-bottom: 25px;
-        }
-
-        .user-meta-node {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .avatar-circle {
-            width: 42px;
-            height: 42px;
-            background: #141f33;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 12px;
-            color: var(--cyan);
-            border: 1px solid rgba(0, 255, 204, 0.15);
-        }
-
-        .user-details h4 {
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .user-details p {
-            font-size: 11px;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-        }
-
-        @keyframes infiniteScroll {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-100%, 0, 0); }
-        }
-
-        /* Scarcity Grid Wrap */
-        .scarcity-panel {
-            background: linear-gradient(135deg, #070d1a 0%, #03050a 100%);
-            border: 1px solid var(--panel-border);
-            border-radius: 24px;
-            padding: 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 120px;
-        }
-
-        .scarcity-title {
-            font-size: 34px;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        .scarcity-desc {
-            font-size: 15px;
-            color: var(--muted);
-            margin-top: 12px;
-            font-weight: 300;
-            max-width: 650px;
-            line-height: 1.6;
-        }
-
-        .metrics-box {
-            display: flex;
-            gap: 35px;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 25px 50px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.02);
-        }
-
-        .metric-value {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 42px;
-            font-weight: 700;
-            color: var(--rose);
-            text-shadow: 0 0 25px var(--rose-glow);
-        }
-
-        .metric-label {
-            font-size: 10px;
-            letter-spacing: 2px;
-            color: #5e6678;
-            margin-top: 6px;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        /* Luxury Footer */
-        footer {
-            padding: 50px 0;
-            border-top: 1px solid var(--panel-border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            color: #484e5c;
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: 0.5px;
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 1024px) {
-            .grid-matrix { grid-template-columns: repeat(2, 1fr); }
-            .scarcity-panel { flex-direction: column; text-align: center; gap: 40px; }
-            .headline { font-size: 52px; }
-        }
-        @media (max-width: 728px) {
-            .grid-matrix { grid-template-columns: 1fr; }
-            .headline { font-size: 38px; }
-            .review-card { width: 320px; padding: 30px; }
-            footer { flex-direction: column; gap: 20px; text-align: center; }
-        }
+        @media (max-width: 1024px) { .allocation-grid, .system-monitors-row { grid-template-columns: repeat(2, 1fr); } .scarcity-lockdown-board { flex-direction: column; text-align: center; gap: 40px; } .main-headline { font-size: 56px; } }
+        @media (max-width: 728px) { .allocation-grid, .system-monitors-row { grid-template-columns: 1fr; } .main-headline { font-size: 40px; } .evaluation-node-box { width: 330px; padding: 35px; } footer { flex-direction: column; gap: 20px; } }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
+    <div class="cyber-ambient-top"></div>
 
-    <div class="container">
+    <div class="main-frame">
         <header>
-            <div class="logo">Subhash Techcraze Ventures</div>
-            <div class="status-node">PROTOCOL ENGINE v5.0 // ONLINE</div>
+            <div class="brand-logo">Subhash Techcraze Ventures</div>
+            <div class="secure-ticker-node">PROTOCOL ENGINE v6.0.0 // STATUS: OPERATIONAL</div>
         </header>
 
-        <main class="hero">
-            <div class="ticker">Global Allocation & Infrastructure</div>
-            <h1 class="headline">Command Control of Global Distribution Capital</h1>
-            <p class="sub-text">Immediate validation frameworks deploying automated cloud asset grids engineered explicitly for tier-1 high-ticket operational cashflow velocity.</p>
+        <main class="hero-engine">
+            <div class="meta-layer-ticker">Global Allocation & Infrastructure Assets</div>
+            <h1 class="main-headline">Command Control of Global Distribution Capital</h1>
+            <p class="hook-description">Immediate validation frameworks deploying automated cloud asset grids engineered explicitly for tier-1 high-status institutional networks.</p>
         </main>
 
-        <div class="toggle-container">
-            <div class="toggle-wrap">
-                <button class="tgl-btn active" id="btn-institutional">Institutional Core</button>
-                <button class="tgl-btn" id="btn-venture">Venture Pool</button>
+        <div class="interactive-toggle-box">
+            <div class="switcher-rail">
+                <button class="rail-btn active" id="trigger-institutional">Institutional Core</button>
+                <button class="rail-btn" id="trigger-venture">Venture Pool</button>
             </div>
         </div>
 
-        <div class="grid-matrix">
-            <div class="luxury-card">
+        <div class="allocation-grid">
+            <!-- Unit 01 -->
+            <div class="sovereign-card">
                 <div>
-                    <div class="card-tag">Unit 01</div>
-                    <h3 class="card-title">Secret 4K Cinematic AI Suite</h3>
-                    <div class="terminal-box">
-                        <span class="status-dot"></span> layer_render.sh<br>
-                        > Tracking B-Roll arrays... OK
+                    <div class="unit-tag">Deployment Unit 01</div>
+                    <h3 class="card-heading">Secret 4K Cinematic AI Suite</h3>
+                    <div class="live-terminal-panel">
+                        <span class="live-pulse-dot"></span> frame_layer_render.sh<br>
+                        > Tracking core B-Roll arrays... OK
                     </div>
-                    <p class="card-desc">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
+                    <p class="card-narrative">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
                 </div>
-                <div class="card-footer">
-                    <div class="price-display" id="price-card-1">$4,900</div>
-                    <button class="action-btn">Request Key</button>
+                <div class="card-action-block">
+                    <div class="matrix-price-val" id="price-slot-1">$4,900</div>
+                    <button class="cta-activation-trigger">Request Key</button>
                 </div>
             </div>
 
-            <div class="luxury-card">
+            <!-- Unit 02 -->
+            <div class="sovereign-card">
                 <div>
-                    <div class="card-tag">Unit 02</div>
-                    <h3 class="card-title">The Faceless Blueprints</h3>
-                    <div class="terminal-box">
-                        <span class="status-dot"></span> anonymity.cfg<br>
-                        > Masking hardware variables... OK
+                    <div class="unit-tag">Deployment Unit 02</div>
+                    <h3 class="card-heading">The Faceless YouTube Blueprints</h3>
+                    <div class="live-terminal-panel">
+                        <span class="live-pulse-dot"></span> anonymity_bypass.cfg<br>
+                        > Masking tracking variables... OK
                     </div>
-                    <p class="card-desc">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
+                    <p class="card-narrative">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
                 </div>
-                <div class="card-footer">
-                    <div class="price-display" id="price-card-2">$9,900</div>
-                    <button class="action-btn">Request Key</button>
+                <div class="card-action-block">
+                    <div class="matrix-price-val" id="price-slot-2">$9,900</div>
+                    <button class="cta-activation-trigger">Request Key</button>
                 </div>
             </div>
 
-            <div class="luxury-card">
+            <!-- Unit 03 -->
+            <div class="sovereign-card">
                 <div>
-                    <div class="card-tag">Unit 03</div>
-                    <h3 class="card-title">Advanced Instagram Bot</h3>
-                    <div class="terminal-box">
-                        <span class="status-dot"></span> interactive.py<br>
-                        > Scaling connection graphs... 100%
+                    <div class="unit-tag">Deployment Unit 03</div>
+                    <h3 class="card-heading">Advanced Instagram Scaling Bot</h3>
+                    <div class="live-terminal-panel">
+                        <span class="live-pulse-dot"></span> interactive_matrix.py<br>
+                        > Scaling user connection graphs... 100%
                     </div>
-                    <p class="card-desc">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
+                    <p class="card-narrative">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
                 </div>
-                <div class="card-footer">
-                    <div class="price-display" id="price-card-3">$3,900</div>
-                    <button class="action-btn">Request Key</button>
+                <div class="card-action-block">
+                    <div class="matrix-price-val" id="price-slot-3">$3,900</div>
+                    <button class="cta-activation-trigger">Request Key</button>
                 </div>
             </div>
         </div>
 
-        <section class="marquee-section">
-            <h2 class="marquee-title">Verified Network Evaluations</h2>
-            <div class="marquee-container">
-                <div class="marquee-rail">
-                    <div class="review-card">
-                        <div class="rating-stars">★★★★★</div>
-                        <p class="quote-text">"The Faceless blueprints completely decentralized our media pipelines. Reached over 14 proxy channels within 30 days flawlessly."</p>
-                        <div class="user-meta-node">
-                            <div class="avatar-circle">AM</div>
-                            <div class="user-details">
-                                <h4>Alexander M.</h4>
-                                <p>Venture Partner</p>
-                            </div>
+        <section class="system-monitors-row">
+            <div class="monitor-tile"><div class="monitor-digits">51,204</div><div class="monitor-caption">Active System Keys</div></div>
+            <div class="monitor-tile"><div class="monitor-digits">$46.2M</div><div class="monitor-caption">Processed Volume</div></div>
+            <div class="monitor-tile"><div class="monitor-digits">99.99%</div><div class="monitor-caption">Core Infrastructure Uptime</div></div>
+            <div class="monitor-tile"><div class="monitor-digits">145+</div><div class="monitor-caption">Regions Synchronized</div></div>
+        </section>
+
+        <!-- 🔄 ⭐ INTEGRATED CONTINUOUS MARQUEE SLIDER WITH ABSOLUTE VELOCITY LOOPS -->
+        <section class="marquee-viewport-shuttle">
+            <h2 class="marquee-section-headline">Verified Network Evaluations</h2>
+            <div class="marquee-flex-rail-wrapper">
+                
+                <!-- Synchronized Cluster A -->
+                <div class="marquee-independent-engine-track">
+                    <div class="evaluation-node-box">
+                        <div class="stars-string-matrix">★★★★★</div>
+                        <p class="evaluation-quote-block">"The Faceless YouTube blueprints completely decentralized our media pipelines. Reached over 14 proxy channels within 30 days flawlessly."</p>
+                        <div class="identity-meta-row">
+                            <div class="avatar-initials-shell">AM</div>
+                            <div class="user-strings"><h4>Alexander M.</h4><p>Venture Partner</p></div>
                         </div>
                     </div>
-                    <div class="review-card">
-                        <div class="rating-stars">★★★★★</div>
-                        <p class="quote-text">"High status execution arrays. The Instagram scaling bot bypasses interaction caps perfectly. Brought an instantaneous shift."</p>
-                        <div class="user-meta-node">
-                            <div class="avatar-circle">HK</div>
-                            <div class="user-details">
-                                <h4>Helena Kael</h4>
-                                <p>Operations Principal</p>
-                            </div>
+                    <div class="evaluation-node-box">
+                        <div class="stars-string-matrix">★★★★★</div>
+                        <p class="evaluation-quote-block">"High status execution arrays. The Instagram scaling bot bypasses interaction caps perfectly. Brought an instantaneous structural shift."</p>
+                        <div class="identity-meta-row">
+                            <div class="avatar-initials-shell">HK</div>
+                            <div class="user-strings"><h4>Helena Kael</h4><p>Operations Principal</p></div>
                         </div>
                     </div>
-                    <div class="review-card">
-                        <div class="rating-stars">★★★★★</div>
-                        <p class="quote-text">"Subhash Techcraze has entirely eliminated heavy infrastructure setup debt for our network. These packages execute on autopilot."</p>
-                        <div class="user-meta-node">
-                            <div class="avatar-circle">DR</div>
-                            <div class="user-details">
-                                <h4>David R.</h4>
-                                <p>Managing Director</p>
-                            </div>
+                    <div class="evaluation-node-box">
+                        <div class="stars-string-matrix">★★★★★</div>
+                        <p class="evaluation-quote-block">"Subhash Techcraze has entirely eliminated heavy infrastructure setup debt for our network. These packages execute on autopilot."</p>
+                        <div class="identity-meta-row">
+                            <div class="avatar-initials-shell">DR</div>
+                            <div class="user-strings"><h4>David R.</h4><p>Managing Director</p></div>
                         </div>
                     </div>
                 </div>
-                <div class="marquee-rail">
-                    <div class="review-card">
-                        <div class="rating-stars">★★★★★</div>
-                        <p class="quote-text">"The Faceless blueprints completely decentralized our media pipelines. Reached over 14 proxy
+
+                <!-- Duplicate Cluster B Running In Absolute Sync To Avoid White Blanks -->
+                <div class="marquee-independent-engine-track">
+                    <div class="evaluation-node-box">
+                        <div class="stars-string-matrix">★★★★★</div>
+                        <p class="evaluation-quote-block">"The Faceless YouTube blueprints completely decentralized our media pipelines. Reached over 14 proxy channels within 30 days flawlessly."</p>
+                        <div class="identity-meta-row">
+                            <div class="avatar-initials-shell">AM</div>
+                            <div class="user-strings"><h4>Alexander M.</h4><p>Venture Partner</p></div>
+                        </div>
+                    </div>
+                    <div class="evaluation-node-box">
+                        <div class="stars-string-matrix">★★★★★</div>
+                        <p class="evaluation-quote-block">"High status execution arrays. The Instagram scaling bot bypasses interaction caps perfectly. Brought an instantaneous structural shift."</p>
+                        <div class="identity-meta-row">
+                            <div class="avatar-initials-shell">HK</div>
+                            <div class="user-strings"><h4>Helena Kael</h4><p>Operations Principal</p></div>
+                        </div>
+                    </div>
+                    <div class="evaluation-node-box">
+                        <div class="stars-string-matrix">★★★★★</div>
+                        <p class="evaluation-quote-block">"Subhash Techcraze has entirely eliminated heavy infrastructure setup debt for our network. These packages execute on autopilot."</p>
+                        <div class="identity-meta-row">
+                            <div class="avatar-initials-shell">DR</div>
+                            <div class="user-strings"><h4>David R.</h4><p>Managing Director</p></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Scarcity Clock Component Matrix -->
+        <section class="scarcity-lockdown-board">
+            <div>
+                <div class="scarcity-l
