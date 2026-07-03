@@ -3,64 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subhash Techcraze Ventures | Sovereignty Capital Matrix</title>
+    <title>Damodar Techcraze Ventures | Institutional Control Engine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-matrix: #02040a;
-            --glass-core: rgba(8, 14, 27, 0.8);
+            --bg: #02040a;
+            --panel: rgba(8, 14, 27, 0.75);
             --border-silver: rgba(255, 255, 255, 0.05);
-            --neon-glow-cyan: #00ffcc;
-            --neon-glow-rose: #ff3366;
+            --cyan: #00ffcc;
+            --cyan-glow: rgba(0, 255, 204, 0.2);
+            --rose: #ff3366;
+            --rose-glow: rgba(255, 51, 102, 0.2);
             --slate-muted: #848b9c;
             --pure-white: #ffffff;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            background-color: var(--bg-matrix); color: var(--pure-white); font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg); color: var(--pure-white); font-family: 'Montserrat', sans-serif;
             min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; position: relative;
         }
 
-        /* Highly Advanced Dynamic Mesh Overlay */
+        /* Tech Mesh Layer to prevent lagging */
         body::before {
             content: ''; position: absolute; inset: 0;
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px);
-            background-size: 70px 70px; pointer-events: none; z-index: 1;
+            background-size: 80px 80px; pointer-events: none; z-index: 1;
         }
 
-        .cyber-ambient-top {
-            position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
-            width: 100%; max-width: 1400px; height: 600px;
-            background: radial-gradient(circle, rgba(0, 255, 204, 0.07) 0%, transparent 75%);
-            filter: blur(120px); pointer-events: none; z-index: 0;
-        }
+        /* Luxury Glowing Background Matrices */
+        .ambient-top { position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1400px; height: 600px; background: radial-gradient(circle, rgba(0, 255, 204, 0.06) 0%, transparent 75%); filter: blur(120px); pointer-events: none; z-index: 0; }
+        .ambient-mid { position: absolute; top: 1800px; left: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(255, 51, 102, 0.03) 0%, transparent 75%); filter: blur(130px); pointer-events: none; z-index: 0; }
+        .ambient-bottom { position: absolute; bottom: 200px; right: -10%; width: 800px; height: 800px; background: radial-gradient(circle, rgba(0, 255, 204, 0.04) 0%, transparent 75%); filter: blur(140px); pointer-events: none; z-index: 0; }
 
-        .main-frame { width: 90%; max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
+        .wrapper-frame { width: 90%; max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
 
-        /* Sovereignty Header Pattern */
+        /* Navigation Node Header */
         header { padding: 45px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-silver); }
-        .brand-logo { font-weight: 900; font-size: 24px; letter-spacing: 6px; text-transform: uppercase; background: linear-gradient(180deg, #ffffff 0%, #6c7282 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .secure-ticker-node { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2.5px; color: var(--neon-glow-cyan); background: rgba(0, 255, 204, 0.02); padding: 12px 24px; border-radius: 10px; border: 1px solid rgba(0, 255, 204, 0.2); text-shadow: 0 0 15px rgba(0, 255, 204, 0.4); }
+        .brand-logo { font-weight: 900; font-size: 24px; letter-spacing: 5px; text-transform: uppercase; background: linear-gradient(180deg, #ffffff 0%, #6c7282 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .secure-node { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2.5px; color: var(--cyan); background: rgba(0, 255, 204, 0.02); padding: 12px 24px; border-radius: 10px; border: 1px solid rgba(0, 255, 204, 0.2); text-shadow: 0 0 15px rgba(0, 255, 204, 0.4); }
 
-        /* High-Status Hero Blueprint */
-        .hero-engine { text-align: center; max-width: 1000px; margin: 120px auto 70px auto; }
-        .meta-layer-ticker { font-size: 13px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: var(--slate-muted); margin-bottom: 25px; }
-        .main-headline { font-size: 76px; font-weight: 900; line-height: 1.05; letter-spacing: -2.5px; margin-bottom: 30px; background: linear-gradient(180deg, #ffffff 30%, #3d414d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hook-description { font-size: 20px; font-weight: 300; color: #b0b7c7; line-height: 1.75; max-width: 850px; margin: 0 auto; }
+        /* SECTION 1: Massive Hero Core */
+        .hero-engine { text-align: center; max-width: 1050px; margin: 140px auto 80px auto; }
+        .ticker-layer { font-size: 13px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: var(--slate-muted); margin-bottom: 25px; }
+        .main-headline { font-size: 82px; font-weight: 900; line-height: 1.05; letter-spacing: -2.5px; margin-bottom: 35px; background: linear-gradient(180deg, #ffffff 30%, #3d414d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hook-text { font-size: 21px; font-weight: 300; color: #b0b7c7; line-height: 1.8; max-width: 880px; margin: 0 auto; }
 
-        /* Switcher Mechanism Layer */
+        /* Trust Logos Tracker */
+        .trust-tracker-container { width: 100%; margin: 60px 0 100px 0; text-align: center; }
+        .trust-logos { display: flex; justify-content: center; gap: 90px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #3a3e4a; letter-spacing: 6px; font-weight: 500; }
+
+        /* Dynamic Selector Button Toggle Switcher */
         .interactive-toggle-box { display: flex; justify-content: center; margin: 60px 0; }
         .switcher-rail { background: rgba(255, 255, 255, 0.015); padding: 6px; border-radius: 14px; border: 1px solid var(--border-silver); display: flex; gap: 6px; }
-        .rail-btn { background: transparent; border: none; color: var(--slate-muted); padding: 16px 32px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 10px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .rail-btn { background: transparent; border: none; color: var(--slate-muted); padding: 16px 35px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 10px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         .rail-btn.active { background: #ffffff; color: #000000; box-shadow: 0 12px 30px rgba(255, 255, 255, 0.12); }
 
-        /* Institutional Symmetrical Matrix Layout Grid */
-        .allocation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 140px; }
+        /* SECTION 2: Grid Matrix Asset Configurations */
+        .allocation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 160px; }
         .sovereign-card { background: var(--glass-core); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border: 1px solid var(--border-silver); border-radius: 28px; padding: 55px 45px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         .sovereign-card:hover { border-color: rgba(0, 255, 204, 0.3); transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0, 255, 204, 0.04); }
 
@@ -71,34 +76,56 @@
         .card-narrative { font-size: 14px; color: var(--slate-muted); line-height: 1.72; margin-bottom: 45px; font-weight: 400; }
         .card-action-block { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 35px; }
         .matrix-price-val { font-size: 30px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; letter-spacing: -1px; }
-        
         .cta-activation-trigger { background: #ffffff; color: #000000; border: none; padding: 16px 35px; font-size: 12px; font-weight: 700; border-radius: 12px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
         .cta-activation-trigger:hover { background: var(--neon-glow-cyan); box-shadow: 0 0 35px rgba(0, 255, 204, 0.4); transform: scale(1.03); }
 
-        /* Trust Network Stat Monitors */
-        .system-monitors-row { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 140px; border-top: 1px solid var(--border-silver); padding-top: 70px; }
-        .monitor-tile { background: rgba(255,255,255,0.002); border-radius: 20px; padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.005); }
-        .monitor-digits { font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 700; color: #ffffff; }
-        .monitor-caption { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--slate-muted); margin-top: 12px; font-weight: 500; }
+        /* SECTION 3: Realtime Capital Volume Stats */
+        .system-monitors-row { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 160px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
+        .monitor-tile { background: rgba(255,255,255,0.001); border-radius: 20px; padding: 45px; text-align: center; border: 1px solid rgba(255,255,255,0.005); }
+        .monitor-digits { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: #ffffff; letter-spacing: -1px; }
+        .monitor-caption { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--slate-muted); margin-top: 14px; font-weight: 500; }
 
-        /* 🔄 ⭐ THE 100% BULLETPROOF ZERO-GAP HORIZONTAL SLIDER ENGINE */
-        .marquee-viewport-shuttle { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 90px 0; border-top: 1px solid var(--border-silver); border-bottom: 1px solid var(--border-silver); margin-bottom: 140px; }
-        .marquee-section-headline { font-size: 42px; font-weight: 900; text-align: center; margin-bottom: 65px; background: linear-gradient(180deg, #ffffff 20%, #4c5261 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -1.5px; }
-        .marquee-flex-rail-wrapper { display: flex; width: max-content; }
-        .marquee-independent-engine-track { display: flex; animation: structuralHardwareGlide 26s linear infinite; }
+        /* SECTION 4: Architecture Specifications Framework (Adds Depth & Length) */
+        .specifications-block { display: grid; grid-template-columns: 1fr 2.5fr; gap: 80px; margin-bottom: 160px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
+        .spec-aside h2 { font-size: 48px; font-weight: 900; letter-spacing: -2px; background: linear-gradient(180deg, #ffffff, #444957); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .spec-list-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .spec-node-box { background: linear-gradient(180deg, #060b14 0%, #020408 100%); border: 1px solid rgba(255,255,255,0.02); padding: 45px; border-radius: 24px; }
+        .spec-box-num { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: var(--cyan); margin-bottom: 15px; letter-spacing: 1px; }
+        .spec-box-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+        .spec-box-desc { font-size: 14px; color: var(--slate-muted); line-height: 1.7; font-weight: 300; }
+
+        /* 🔄 SECTION 5: THE 100% BULLETPROOF ZERO-GAP HORIZONTAL SLIDER ENGINE (15 REVIEWS CLUSTERS) */
+        .marquee-viewport-shuttle { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 100px 0; border-top: 1px solid var(--border-silver); border-bottom: 1px solid var(--border-silver); margin-bottom: 160px; }
+        .marquee-section-headline { font-size: 42px; font-weight: 900; text-align: center; margin-bottom: 70px; background: linear-gradient(180deg, #ffffff 20%, #4c5261 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -1.5px; }
+        
+        .marquee-flex-rail-wrapper { display: flex; width: max-content; margin-bottom: 40px; }
+        .marquee-flex-rail-wrapper.reverse-rail { animation-direction: reverse; }
+        .marquee-independent-engine-track { display: flex; animation: structuralHardwareGlide 32s linear infinite; will-change: transform; }
         .marquee-viewport-shuttle:hover .marquee-independent-engine-track { animation-play-state: paused; }
 
-        .evaluation-node-box { width: 420px; background: linear-gradient(180deg, #0a111f 0%, #03050b 100%); border: 1px solid rgba(255, 255, 255, 0.02); border-radius: 24px; padding: 45px; margin-right: 35px; flex-shrink: 0; box-shadow: 0 40px 90px rgba(0,0,0,0.6); }
-        .stars-string-matrix { color: var(--neon-glow-cyan); font-size: 14px; margin-bottom: 20px; letter-spacing: 2px; }
-        .evaluation-quote-block { font-size: 14px; color: #d1d8e6; line-height: 1.75; font-weight: 300; margin-bottom: 30px; }
+        .evaluation-node-box { width: 420px; background: linear-gradient(180deg, #060c17 0%, #020409 100%); border: 1px solid rgba(255, 255, 255, 0.02); border-radius: 24px; padding: 45px; margin-right: 35px; flex-shrink: 0; box-shadow: 0 40px 90px rgba(0,0,0,0.6); }
+        .stars-string-matrix { color: var(--cyan); font-size: 14px; margin-bottom: 20px; letter-spacing: 2px; }
+        .evaluation-quote-block { font-size: 14px; color: #d1d8e6; line-height: 1.75; font-weight: 300; margin-bottom: 30px; height: 75px; overflow: hidden; }
         .identity-meta-row { display: flex; align-items: center; gap: 15px; }
-        .avatar-initials-shell { width: 44px; height: 44px; background: #132036; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: var(--neon-glow-cyan); border: 1px solid rgba(0, 255, 204, 0.15); }
+        .avatar-initials-shell { width: 44px; height: 44px; background: #132036; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15); }
         .profile-strings h4 { font-size: 15px; font-weight: 700; color: #ffffff; }
         .profile-strings p { font-size: 11px; color: var(--slate-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
 
         @keyframes structuralHardwareGlide { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
 
-        /* Dynamic Time-Out Scarcity Configuration Component */
+        /* SECTION 6: High-Value Strategic Integration Grid (Adds Depth & Scale) */
+        .strategic-integration-block { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; margin-bottom: 160px; background: rgba(255,255,255,0.005); border: 1px solid rgba(255,255,255,0.02); padding: 70px; border-radius: 32px; }
+        .strat-title { font-size: 38px; font-weight: 700; margin-bottom: 20px; letter-spacing: -1px; }
+        .strat-desc { font-size: 15px; color: var(--slate-muted); line-height: 1.75; font-weight: 300; margin-bottom: 40px; }
+        .strat-nodes-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .strat-mini-node { background: #050912; border: 1px solid rgba(255,255,255,0.03); padding: 25px; border-radius: 14px; text-align: left; }
+        .strat-mini-node h5 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--cyan); }
+        .strat-mini-node p { font-size: 13px; color: var(--slate-muted); line-height: 1.5; }
+        
+        .strat-visual-panel { background: linear-gradient(145deg, #070d19 0%, #020306 100%); border: 1px solid var(--border-silver); border-radius: 20px; padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .visual-accent-circle { width: 120px; height: 120px; background: radial-gradient(circle, rgba(0, 255, 204, 0.1) 0%, transparent 70%); border: 1px solid rgba(0, 255, 204, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--cyan); box-shadow: 0 0 40px rgba(0,255,204,0.1); }
+
+        /* SECTION 7: Urgent Countdown Scarcity Board */
         .scarcity-lockdown-board { background: linear-gradient(135deg, #060b17 0%, #020307 100%); border: 1px solid var(--border-silver); border-radius: 28px; padding: 65px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 140px; box-shadow: 0 50px 100px rgba(0,0,0,0.8); }
         .scarcity-left-header { font-size: 36px; font-weight: 700; letter-spacing: -1.5px; }
         .scarcity-sub-narrative { font-size: 15px; color: var(--slate-muted); margin-top: 14px; font-weight: 300; max-width: 680px; line-height: 1.65; }
@@ -109,25 +136,34 @@
         /* Luxury Production Footer Layout */
         footer { padding: 55px 0; border-top: 1px solid var(--border-silver); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #434854; font-family: 'Space Grotesk', sans-serif; }
 
-        @media (max-width: 1024px) { .allocation-grid, .system-monitors-row { grid-template-columns: repeat(2, 1fr); } .scarcity-lockdown-board { flex-direction: column; text-align: center; gap: 40px; } .main-headline { font-size: 56px; } }
-        @media (max-width: 728px) { .allocation-grid, .system-monitors-row { grid-template-columns: 1fr; } .main-headline { font-size: 40px; } .evaluation-node-box { width: 330px; padding: 35px; } footer { flex-direction: column; gap: 20px; } }
+        @media (max-width: 1100px) { .allocation-grid, .system-monitors-row, .specifications-block, .strategic-integration-block { grid-template-columns: repeat(2, 1fr); } .scarcity-lockdown-board { flex-direction: column; text-align: center; gap: 40px; } .main-headline { font-size: 56px; } .strategic-integration-block { grid-template-columns: 1fr; } }
+        @media (max-width: 728px) { .allocation-grid, .system-monitors-row, .spec-list-grid, .strat-nodes-wrap { grid-template-columns: 1fr; } .main-headline { font-size: 40px; } .evaluation-node-box { width: 330px; padding: 35px; } footer { flex-direction: column; gap: 20px; } .specifications-block { grid-template-columns: 1fr; gap: 40px; } }
     </style>
 </head>
 <body>
 
-    <div class="cyber-ambient-top"></div>
+    <div class="ambient-top"></div>
+    <div class="ambient-mid"></div>
+    <div class="ambient-bottom"></div>
 
-    <div class="main-frame">
+    <div class="wrapper-frame">
         <header>
-            <div class="brand-logo">Subhash Techcraze Ventures</div>
-            <div class="secure-ticker-node">PROTOCOL ENGINE v6.0.0 // STATUS: OPERATIONAL</div>
+            <div class="brand-logo">Damodar Techcraze Ventures</div>
+            <div class="secure-ticker-node">PROTOCOL ENGINE v6.5.0 // STATUS: OPERATIONAL</div>
         </header>
 
+        <!-- SECTION 1: HERO CORE -->
         <main class="hero-engine">
             <div class="meta-layer-ticker">Global Allocation & Infrastructure Assets</div>
             <h1 class="main-headline">Command Control of Global Distribution Capital</h1>
-            <p class="hook-description">Immediate validation frameworks deploying automated cloud asset grids engineered explicitly for tier-1 high-status institutional networks.</p>
+            <p class="hook-text">Immediate validation frameworks deploying automated cloud asset grids engineered explicitly for tier-1 high-status institutional networks.</p>
         </main>
+
+        <section class="trust-tracker-container">
+            <div class="trust-logos">
+                <span>BLOOMBERG</span><span>TECHCRUNCH</span><span>FORBES</span><span>REUTERS</span>
+            </div>
+        </section>
 
         <div class="interactive-toggle-box">
             <div class="switcher-rail">
@@ -136,8 +172,8 @@
             </div>
         </div>
 
+        <!-- SECTION 2: THE 3 BALANCED GLASSMORPHIC CARDS GRID -->
         <div class="allocation-grid">
-            <!-- Unit 01 -->
             <div class="sovereign-card">
                 <div>
                     <div class="unit-tag">Deployment Unit 01</div>
@@ -154,7 +190,6 @@
                 </div>
             </div>
 
-            <!-- Unit 02 -->
             <div class="sovereign-card">
                 <div>
                     <div class="unit-tag">Deployment Unit 02</div>
@@ -171,7 +206,6 @@
                 </div>
             </div>
 
-            <!-- Unit 03 -->
             <div class="sovereign-card">
                 <div>
                     <div class="unit-tag">Deployment Unit 03</div>
@@ -189,6 +223,7 @@
             </div>
         </div>
 
+        <!-- SECTION 3: SYSTEM REALTIME MONITOR NUMBERS -->
         <section class="system-monitors-row">
             <div class="monitor-tile"><div class="monitor-digits">51,204</div><div class="monitor-caption">Active System Keys</div></div>
             <div class="monitor-tile"><div class="monitor-digits">$46.2M</div><div class="monitor-caption">Processed Volume</div></div>
@@ -196,71 +231,4 @@
             <div class="monitor-tile"><div class="monitor-digits">145+</div><div class="monitor-caption">Regions Synchronized</div></div>
         </section>
 
-        <!-- 🔄 ⭐ INTEGRATED CONTINUOUS MARQUEE SLIDER WITH ABSOLUTE VELOCITY LOOPS -->
-        <section class="marquee-viewport-shuttle">
-            <h2 class="marquee-section-headline">Verified Network Evaluations</h2>
-            <div class="marquee-flex-rail-wrapper">
-                
-                <!-- Synchronized Cluster A -->
-                <div class="marquee-independent-engine-track">
-                    <div class="evaluation-node-box">
-                        <div class="stars-string-matrix">★★★★★</div>
-                        <p class="evaluation-quote-block">"The Faceless YouTube blueprints completely decentralized our media pipelines. Reached over 14 proxy channels within 30 days flawlessly."</p>
-                        <div class="identity-meta-row">
-                            <div class="avatar-initials-shell">AM</div>
-                            <div class="user-strings"><h4>Alexander M.</h4><p>Venture Partner</p></div>
-                        </div>
-                    </div>
-                    <div class="evaluation-node-box">
-                        <div class="stars-string-matrix">★★★★★</div>
-                        <p class="evaluation-quote-block">"High status execution arrays. The Instagram scaling bot bypasses interaction caps perfectly. Brought an instantaneous structural shift."</p>
-                        <div class="identity-meta-row">
-                            <div class="avatar-initials-shell">HK</div>
-                            <div class="user-strings"><h4>Helena Kael</h4><p>Operations Principal</p></div>
-                        </div>
-                    </div>
-                    <div class="evaluation-node-box">
-                        <div class="stars-string-matrix">★★★★★</div>
-                        <p class="evaluation-quote-block">"Subhash Techcraze has entirely eliminated heavy infrastructure setup debt for our network. These packages execute on autopilot."</p>
-                        <div class="identity-meta-row">
-                            <div class="avatar-initials-shell">DR</div>
-                            <div class="user-strings"><h4>David R.</h4><p>Managing Director</p></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Duplicate Cluster B Running In Absolute Sync To Avoid White Blanks -->
-                <div class="marquee-independent-engine-track">
-                    <div class="evaluation-node-box">
-                        <div class="stars-string-matrix">★★★★★</div>
-                        <p class="evaluation-quote-block">"The Faceless YouTube blueprints completely decentralized our media pipelines. Reached over 14 proxy channels within 30 days flawlessly."</p>
-                        <div class="identity-meta-row">
-                            <div class="avatar-initials-shell">AM</div>
-                            <div class="user-strings"><h4>Alexander M.</h4><p>Venture Partner</p></div>
-                        </div>
-                    </div>
-                    <div class="evaluation-node-box">
-                        <div class="stars-string-matrix">★★★★★</div>
-                        <p class="evaluation-quote-block">"High status execution arrays. The Instagram scaling bot bypasses interaction caps perfectly. Brought an instantaneous structural shift."</p>
-                        <div class="identity-meta-row">
-                            <div class="avatar-initials-shell">HK</div>
-                            <div class="user-strings"><h4>Helena Kael</h4><p>Operations Principal</p></div>
-                        </div>
-                    </div>
-                    <div class="evaluation-node-box">
-                        <div class="stars-string-matrix">★★★★★</div>
-                        <p class="evaluation-quote-block">"Subhash Techcraze has entirely eliminated heavy infrastructure setup debt for our network. These packages execute on autopilot."</p>
-                        <div class="identity-meta-row">
-                            <div class="avatar-initials-shell">DR</div>
-                            <div class="user-strings"><h4>David R.</h4><p>Managing Director</p></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Scarcity Clock Component Matrix -->
-        <section class="scarcity-lockdown-board">
-            <div>
-                <div class="scarcity-l
+        <!-- SECTION 4: ARCHITECTURE SPECIFICATIONS (INCREASES SCROLL DEPTH)
