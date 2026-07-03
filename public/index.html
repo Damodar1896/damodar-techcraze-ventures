@@ -3,209 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damodar Techcraze Ventures | Sovereign Institutional Networks</title>
+    <title>Damodar Techcraze Ventures | Institutional Infrastructure Matrix</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-obsidian: #020406;
-            --glass-card: rgba(11, 16, 26, 0.8);
-            --border-glow: rgba(255, 255, 255, 0.04);
-            --border-hover: rgba(0, 255, 204, 0.25);
+            --bg-deep: #010204;
+            --glass-core: rgba(10, 14, 23, 0.85);
+            --border-glow: rgba(255, 255, 255, 0.03);
+            --border-premium: rgba(0, 255, 204, 0.25);
             --text-pure: #FFFFFF;
-            --text-muted: #8E95A5;
-            --neon-green: #00FFCC;
+            --text-muted: #848A99;
+            --neon-signal: #00FFCC;
             --neon-alert: #FF3366;
         }
 
-        * {
-            box-sizing: border-box;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
+        * { box-sizing: border-box; }
         body {
-            background-color: var(--bg-obsidian);
-            color: var(--text-pure);
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
+            background-color: var(--bg-deep); color: var(--text-pure); font-family: 'Montserrat', sans-serif;
+            margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; overflow-x: hidden;
         }
 
-        /* Fluid Lighting Effects */
-        .ambient-layer-1 {
-            position: absolute; top: -15%; left: 15%; width: 700px; height: 700px;
-            background: radial-gradient(circle, rgba(0, 255, 204, 0.04) 0%, transparent 75%);
-            z-index: -2; pointer-events: none; filter: blur(90px);
+        /* Ambient Dynamic Blurs */
+        .glow-orb-1 {
+            position: absolute; top: -15%; left: 10%; width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.03) 0%, transparent 70%);
+            z-index: -2; pointer-events: none; filter: blur(100px);
         }
-
-        .ambient-layer-2 {
-            position: absolute; top: 50%; right: 5%; width: 800px; height: 800px;
-            background: radial-gradient(circle, rgba(255, 51, 102, 0.02) 0%, transparent 75%);
-            z-index: -2; pointer-events: none; filter: blur(110px);
+        .glow-orb-2 {
+            position: absolute; top: 60%; right: -5%; width: 900px; height: 900px;
+            background: radial-gradient(circle, rgba(255, 51, 102, 0.015) 0%, transparent 70%);
+            z-index: -2; pointer-events: none; filter: blur(120px);
         }
-
         body::after {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px);
-            background-size: 60px 60px; z-index: -1; pointer-events: none;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.002) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.002) 1px, transparent 1px);
+            background-size: 80px 80px; z-index: -1; pointer-events: none;
         }
 
         header {
-            width: 90%; max-width: 1400px; padding: 45px 0;
+            width: 90%; max-width: 1400px; padding: 50px 0;
             display: flex; justify-content: space-between; align-items: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
+        .logo { font-weight: 900; font-size: 24px; letter-spacing: 5px; text-transform: uppercase; background: linear-gradient(180deg, #FFFFFF 0%, #767B88 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .secure-node { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--neon-signal); background: rgba(0, 255, 204, 0.02); padding: 12px 24px; border-radius: 8px; border: 1px solid rgba(0, 255, 204, 0.15); }
 
-        .logo {
-            font-weight: 900; font-size: 24px; letter-spacing: 5px; text-transform: uppercase;
-            background: linear-gradient(180deg, #FFFFFF 0%, #7A7E8C 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
+        .hero { text-align: center; max-width: 1150px; margin: 120px auto 60px auto; padding: 0 20px; }
+        .status-ticker { font-size: 12px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 28px; }
+        .headline { font-size: 76px; font-weight: 900; line-height: 1.1; letter-spacing: -3px; margin: 0 0 32px 0; background: linear-gradient(180deg, #FFFFFF 20%, #5E6270 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .sub-hook { font-size: 21px; font-weight: 300; color: #A4A9B8; line-height: 1.8; max-width: 840px; margin: 0 auto; }
 
-        .secure-node {
-            font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--neon-green); background: rgba(0, 255, 204, 0.02);
-            padding: 12px 24px; border-radius: 8px; border: 1px solid rgba(0, 255, 204, 0.15);
-        }
+        .trust-ticker-container { width: 100%; max-width: 1400px; margin: 30px 0 80px 0; text-align: center; }
+        .trust-logos { display: flex; justify-content: center; gap: 80px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #434754; letter-spacing: 5px; font-weight: 500; }
 
-        /* Hero Setup */
-        .hero { text-align: center; max-width: 1100px; margin: 110px auto 60px auto; padding: 0 20px; }
-        .status-ticker { font-size: 12px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 25px; }
-        .headline {
-            font-size: 74px; font-weight: 900; line-height: 1.1; letter-spacing: -3px; margin: 0 0 30px 0;
-            background: linear-gradient(180deg, #FFFFFF 20%, #636775 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .sub-hook { font-size: 21px; font-weight: 300; color: #A9AEBC; line-height: 1.75; max-width: 820px; margin: 0 auto; }
-
-        /* Trust Network Badges */
-        .trust-ticker-container { width: 100%; max-width: 1400px; margin: 20px 0 80px 0; text-align: center; }
-        .trust-logos { display: flex; justify-content: center; gap: 70px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #4A4E5A; letter-spacing: 5px; }
-
-        /* Sliders Controllers */
-        .toggle-container {
-            margin-bottom: 60px; display: flex; background: rgba(255, 255, 255, 0.02);
-            padding: 5px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .toggle-btn {
-            background: transparent; border: none; color: var(--text-muted); padding: 14px 35px;
-            font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700;
-            cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 8px;
-        }
-
+        .toggle-container { margin-bottom: 60px; display: flex; background: rgba(255, 255, 255, 0.02); padding: 6px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.04); }
+        .toggle-btn { background: transparent; border: none; color: var(--text-muted); padding: 14px 35px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 8px; transition: all 0.3s; }
         .toggle-btn.active { background: #FFFFFF; color: #000000; box-shadow: 0 10px 25px rgba(255,255,255,0.1); }
 
-        /* Dynamic Product Display System */
-        .grid-system { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 90%; max-width: 1400px; margin-bottom: 120px; }
-        .premium-card {
-            background: var(--glass-card); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            border: 1px solid var(--border-glow); border-radius: 24px; padding: 55px 45px;
-            display: flex; flex-direction: column; justify-content: space-between;
-            box-shadow: 0 60px 120px rgba(0, 0, 0, 0.85); position: relative;
-        }
+        /* Core Infrastructure Matrix Grid */
+        .grid-system { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 90%; max-width: 1400px; margin-bottom: 140px; }
+        .premium-card { background: var(--glass-card); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid var(--border-glow); border-radius: 24px; padding: 60px 45px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 60px 120px rgba(0, 0, 0, 0.85); position: relative; }
         .premium-card:hover { border-color: var(--border-hover); transform: translateY(-10px); }
 
-        .card-preview-terminal {
-            background: #04060A; border: 1px solid rgba(255,255,255,0.04); border-radius: 12px;
-            padding: 18px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #585F6E; margin-bottom: 35px; line-height: 1.6;
-        }
-        .terminal-dot { width: 6px; height: 6px; background: var(--neon-green); border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 10px var(--neon-green); }
-        .meta-tag { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #6C7280; margin-bottom: 22px; }
-        .card-title { font-size: 28px; font-weight: 700; margin: 0 0 18px 0; line-height: 1.25; letter-spacing: -1px; }
+        .card-preview-terminal { background: #04060A; border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 18px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #535A69; margin-bottom: 35px; line-height: 1.6; }
+        .terminal-dot { width: 6px; height: 6px; background: var(--neon-signal); border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 10px var(--neon-signal); }
+        .meta-tag { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #666C7A; margin-bottom: 24px; }
+        .card-title { font-size: 30px; font-weight: 700; margin: 0 0 18px 0; line-height: 1.25; letter-spacing: -1px; }
         .card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 45px; font-weight: 300; }
         .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 35px; }
-        .price-amt { font-size: 32px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; background: linear-gradient(180deg, #FFFFFF 0%, #9FA4B2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .price-amt { font-size: 32px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; background: linear-gradient(180deg, #FFFFFF 0%, #9DA2B0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .btn-acquire {
-            background-color: #FFFFFF; color: #000000; border: none; padding: 18px 38px; font-size: 13px;
-            font-weight: 700; border-radius: 10px; cursor: pointer; text-transform: uppercase;
-            animation: elegantPulse 4s infinite ease-in-out;
-        }
-        .btn-acquire:hover { background-color: var(--neon-green); box-shadow: 0 0 35px rgba(0, 255, 204, 0.4); transform: scale(1.05); }
+        .btn-acquire { background-color: #FFFFFF; color: #000000; border: none; padding: 18px 40px; font-size: 13px; font-weight: 700; border-radius: 10px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; animation: structuralPulse 4s infinite ease-in-out; }
+        .btn-acquire:hover { background-color: var(--neon-signal); box-shadow: 0 0 35px rgba(0, 255, 204, 0.4); transform: scale(1.04); animation-play-state: paused; }
+        @keyframes structuralPulse { 0%, 82%, 100% { transform: translateX(0); } 85% { transform: translateX(-4px); } 88% { transform: translateX(4px); } 91% { transform: translateX(-2px); } 94% { transform: translateX(2px); } }
 
-        @keyframes elegantPulse { 0%, 82%, 100% { transform: translateX(0); } 85% { transform: translateX(-4px); } 88% { transform: translateX(4px); } 91% { transform: translateX(-2px); } 94% { transform: translateX(2px); } }
+        /* Volumetric Global Metrics (Trust Layers) */
+        .live-volume-metrics { width: 90%; max-width: 1400px; margin-bottom: 120px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 60px; }
+        .metric-block { background: rgba(255,255,255,0.005); border: 1px solid rgba(255,255,255,0.01); border-radius: 16px; padding: 35px; text-align: center; backdrop-filter: blur(5px); }
+        .metric-num { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: #FFFFFF; letter-spacing: -1px; }
+        .metric-lbl { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-top: 12px; font-weight: 500; }
 
-        /* 🌟 NEW EXPANSION SECTION 1: GLOBAL LIVE METRICS PANEL */
-        .live-sales-metrics {
-            width: 90%; max-width: 1400px; margin-bottom: 120px;
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 60px;
-        }
-        .metric-card { background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.02); border-radius: 16px; padding: 35px; }
-        .metric-number { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: #FFFFFF; }
-        .metric-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-top: 10px; }
+        /* ⭐ HIGH ULTRA CLASS CONTINUOUS INFINITE SLIDING REVIEWS CAROUSEL */
+        .reviews-section-wrapper { width: 100%; overflow: hidden; padding: 100px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); margin-bottom: 60px; }
+        .reviews-heading { font-size: 46px; font-weight: 900; text-align: center; margin-bottom: 70px; letter-spacing: -2px; background: linear-gradient(180deg, #FFF, #4A4E5A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .carousel-container { display: flex; width: max-content; animation: glideTrack 35s linear infinite; }
+        .carousel-container:hover { animation-play-state: paused; }
+        
+        .review-node-box { width: 420px; background: linear-gradient(180deg, #090C14 0%, #030508 100%); border: 1px solid rgba(255,255,255,0.03); border-radius: 20px; padding: 45px; margin-right: 30px; flex-shrink: 0; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+        .stars-gold { color: var(--neon-signal); font-size: 15px; margin-bottom: 20px; letter-spacing: 2px; animation: subtleStarTwinkle 2s infinite ease-in-out; }
+        .review-quote { font-size: 14.5px; color: #C5CAD6; line-height: 1.7; font-weight: 300; margin-bottom: 30px; height: 100px; overflow: hidden; }
+        .profile-node { display: flex; align-items: center; gap: 15px; }
+        .profile-avatar { width: 42px; height: 42px; background: #151B26; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; color: var(--neon-signal); border: 1px solid rgba(0,255,204,0.15); }
+        .profile-meta h4 { font-size: 15px; font-weight: 700; margin: 0; color: #FFFFFF; }
+        .profile-meta p { font-size: 11px; color: var(--text-muted); margin: 4px 0 0 0; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* ⭐ NEW EXPANSION SECTION 2: TOP LEVEL CUSTOMER REVIEWS (ELITE VERIFIED USERS) */
-        .reviews-section {
-            width: 90%; max-width: 1400px; margin-bottom: 120px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 100px;
-        }
-        .section-heading { font-size: 46px; font-weight: 900; text-align: center; margin-bottom: 60px; letter-spacing: -2px; background: linear-gradient(180deg, #FFF, #4A4E5A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
-        .review-card { background: linear-gradient(180deg, #090D15 0%, #030508 100%); border: 1px solid rgba(255,255,255,0.03); border-radius: 20px; padding: 45px; }
-        .stars { color: var(--neon-green); font-size: 16px; margin-bottom: 20px; letter-spacing: 3px; }
-        .review-text { font-size: 15px; color: #C5CAD6; line-height: 1.7; font-weight: 300; margin-bottom: 30px; }
-        .user-profile { display: flex; align-items: center; gap: 15px; }
-        .user-avatar { width: 40px; height: 40px; background: #1B2130; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: var(--neon-green); border: 1px solid rgba(0,255,204,0.2); }
-        .user-info h4 { font-size: 15px; font-weight: 700; margin: 0; color: #FFFFFF; }
-        .user-info p { font-size: 11px; color: var(--text-muted); margin: 3px 0 0 0; text-transform: uppercase; letter-spacing: 1px; }
+        @keyframes glideTrack { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-450px * 6)); } }
 
-        /* Live Scarcity Core Panel */
-        .scarcity-panel {
-            width: 90%; max-width: 1400px; background: linear-gradient(135deg, #0A0E15 0%, #030406 100%);
-            border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 80px;
-            display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 60px; align-items: center; margin-bottom: 140px;
-        }
+        /* Operational Manifesto Depth Module */
+        .manifesto-panel { width: 90%; max-width: 1400px; padding: 130px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); text-align: center; }
+        .manifesto-quote { font-size: 40px; font-weight: 300; line-height: 1.5; max-width: 1100px; margin: 0 auto; letter-spacing: -1.5px; background: linear-gradient(180deg, #FFF 20%, #6E7380 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Global Structural Spec Modules */
+        .spec-expansion-section { width: 90%; max-width: 1400px; padding: 120px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); display: grid; grid-template-columns: 1fr 2.5fr; gap: 100px; }
+        .spec-sidebar h2 { font-size: 56px; font-weight: 900; letter-spacing: -2.5px; margin: 0; background: linear-gradient(180deg, #FFF, #424650); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; }
+        .spec-node-box { background: linear-gradient(180deg, #0A0D14 0%, #040508 100%); border: 1px solid rgba(255, 255, 255, 0.02); padding: 45px; border-radius: 20px; }
+        .spec-box-title { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
+        .spec-box-desc { font-size: 14.5px; color: var(--text-muted); line-height: 1.75; font-weight: 300; }
+
+        /* Interactive Real-Time Verified Scarcity Core Engine Panel */
+        .scarcity-panel { width: 90%; max-width: 1400px; background: linear-gradient(135deg, #0A0E16 0%, #020406 100%); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 80px; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 60px; align-items: center; margin-bottom: 140px; box-shadow: 0 60px 140px rgba(0,0,0,0.9); }
         .scarcity-title { font-size: 46px; font-weight: 700; letter-spacing: -2px; }
         .scarcity-desc { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; }
-        .metrics-container { display: flex; justify-content: space-around; text-align: center; background: rgba(0,0,0,0.3); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.02); }
-        .metric-val { font-family: 'Space Grotesk', sans-serif; font-size: 56px; font-weight: 700; color: var(--neon-alert); text-shadow: 0 0 30px rgba(255,51,102,0.2); }
-        .metric-lbl { font-size: 11px; letter-spacing: 2px; color: #585E6D; margin-top: 8px; text-transform: uppercase; }
+        .metrics-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: center; background: rgba(0,0,0,0.3); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.02); }
+        .metric-wrapper-box { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .metric-val-live { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; color: var(--neon-alert); text-shadow: 0 0 35px rgba(255,51,102,0.25); }
+        .metric-lbl-live { font-size: 11px; letter-spacing: 2px; color: #5B6170; margin-top: 8px; text-transform: uppercase; }
 
-        /* 📱 FUTURE SOCIAL LAYER ACCESS NODES */
-        .social-placeholder-anchor {
-            width: 100%; text-align: center; margin-bottom: 8px; font-family: 'Space Grotesk', sans-serif;
-            font-size: 11px; letter-spacing: 3px; color: #3D414D; text-transform: uppercase;
-        }
-        .social-link-matrix {
-            display: flex; justify-content: center; gap: 30px; margin-bottom: 60px;
-        }
-        .social-node-disabled {
-            font-size: 12px; color: #4F5463; letter-spacing: 1px; font-weight: 500;
-            text-transform: uppercase; cursor: not-allowed; border-bottom: 1px dotted #3D414D; padding-bottom: 4px;
-        }
+        /* Future Deployment Layout Nodes (Hidden configuration architecture tags) */
+        .future-context-anchor { width: 100%; text-align: center; margin-bottom: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 3px; color: #383B47; text-transform: uppercase; pointer-events: none; }
+        .future-matrix-links { display: flex; justify-content: center; gap: 35px; margin-bottom: 60px; pointer-events: none; }
+        .matrix-node-inactive { font-size: 11px; color: #434754; letter-spacing: 1px; font-weight: 500; text-transform: uppercase; border-bottom: 1px dotted #2E313D; padding-bottom: 4px; }
 
-        footer {
-            width: 90%; max-width: 1400px; padding: 60px 0; border-top: 1px solid rgba(255, 255, 255, 0.04);
-            display: flex; justify-content: space-between; font-size: 12px; color: #4B4F5B;
-        }
+        footer { width: 90%; max-width: 1400px; padding: 60px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); display: flex; justify-content: space-between; font-size: 12px; color: #454954; }
 
-        @media (max-width: 1100px) { .grid-system, .reviews-grid, .live-sales-metrics { grid-template-columns: 1fr 1fr; } .scarcity-panel { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .grid-system, .reviews-grid, .live-sales-metrics { grid-template-columns: 1fr; } .headline { font-size: 48px; } }
+        @media (max-width: 1100px) { .grid-system, .live-volume-metrics, .spec-grid { grid-template-columns: 1fr 1fr; } .scarcity-panel, .spec-expansion-section { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .grid-system, .live-volume-metrics, .spec-grid { grid-template-columns: 1fr; } .headline { font-size: 48px; } .review-node-box { width: 320px; } }
     </style>
 </head>
 <body>
 
-    <div class="ambient-layer-1"></div>
-    <div class="ambient-layer-2"></div>
+    <div class="glow-orb-1"></div>
+    <div class="glow-orb-2"></div>
 
     <header>
         <div class="logo">Damodar Techcraze Ventures</div>
-        <div class="secure-node">NETWORK PROTOCOL v3.0.0 : ACTIVE</div>
+        <div class="secure-node">NETWORK PROTOCOL CONTEXT v3.5.0 : VERIFIED</div>
     </header>
 
     <main class="hero">
-        <div class="status-ticker">Institutional Digital Capital Engines</div>
+        <div class="status-ticker">Sovereign Computational & Allocation Infrastructures</div>
         <h1 class="headline">Command Control of Global Distribution Capital</h1>
-        <p class="sub-hook">Immediate validation pipelines deploying automated cloud computational nodes engineered strictly for hyper-growth sovereign markets.</p>
+        <p class="sub-hook">Immediate verification frameworks deploying automated data matrices engineered exclusively for tier-1 high-status networks.</p>
     </main>
 
     <section class="trust-ticker-container">
@@ -215,147 +158,113 @@
     </section>
 
     <div class="toggle-container">
-        <button class="toggle-btn active" id="btn-institutional">Institutional Core</button>
-        <button class="toggle-btn" id="btn-venture">Venture Capital Pool</button>
+        <button class="toggle-btn active" id="mode-institutional">Institutional Allocation</button>
+        <button class="toggle-btn" id="mode-venture">Venture Capital Pool</button>
     </div>
 
+    <!-- Symmetrical Multi-Layer Glass Grid Blocks -->
     <div class="grid-system">
+        <!-- Card 1 -->
         <div class="premium-card">
             <div>
-                <div class="meta-tag">Infrastructure Core 01</div>
+                <div class="meta-tag">Deployment Unit 01</div>
                 <h3 class="card-title">Secret 4K Cinematic AI Video Suite</h3>
                 <div class="card-preview-terminal">
-                    <span class="terminal-dot"></span> asset_core_engine.sh<br>
-                    > Synthesizing multi-track B-Roll... OK<br>
-                    > Compiling distribution models... READY
+                    <span class="terminal-dot"></span> frame_layer_render.sh<br>
+                    > Tracking core B-Roll arrays... OK<br>
+                    > Processing coordinate matrix... RUNNING
                 </div>
                 <p class="card-desc">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
             </div>
             <div class="card-footer">
-                <div class="price-wrapper"><span class="price-amt" id="price1">$4,900</span></div>
+                <div class="price-wrapper"><span class="price-amt" id="pr-1">$4,900</span></div>
                 <button class="btn-acquire">Request Key</button>
             </div>
         </div>
 
+        <!-- Card 2 -->
         <div class="premium-card">
             <div>
-                <div class="meta-tag">Strategic Matrix 02</div>
+                <div class="meta-tag">Deployment Unit 02</div>
                 <h3 class="card-title">The Faceless YouTube Blueprints</h3>
                 <div class="card-preview-terminal">
-                    <span class="terminal-dot"></span> network_bypass.cfg<br>
-                    > Routing multi-thread proxies... OK<br>
-                    > Masking structural parameters... SECURE
+                    <span class="terminal-dot"></span> anonymity_bypass.cfg<br>
+                    > Establishing silent proxy networks... OK<br>
+                    > Encryption signature parameter... TRUE
                 </div>
                 <p class="card-desc">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
             </div>
             <div class="card-footer">
-                <div class="price-wrapper"><span class="price-amt" id="price2">$9,900</span></div>
+                <div class="price-wrapper"><span class="price-amt" id="pr-2">$9,900</span></div>
                 <button class="btn-acquire">Request Key</button>
             </div>
         </div>
 
+        <!-- Card 3 -->
         <div class="premium-card">
             <div>
-                <div class="meta-tag">Autonomous Protocol 03</div>
+                <div class="meta-tag">Deployment Unit 03</div>
                 <h3 class="card-title">Advanced Instagram Scaling Bot</h3>
                 <div class="card-preview-terminal">
-                    <span class="terminal-dot"></span> programmatic_matrix.py<br>
-                    > Calibrating user graph arrays... 100%<br>
-                    > Firewall encryption status... TRUE
+                    <span class="terminal-dot"></span> retention_matrix.py<br>
+                    > Mapping interaction datasets... 100%<br>
+                    > Firewall integrity validation... SECURE
                 </div>
                 <p class="card-desc">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
             </div>
             <div class="card-footer">
-                <div class="price-wrapper"><span class="price-amt" id="price3">$3,900</span></div>
+                <div class="price-wrapper"><span class="price-amt" id="pr-3">$3,900</span></div>
                 <button class="btn-acquire">Request Key</button>
             </div>
         </div>
     </div>
 
-    <section class="live-sales-metrics">
-        <div class="metric-card">
-            <div class="metric-number">48,291</div>
-            <div class="metric-label">Active Global Keys</div>
+    <!-- Volumetric Trust Core Blocks -->
+    <section class="live-volume-metrics">
+        <div class="metric-block">
+            <div class="metric-num">51,204</div>
+            <div class="metric-lbl">Active System Keys</div>
         </div>
-        <div class="metric-card">
-            <div class="metric-number">$42.8M</div>
-            <div class="metric-label">Processed Volume</div>
+        <div class="metric-block">
+            <div class="metric-num">$46.2M</div>
+            <div class="metric-lbl">Processed Network Liquidity</div>
         </div>
-        <div class="metric-card">
-            <div class="metric-number">99.98%</div>
-            <div class="metric-label">Network Uptime</div>
+        <div class="metric-block">
+            <div class="metric-num">99.99%</div>
+            <div class="metric-lbl">Node Infrastructure Uptime</div>
         </div>
-        <div class="metric-card">
-            <div class="metric-number">140+</div>
-            <div class="metric-label">Regions Synchronized</div>
-        </div>
-    </section>
-
-    <section class="reviews-section">
-        <h2 class="section-heading">Verified Network Evaluations</h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"The Faceless YouTube Architecture completely decoupled our content production pipeline. Scaled 12 separate proxy channels inside 30 days without single flag."</p>
-                <div class="user-profile">
-                    <div class="user-avatar">AM</div>
-                    <div class="user-info">
-                        <h4>Alexander Miller</h4>
-                        <p>Venture Director, Austin TX</p>
-                    </div>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Absolute institutional quality execution. The Instagram Bot script bypasses interaction latency perfectly. Day 1 deployment brought immediate retention spike."</p>
-                <div class="user-profile">
-                    <div class="user-avatar">HK</div>
-                    <div class="user-info">
-                        <h4>Helena Kael</h4>
-                        <p>Principal Operations, London</p>
-                    </div>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"High velocity computational units that simply deliver. Damodar Techcraze has eliminated our structural engineering overhead. Absolute sovereign scale."</p>
-                <div class="user-profile">
-                    <div class="user-avatar">DR</div>
-                    <div class="user-info">
-                        <h4>David R.</h4>
-                        <p>Managing Partner, Sydney</p>
-                    </div>
-                </div>
-            </div>
+        <div class="metric-block">
+            <div class="metric-num">145+</div>
+            <div class="metric-lbl">Sovereign Regions Integrated</div>
         </div>
     </section>
 
-    <section class="scarcity-panel">
-        <div>
-            <div class="scarcity-title">98.4% Live Server Capacity Allocated</div>
-            <div class="scarcity-desc">Sovereign network pipelines operate under strict computational caps. Secure configuration access keys before automatic global allocation timeout.</div>
-        </div>
-        <div class="metrics-container">
-            <div><div class="metric-val">98.4%</div><div class="metric-lbl">Bandwidth Cap</div></div>
-            <div><div class="metric-val" id="live-countdown-clock">10:00</div><div class="metric-lbl">Access Expiry</div></div>
-        </div>
-    </section>
-
-    <div class="social-placeholder-anchor">Future System Network Sync Links</div>
-    <div class="social-link-matrix">
-        <span class="social-node-disabled">Facebook Connectivity Node</span>
-        <span class="social-node-disabled">Instagram Data Relay</span>
-        <span class="social-node-disabled">YouTube Video Terminal</span>
-        <span class="social-node-disabled">Twitter Secure Feed</span>
-    </div>
-
-    <footer>
-        <div>©️ 2026 Damodar Techcraze Ventures. Sovereign Global Networks Inc.</div>
-        <div>v3.0.0 // STRIPE PLATINUM GATEWAY REALTIME VERIFIED</div>
-    </footer>
-
-    <script>
-        // Real-Time Active Decrementing Countdown Timer Logic (10:00 To 00:00)
-        function initiateDynamicTimer(durationInSeconds, displayElement) {
-            let totalTime = durationInSeconds;
-            const operationalInterval = se
+    <!-- 🫨 ⭐ HIGH LUXURY CONTINUOUS INFINITE RUNNING REVIEWS TRACK SLIDER -->
+    <section class="reviews-section-wrapper">
+        <h2 class="reviews-heading">Verified Network Evaluations</h2>
+        <div class="carousel-container">
+            <!-- Review 1 -->
+            <div class="review-node-box">
+                <div class="stars-gold">★★★★★</div>
+                <p class="review-quote">"The Faceless YouTube Blueprints completely restructured our brand's global media framework. Absolute anonymity achieved over 14 proxy nodes within 30 days."</p>
+                <div class="profile-node">
+                    <div class="profile-avatar">AM</div>
+                    <div class="profile-meta"><h4>Alexander Miller</h4><p>Venture Partner, Austin TX</p></div>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="review-node-box">
+                <div class="stars-gold">★★★★★</div>
+                <p class="review-quote">"High velocity performance loops. The Instagram interaction arrays bypass target structural friction perfectly. Brought an instantaneous scaling graph conversion."</p>
+                <div class="profile-node">
+                    <div class="profile-avatar">HK</div>
+                    <div class="profile-meta"><h4>Helena Kael</h4><p>Operations Lead, London</p></div>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="review-node-box">
+                <div class="stars-gold">★★★★★</div>
+                <p class="review-quote">"Damodar Techcraze has entirely removed our heavy internal development setups. These systems deploy instantly directly on complete autonomous loops."</p>
+                <div class="profile-node">
+                    <div class="profile-avatar">DR</div>
+                    <div class="profile-meta"><h4>
