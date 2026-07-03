@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damodar Techcraze Ventures | Institutional AI Infrastructure</title>
+    <title>Damodar Techcraze Ventures | Elite AI Capital Systems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
@@ -93,7 +93,7 @@
             font-size: 68px;
             font-weight: 900;
             line-height: 1.1;
-            letter-spacing: -2.5px;
+            letter-spacing: -2px;
             margin: 0 0 30px 0;
             background: linear-gradient(180deg, #FFFFFF 15%, #848995 100%);
             -webkit-background-clip: text;
@@ -115,7 +115,7 @@
             gap: 32px;
             width: 85%;
             max-width: 1200px;
-            margin-bottom: 120px;
+            margin-bottom: 100px;
         }
 
         .premium-card {
@@ -200,10 +200,51 @@
             transition: all 0.3s ease;
         }
 
-        .btn-acquire:hover {
-            background-color: #E5E8EE;
+        /* MASSIVE EXPANSION SECTION FOR ENTERPRISE LOOK */
+        .feature-expansion {
+            width: 85%;
+            max-width: 1200px;
+            padding: 100px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
         }
 
+        .expansion-sidebar h2 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .expansion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .feature-node-box {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .node-box-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .node-box-desc {
+            font-size: 14px;
+            color: #8E939E;
+            line-height: 1.6;
+        }
+
+        /* Scarcity Panel With LIVE Timer Trigger */
         .scarcity-panel {
             width: 85%;
             max-width: 1200px;
@@ -245,10 +286,10 @@
 
         .metric-val {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 42px;
+            font-size: 46px;
             font-weight: 700;
             color: #FF3366;
-            text-shadow: 0 0 20px rgba(255, 51, 102, 0.2);
+            text-shadow: 0 0 25px rgba(255, 51, 102, 0.3);
         }
 
         .metric-lbl {
@@ -271,7 +312,7 @@
         }
 
         @media (max-width: 968px) {
-            .grid-system, .scarcity-panel { grid-template-columns: 1fr; }
+            .grid-system, .scarcity-panel, .feature-expansion, .expansion-grid { grid-template-columns: 1fr; }
             .headline { font-size: 46px; }
         }
     </style>
@@ -339,21 +380,47 @@
         </div>
     </div>
 
+    <!-- NEW EXPANDED FULL-PAGE SYSTEM SECTION -->
+    <section class="feature-expansion">
+        <div class="expansion-sidebar">
+            <h2>The Protocol Architecture</h2>
+        </div>
+        <div class="expansion-grid">
+            <div class="feature-node-box">
+                <div class="node-box-title">01 / Pure Anonymity</div>
+                <div class="node-box-desc">Systems are built to run independently without personal identity strings. Maximum cloud operational security.</div>
+            </div>
+            <div class="feature-node-box">
+                <div class="node-box-title">02 / High Velocity</div>
+                <div class="node-box-desc">Automated interaction clusters scale matrix retention graphs without linear time friction.</div>
+            </div>
+            <div class="feature-node-box">
+                <div class="node-box-title">03 / Cross Border</div>
+                <div class="node-box-desc">Native international configurations instantly localized for prime US, UK, and Euro tier-1 audiences.</div>
+            </div>
+            <div class="feature-node-box">
+                <div class="node-box-title">04 / Zero Overhead</div>
+                <div class="node-box-desc">Eliminate development setups. Run pre-coded deployment sequences on complete autopilot loops.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scarcity Panel With REAL DYNAMIC TICKING TIMER -->
     <section class="scarcity-panel">
         <div>
             <div class="scarcity-title">98.4% of Network Assets Allocated for Current Global Run</div>
             <div class="scarcity-desc">
-                Damodar Techcraze Ventures operates under strict worldwide server thresholds. Once bandwidth cap resets, token allocation values scale automatically. Secure system components before current pipeline locks.
+                Damodar Techcraze Ventures operates under strict worldwide server thresholds. Secure system components at current validation rates before current pipeline locks automatically.
             </div>
         </div>
         <div class="metrics-container">
             <div>
-                <div class="metric-val">04</div>
+                <div class="metric-val">03</div>
                 <div class="metric-lbl">Licenses Left</div>
             </div>
             <div>
-                <div class="metric-val">12m</div>
-                <div class="metric-lbl">Global Reset</div>
+                <div class="metric-val" id="countdown-clock">10:00</div>
+                <div class="metric-lbl">Offer Expiry</div>
             </div>
         </div>
     </section>
@@ -362,6 +429,32 @@
         <div>©️ 2026 Damodar Techcraze Ventures. Global Operations Inc.</div>
         <div>SECURE PIPELINE CONTEXT V1.9.4</div>
     </footer>
+
+    <!-- LIVE TIMER TRIGGER JAVASCRIPT -->
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration; // Loops back or freezes as needed
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var tenMinutes = 60 * 10,
+                display = document.querySelector('#countdown-clock');
+            startTimer(tenMinutes, display);
+        };
+    </script>
 
 </body>
 </html>
