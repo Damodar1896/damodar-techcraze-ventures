@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damodar Techcraze Ventures | Sovereign Institutional Infrastructure</title>
+    <title>Damodar Techcraze Ventures | Institutional AI Capital Network</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-sovereign: #010204;
-            --glass-core: rgba(10, 15, 26, 0.7);
-            --border-glow: rgba(255, 255, 255, 0.05);
-            --border-premium: rgba(255, 255, 255, 0.25);
+            --bg-obsidian: #020305;
+            --glass-card: rgba(13, 17, 24, 0.75);
+            --border-glow: rgba(255, 255, 255, 0.04);
+            --border-hover: rgba(0, 255, 204, 0.25);
             --text-pure: #FFFFFF;
-            --text-muted: #7E8494;
-            --neon-signal: #00FFCC;
-            --neon-alert: #FF3366;
+            --text-muted: #8F96A3;
+            --neon-green: #00FFCC;
+            --neon-glow: rgba(0, 255, 204, 0.03);
         }
 
-        *, *::before, *::after {
+        * {
             box-sizing: border-box;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         body {
-            background-color: var(--bg-sovereign);
+            background-color: var(--bg-obsidian);
             color: var(--text-pure);
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -37,51 +38,51 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Global Cyber Background Layering */
-        body::before {
-            content: '';
+        /* 🌌 Premium Apple-Level Fluid Light Backdrops */
+        .ambient-glow-1 {
             position: absolute;
-            top: -20%; left: 50%; transform: translateX(-50%);
-            width: 1400px; height: 900px;
-            background: radial-gradient(circle, rgba(0, 255, 204, 0.02) 0%, rgba(255, 51, 102, 0.01) 50%, transparent 80%);
-            z-index: -2;
-            pointer-events: none;
+            top: -10%; left: 20%; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.04) 0%, transparent 70%);
+            z-index: -2; pointer-events: none;
+            filter: blur(80px);
         }
 
+        .ambient-glow-2 {
+            position: absolute;
+            top: 40%; right: 10%; width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(255, 51, 102, 0.02) 0%, transparent 70%);
+            z-index: -2; pointer-events: none;
+            filter: blur(100px);
+        }
+
+        /* Tech Mesh Layer */
         body::after {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
-            background-size: 100px 100px;
-            z-index: -1;
-            pointer-events: none;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: -1; pointer-events: none;
         }
 
         header {
             width: 90%;
             max-width: 1400px;
-            padding: 50px 0;
+            padding: 45px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
 
         .logo {
             font-weight: 900;
-            font-size: 26px;
-            letter-spacing: 6px;
+            font-size: 24px;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            background: linear-gradient(180deg, #FFFFFF 0%, #6C717E 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #7A7E8C 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .header-nodes {
-            display: flex;
-            gap: 20px;
-            align-items: center;
         }
 
         .secure-node {
@@ -89,7 +90,7 @@
             font-size: 11px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--neon-signal);
+            color: var(--neon-green);
             background: rgba(0, 255, 204, 0.02);
             padding: 12px 24px;
             border-radius: 8px;
@@ -97,184 +98,166 @@
             box-shadow: 0 0 30px rgba(0, 255, 204, 0.05);
         }
 
+        /* Hero Unit */
         .hero {
             text-align: center;
-            max-width: 1150px;
-            margin: 140px auto 70px auto;
+            max-width: 1100px;
+            margin: 120px auto 60px auto;
             padding: 0 20px;
         }
 
         .status-ticker {
             font-size: 13px;
             font-weight: 700;
-            letter-spacing: 9px;
+            letter-spacing: 8px;
             text-transform: uppercase;
             color: var(--text-muted);
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .headline {
-            font-size: 82px;
+            font-size: 76px;
             font-weight: 900;
-            line-height: 1.05;
-            letter-spacing: -3.5px;
-            margin: 0 0 35px 0;
-            background: linear-gradient(180deg, #FFFFFF 30%, #525661 100%);
+            line-height: 1.1;
+            letter-spacing: -3px;
+            margin: 0 0 30px 0;
+            background: linear-gradient(180deg, #FFFFFF 20%, #636775 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .sub-hook {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 300;
-            color: #B1B6C4;
-            line-height: 1.8;
-            max-width: 840px;
+            color: #A9AEBC;
+            line-height: 1.75;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* MONOCHROMATIC TRUST SOCIAL PROOF TICKER */
+        /* Sleek Trust Badges */
         .trust-ticker-container {
             width: 100%;
             max-width: 1400px;
-            margin: 40px 0 100px 0;
+            margin: 20px 0 80px 0;
             text-align: center;
-        }
-        
-        .trust-lbl {
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #4C505C;
-            margin-bottom: 20px;
         }
 
         .trust-logos {
             display: flex;
             justify-content: center;
-            gap: 60px;
+            gap: 70px;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: #3D404A;
-            letter-spacing: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #4A4E5A;
+            letter-spacing: 5px;
         }
 
-        /* TIERS CONTROLLER SLIDER TOGGLE */
+        /* Mode Switcher Sliders */
         .toggle-container {
             margin-bottom: 60px;
             display: flex;
             background: rgba(255, 255, 255, 0.02);
-            padding: 6px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 5px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .toggle-btn {
             background: transparent;
             border: none;
             color: var(--text-muted);
-            padding: 12px 30px;
+            padding: 14px 35px;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            border-radius: 6px;
+            letter-spacing: 1.5px;
+            border-radius: 8px;
         }
 
         .toggle-btn.active {
             background: #FFFFFF;
             color: #000000;
+            box-shadow: 0 10px 25px rgba(255,255,255,0.1);
         }
 
-        /* Multi-Layered Glassmorphic Core Matrix Layout */
+        /* Glassmorphic Layer Matrix Grids */
         .grid-system {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             width: 90%;
             max-width: 1400px;
-            margin-bottom: 140px;
+            margin-bottom: 120px;
         }
 
         .premium-card {
-            background: var(--glass-core);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: var(--glass-card);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border: 1px solid var(--border-glow);
             border-radius: 24px;
-            padding: 60px 50px;
+            padding: 55px 45px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 60px 120px rgba(0, 0, 0, 0.85);
             position: relative;
-            overflow: hidden;
-        }
-
-        .premium-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
         }
 
         .premium-card:hover {
-            border-color: var(--border-premium);
+            border-color: var(--border-hover);
             transform: translateY(-12px);
-            box-shadow: 0 60px 110px rgba(0, 255, 204, 0.02);
+            box-shadow: 0 70px 130px rgba(0, 255, 204, 0.03);
         }
 
-        /* Simulated Terminal Output Windows */
+        /* Interactive IDE Code Windows */
         .card-preview-terminal {
-            background: #040609;
-            border: 1px solid rgba(255,255,255,0.03);
-            border-radius: 10px;
-            padding: 16px;
-            font-family: monospace;
+            background: #04060A;
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 12px;
+            padding: 18px;
+            font-family: 'Space Grotesk', monospace;
             font-size: 11px;
-            color: #515866;
+            color: #585F6E;
             margin-bottom: 35px;
-            overflow: hidden;
-            text-align: left;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .terminal-dot {
             width: 6px; height: 6px;
-            background: #FF5F56;
+            background: var(--neon-green);
             border-radius: 50%;
             display: inline-block;
-            margin-right: 4px;
-            box-shadow: 0 0 8px #FF5F56;
+            margin-right: 6px;
+            box-shadow: 0 0 10px var(--neon-green);
         }
 
         .meta-tag {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #616675;
-            margin-bottom: 24px;
+            color: #6C7280;
+            margin-bottom: 22px;
         }
 
         .card-title {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 700;
-            margin: 0 0 20px 0;
-            line-height: 1.2;
+            margin: 0 0 18px 0;
+            line-height: 1.25;
             letter-spacing: -1px;
         }
 
         .card-desc {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-muted);
-            line-height: 1.75;
-            margin-bottom: 50px;
+            line-height: 1.7;
+            margin-bottom: 45px;
             font-weight: 300;
         }
 
@@ -282,297 +265,147 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             padding-top: 35px;
-        }
-
-        .price-wrapper {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .price-lbl {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #505461;
         }
 
         .price-amt {
             font-size: 32px;
             font-weight: 700;
-            margin-top: 4px;
             font-family: 'Space Grotesk', sans-serif;
-            background: linear-gradient(180deg, #FFF 0%, #A0A5B4 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #9FA4B2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* 🫨 SEVERE PSYCHOLOGICAL TRIGGER HIGH-STATUS CONVERT BUTTON */
+        /* 🫨 Balanced Shaking CTA */
         .btn-acquire {
             background-color: #FFFFFF;
             color: #000000;
             border: none;
-            padding: 18px 40px;
+            padding: 18px 38px;
             font-size: 13px;
             font-weight: 700;
             border-radius: 10px;
             cursor: pointer;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            animation: intensePulse 4s infinite ease-in-out;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: elegantPulse 4s infinite ease-in-out;
         }
 
         .btn-acquire:hover {
-            background-color: #00FFCC;
-            color: #000000;
+            background-color: var(--neon-green);
+            box-shadow: 0 0 35px rgba(0, 255, 204, 0.4);
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 255, 204, 0.4);
             animation-play-state: paused;
         }
 
-        @keyframes intensePulse {
-            0%, 80%, 100% { transform: translateX(0) scale(1); }
-            85% { transform: translateX(-5px) scale(1.03); }
-            88% { transform: translateX(5px) scale(1.03); }
-            91% { transform: translateX(-3px) scale(1.03); }
-            94% { transform: translateX(3px) scale(1.03); }
-            97% { transform: translateX(0) scale(1.03); }
+        @keyframes elegantPulse {
+            0%, 82%, 100% { transform: translateX(0); }
+            85% { transform: translateX(-4px); }
+            88% { transform: translateX(4px); }
+            91% { transform: translateX(-2px); }
+            94% { transform: translateX(2px); }
         }
 
-        /* LENGTH EXPANSION 01: SOVEREIGN PHILOSOPHY MANIFESTO */
+        /* 🏛️ Massive Layout Extension Panels */
         .manifesto-container {
-            width: 90%;
-            max-width: 1400px;
+            width: 90%; max-width: 1400px;
             padding: 140px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             text-align: center;
         }
 
-        .manifesto-title {
-            font-size: 13px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: var(--neon-signal);
-            margin-bottom: 30px;
-        }
-
         .manifesto-text {
-            font-size: 38px;
-            font-weight: 300;
-            line-height: 1.5;
-            max-width: 1000px;
-            margin: 0 auto;
-            letter-spacing: -1px;
-            color: #D2D6E1;
+            font-size: 42px; font-weight: 300; line-height: 1.45;
+            max-width: 1050px; margin: 0 auto; letter-spacing: -1.5px;
+            background: linear-gradient(180deg, #FFF 20%, #767A86 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        /* LENGTH EXPANSION 02: TECHNICAL DEEP ARCHITECTURE BLOCKS */
         .feature-expansion {
-            width: 90%;
-            max-width: 1400px;
-            padding: 120px 0;
+            width: 90%; max-width: 1400px;
+            padding: 130px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             display: grid;
-            grid-template-columns: 1fr 2.5fr;
-            gap: 100px;
+            grid-template-columns: 1fr 2.5fr; gap: 100px;
         }
 
         .expansion-sidebar h2 {
-            font-size: 52px;
-            font-weight: 900;
-            letter-spacing: -2.5px;
-            line-height: 1.15;
-            margin: 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #4D515B 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 56px; font-weight: 900; letter-spacing: -2.5px;
+            margin: 0; background: linear-gradient(180deg, #FFF, #424650);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
         .expansion-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
         }
 
         .feature-node-box {
-            background: linear-gradient(180deg, #090C12 0%, #030508 100%);
+            background: linear-gradient(180deg, #0A0D14 0%, #040508 100%);
             border: 1px solid rgba(255, 255, 255, 0.02);
-            padding: 45px;
-            border-radius: 20px;
-            transition: border 0.3s;
+            padding: 45px; border-radius: 20px;
         }
 
-        .feature-node-box:hover {
-            border-color: rgba(255,255,255,0.08);
-        }
+        .node-box-title { font-size: 20px; font-weight: 700; margin-bottom: 14px; }
+        .node-box-desc { font-size: 15px; color: var(--text-muted); line-height: 1.75; font-weight: 300; }
 
-        .node-box-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 14px;
-            letter-spacing: -0.5px;
-        }
-
-        .node-box-desc {
-            font-size: 15px;
-            color: var(--text-muted);
-            line-height: 1.75;
-            font-weight: 300;
-        }
-
-        /* LENGTH EXPANSION 03: LIVE BACKBONE STATUS MAP */
-        .global-status-section {
-            width: 90%;
-            max-width: 1400px;
-            padding: 120px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            text-align: center;
-        }
-
-        .global-title {
-            font-size: 36px;
-            font-weight: 700;
-            letter-spacing: -1.5px;
-            margin-bottom: 50px;
-        }
-
-        .node-cluster-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-
-        .cluster-node {
-            background: rgba(255,255,255,0.01);
-            border: 1px solid rgba(255,255,255,0.02);
-            padding: 30px;
-            border-radius: 16px;
-            text-align: left;
-        }
-
-        .cluster-location {
-            font-size: 15px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .cluster-ping {
-            width: 8px; height: 8px;
-            background-color: var(--neon-signal);
-            border-radius: 50%;
-            box-shadow: 0 0 15px var(--neon-signal);
-        }
-
-        .cluster-status {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 10px;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        /* IMPERIOUS INSTITUTIONAL FOMO CONVERSION PANEL */
+        /* Scarcity Banner System */
         .scarcity-panel {
-            width: 90%;
-            max-width: 1400px;
-            background: linear-gradient(135deg, #090E17 0%, #020406 100%);
+            width: 90%; max-width: 1400px;
+            background: linear-gradient(135deg, #0A0E15 0%, #030406 100%);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 28px;
-            padding: 80px;
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 140px;
-            box-shadow: 0 60px 140px rgba(0,0,0,0.9);
+            border-radius: 28px; padding: 80px;
+            display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 60px;
+            align-items: center; margin-bottom: 140px;
         }
 
-        .scarcity-title {
-            font-size: 46px;
-            font-weight: 700;
-            letter-spacing: -2px;
-            line-height: 1.15;
-        }
-
-        .scarcity-desc {
-            font-size: 17px;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-top: 20px;
-            font-weight: 300;
-        }
+        .scarcity-title { font-size: 46px; font-weight: 700; letter-spacing: -2px; }
+        .scarcity-desc { font-size: 17px; color: var(--text-muted); line-height: 1.8; font-weight: 300; }
 
         .metrics-container {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.02);
+            display: flex; justify-content: space-around; text-align: center;
+            background: rgba(0,0,0,0.3); padding: 40px; border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.02);
         }
 
-        .metric-val {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 58px;
-            font-weight: 700;
-            color: var(--neon-alert);
-            text-shadow: 0 0 35px rgba(255, 51, 102, 0.4);
-        }
-
-        .metric-lbl {
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: #5A5F6E;
-            margin-top: 8px;
-            text-transform: uppercase;
-        }
+        .metric-val { font-family: 'Space Grotesk', sans-serif; font-size: 56px; font-weight: 700; color: #FF3366; }
+        .metric-lbl { font-size: 11px; letter-spacing: 2px; color: #585E6D; margin-top: 8px; text-transform: uppercase; }
 
         footer {
-            width: 90%;
-            max-width: 1400px;
-            padding: 60px 0;
+            width: 90%; max-width: 1400px; padding: 60px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: #4C505C;
-            letter-spacing: 0.5px;
+            display: flex; justify-content: space-between; font-size: 12px; color: #4B4F5B;
         }
 
         @media (max-width: 1100px) {
-            .grid-system, .node-cluster-grid { grid-template-columns: 1fr 1fr; }
+            .grid-system, .expansion-grid { grid-template-columns: 1fr 1fr; }
             .feature-expansion { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            .grid-system, .scarcity-panel, .expansion-grid, .node-cluster-grid { grid-template-columns: 1fr; }
-            .headline { font-size: 52px; }
-            .scarcity-panel { padding: 40px; }
+            .grid-system, .scarcity-panel, .expansion-grid { grid-template-columns: 1fr; }
+            .headline { font-size: 50px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
     <header>
         <div class="logo">Damodar Techcraze Ventures</div>
-        <div class="header-nodes">
-            <div class="secure-node" style="color: #FFF; border-color: rgba(255,255,255,0.1);">SOVEREIGN TIER V2.9.0</div>
-            <div class="secure-node">NETWORK PROTOCOL: ACTIVE</div>
-        </div>
+        <div class="secure-node">INSTITUTIONAL LAYER: SECURED</div>
     </header>
 
     <main class="hero">
-        <div class="status-ticker">Sovereign Asset & Computational Infrastructure</div>
+        <div class="status-ticker">Global Enterprise Computational Nodes</div>
         <h1 class="headline">Command Control of Institutional Digital Capital</h1>
-        <p class="sub-hook">Immediate cryptographic validation pipelines deploying automated high-status cashflow velocity units engineered strictly for tier-1 sovereign markets.</p>
+        <p class="sub-hook">Immediate validation pipelines deploying end-to-end cloud optimization engines engineered strictly for tier-1 sovereign markets.</p>
     </main>
 
     <section class="trust-ticker-container">
-        <div class="trust-lbl">Institutional Networks Validated Within</div>
         <div class="trust-logos">
             <span>BLOOMBERG</span>
             <span>TECHCRUNCH</span>
@@ -582,49 +415,127 @@
     </section>
 
     <div class="toggle-container">
-        <button class="toggle-btn active" id="tier-inst">Institutional Allocation</button>
-        <button class="toggle-btn" id="tier-vent">Venture Capital Pool</button>
+        <button class="toggle-btn active" id="t-inst">Institutional Core</button>
+        <button class="toggle-btn" id="t-vent">Venture Capital Pool</button>
     </div>
 
     <div class="grid-system">
+        <!-- Card 1 -->
         <div class="premium-card">
             <div>
-                <div class="meta-tag">Infrastructure Cluster 01</div>
+                <div class="meta-tag">Deployment Node 01</div>
                 <h3 class="card-title">Secret 4K Cinematic AI Video Suite</h3>
                 <div class="card-preview-terminal">
-                    <span class="terminal-dot"></span> rendering_pipeline.cfg<br>
-                    > Loading core visual layers... OK<br>
-                    > B-Roll coordinate matrices... LOCKED
+                    <span class="terminal-dot"></span> asset_core_engine.sh<br>
+                    > Synthesizing multi-track B-Roll... OK<br>
+                    > Compiling distribution models... READY
                 </div>
                 <p class="card-desc">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
             </div>
             <div class="card-footer">
-                <div class="price-wrapper">
-                    <span class="price-lbl">Allocation Token</span>
-                    <span class="price-amt" id="p1">$4,900</span>
-                </div>
+                <div class="price-wrapper"><span class="price-amt" id="p1">$4,900</span></div>
                 <button class="btn-acquire">Request Key</button>
             </div>
         </div>
 
+        <!-- Card 2 -->
         <div class="premium-card">
             <div>
-                <div class="meta-tag">Strategic Frame Cluster 02</div>
+                <div class="meta-tag">Deployment Node 02</div>
                 <h3 class="card-title">The Faceless YouTube Blueprints</h3>
                 <div class="card-preview-terminal">
-                    <span class="terminal-dot"></span> network_bypass_root.sh<br>
-                    > Initializing proxy arrays... OK<br>
-                    > Cryptographic identity hidden... TRUE
+                    <span class="terminal-dot"></span> network_bypass.cfg<br>
+                    > Routing multi-thread proxies... OK<br>
+                    > Masking structural parameters... SECURE
                 </div>
                 <p class="card-desc">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
             </div>
             <div class="card-footer">
-                <div class="price-wrapper">
-                    <span class="price-lbl">Allocation Token</span>
-                    <span class="price-amt" id="p2">$9,900</span>
-                </div>
+                <div class="price-wrapper"><span class="price-amt" id="p2">$9,900</span></div>
                 <button class="btn-acquire">Request Key</button>
             </div>
         </div>
 
-        <di
+        <!-- Card 3 -->
+        <div class="premium-card">
+            <div>
+                <div class="meta-tag">Deployment Node 03</div>
+                <h3 class="card-title">Advanced Instagram Scaling Bot</h3>
+                <div class="card-preview-terminal">
+                    <span class="terminal-dot"></span> programmatic_matrix.py<br>
+                    > Calibrating user graph arrays... 100%<br>
+                    > Firewall encryption status... TRUE
+                </div>
+                <p class="card-desc">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
+            </div>
+            <div class="card-footer">
+                <div class="price-wrapper"><span class="price-amt" id="p3">$3,900</span></div>
+                <button class="btn-acquire">Request Key</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="manifesto-container">
+        <div class="manifesto-text">
+            "We engineer computational systems for individuals who command absolute market velocity, absolute execution authority, and absolute sovereignty."
+        </div>
+    </section>
+
+    <section class="feature-expansion">
+        <div class="expansion-sidebar"><h2>Sovereign Systems</h2></div>
+        <div class="expansion-grid">
+            <div class="feature-node-box">
+                <div class="node-box-title">01 / Full Encryption</div>
+                <div class="node-box-desc">Systems are built decoupled from tracking strings. Maximum multi-layer server identity protection.</div>
+            </div>
+            <div class="feature-node-box">
+                <div class="node-box-title">02 / High-Velocity Relays</div>
+                <div class="node-box-desc">Distributed server clusters accelerate computational outputs without execution lag.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="scarcity-panel">
+        <div>
+            <div class="scarcity-title">98.4% Server Capacity Allocation Reached</div>
+            <div class="scarcity-desc">Sovereign pipelines operate under strict global hardware caps. Secure encryption keys before automatic node structural lockout sequences activate.</div>
+        </div>
+        <div class="metrics-container">
+            <div><div class="metric-val">98.4%</div><div class="metric-lbl">Bandwidth Cap</div></div>
+            <div><div class="metric-val" id="timer-clock">10:00</div><div class="metric-lbl">Access Expiry</div></div>
+        </div>
+    </section>
+
+    <footer>
+        <div>©️ 2026 Damodar Techcraze Ventures. All Rights Reserved.</div>
+        <div>V2.9.5 // SECURE GATEWAY VERIFIED</div>
+    </footer>
+
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) { timer = duration; }
+            }, 1000);
+        }
+
+        const bInst = document.getElementById('t-inst');
+        const bVent = document.getElementById('t-vent');
+        const p1 = document.getElementById('p1'); const p2 = document.getElementById('p2'); const p3 = document.getElementById('p3');
+
+        bInst.addEventListener('click', () => {
+            bInst.classList.add('active'); bVent.classList.remove('active');
+            p1.textContent = "$4,900"; p2.textContent = "$9,900"; p3.textContent = "$3,900";
+        });
+        bVent.addEventListener('click', () => {
+            bVent.classList.add('active'); bInst.classList.remove('active');
+            p1.textContent = "$49,000"; p2.textContent = "$99,000"; p3.textContent = "$39,000";
+        });
+
+        window.onload = function () {
+            var clock = document.queryS
