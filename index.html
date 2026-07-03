@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damodar Techcraze Ventures | Premium AI Assets</title>
+    <style>
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: #161a22;
+            --gold: #ffb703;
+            --cyan: #00f5d4;
+            --text: #ffffff;
+            --text-dim: #8b949e;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text);
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .brand {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, var(--gold), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero {
+            text-align: center;
+            max-width: 900px;
+            padding: 80px 20px;
+            box-sizing: border-box;
+        }
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        .hero h1 span.gold-glow {
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(255, 183, 3, 0.2);
+        }
+        .hero h1 span.cyan-glow {
+            color: var(--cyan);
+            text-shadow: 0 0 20px rgba(0, 245, 212, 0.2);
+        }
+        .hero p {
+            font-size: 20px;
+            color: var(--text-dim);
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .matrix-card {
+            background-color: var(--card-bg);
+            border: 1px solid #21262d;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .matrix-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--cyan));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .matrix-card:hover {
+            transform: translateY(-5px);
+            border-color: #303642;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .matrix-card:hover::before {
+            opacity: 1;
+        }
+        .matrix-card h3 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .matrix-card p {
+            color: var(--text-dim);
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .btn-premium {
+            background: linear-gradient(90deg, var(--gold), var(--cyan));
+            color: #000000;
+            border: none;
+            padding: 16px 36px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-premium:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(0, 245, 212, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">DAMODAR TECHCRAZE VENTILATIONS</div>
+        <div>
+            <button class="btn-premium" style="padding: 10px 20px; font-size: 14px;">Enterprise Access</button>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Scale Your Brand Instantly With <br><span class="gold-glow">High-Income</span> <span class="cyan-glow">AI Assets</span></h1>
+        <p>Instant deployment to 100% automated monetization matrices, premium developer systems, and custom automated distribution loops engineered for the 2026 economy.</p>
+        <button class="btn-premium">Initialize Secure Network</button>
+    </div>
+
+    <div class="matrix-grid">
+        <div class="matrix-card">
+            <h3>Secret 4K Cinematic AI Video Editing Suite</h3>
+            <p>Complete next-generation rendering pipelines locked section 8-B framework optimized for hyper-scalable visual creation.</p>
+        </div>
+        <div class="matrix-card">
+            <h3>The Faceless YouTube Growth Blueprints</h3>
+            <p>Multi-threaded channel growth configurations engineered for scaling organic audience systems with absolute anonymity.</p>
+        </div>
+        <div class="matrix-card">
+            <h3>Advanced Instagram Reels Scaling Bot</h3>
+            <p>Control dynamic distributions and high-yield content networks directly via secure cloud interface loops.</p>
+        </div>
+    </div>
+
+</body>
+</html>
