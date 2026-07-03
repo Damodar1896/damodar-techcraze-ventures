@@ -3,273 +3,598 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damodar Techcraze Ventures | Sovereign Infrastructure Network</title>
+    <title>Subhash Techcraze Ventures | Institutional Control Engine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-obsidian: #020408;
-            --glass-panel: rgba(9, 14, 26, 0.75);
-            --border-glow: rgba(255, 255, 255, 0.04);
-            --border-premium: rgba(0, 255, 204, 0.22);
-            --text-pure: #FFFFFF;
-            --text-muted: #878E9C;
-            --neon-cyan: #00FFCC;
-            --neon-rose: #FF3366;
+            --bg: #03060f;
+            --panel: rgba(10, 16, 32, 0.7);
+            --panel-border: rgba(255, 255, 255, 0.05);
+            --cyan: #00ffcc;
+            --cyan-glow: rgba(0, 255, 204, 0.3);
+            --rose: #ff3366;
+            --rose-glow: rgba(255, 51, 102, 0.3);
+            --muted: #8a92a6;
+            --text: #ffffff;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: var(--bg-obsidian); color: var(--text-pure); font-family: 'Montserrat', sans-serif;
-            min-height: 100vh; display: flex; flex-direction: column; align-items: center; overflow-x: hidden;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            position: relative;
         }
 
-        /* Luxury Cyber Ambient Layers */
-        .ambient-mesh-1 {
-            position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
-            width: 1400px; height: 800px;
-            background: radial-gradient(circle, rgba(16, 24, 40, 0.4) 0%, rgba(0, 255, 204, 0.02) 45%, transparent 75%);
-            z-index: -2; pointer-events: none; filter: blur(100px);
-        }
-        
-        body::after {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.002) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.002) 1px, transparent 1px);
-            background-size: 80px 80px; z-index: -1; pointer-events: none;
+        /* Tech Grid Background overlay */
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 1;
         }
 
+        /* Ambient Premium Glows */
+        .ambient-glow-1 {
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.06) 0%, transparent 70%);
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ambient-glow-2 {
+            position: absolute;
+            bottom: 10%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 51, 102, 0.03) 0%, transparent 70%);
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1240px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Premium Header Layout */
         header {
-            width: 85%; max-width: 1400px; padding: 50px 0;
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--panel-border);
         }
-        .logo { font-weight: 900; font-size: 24px; letter-spacing: 5px; text-transform: uppercase; background: linear-gradient(180deg, #FFFFFF 0%, #767B88 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .secure-node { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--neon-cyan); background: rgba(0, 255, 204, 0.02); padding: 12px 24px; border-radius: 8px; border: 1px solid rgba(0, 255, 204, 0.15); box-shadow: 0 0 30px rgba(0, 255, 204, 0.05); }
 
-        .hero { text-align: center; max-width: 1150px; margin: 130px auto 60px auto; padding: 0 20px; }
-        .status-ticker { font-size: 12px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 28px; }
-        .headline { font-size: 80px; font-weight: 900; line-height: 1.05; letter-spacing: -3.5px; margin: 0 0 35px 0; background: linear-gradient(180deg, #FFFFFF 30%, #4D515E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .sub-hook { font-size: 22px; font-weight: 300; color: #ABB0BF; line-height: 1.8; max-width: 860px; margin: 0 auto; }
+        .logo {
+            font-weight: 900;
+            font-size: 22px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #ffffff 0%, #7d8496 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        .trust-ticker-container { width: 100%; max-width: 1400px; margin: 40px 0 80px 0; text-align: center; }
-        .trust-logos { display: flex; justify-content: center; gap: 80px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #434754; letter-spacing: 5px; font-weight: 500; }
+        .status-node {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--cyan);
+            background: rgba(0, 255, 204, 0.03);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            text-shadow: 0 0 10px var(--cyan-glow);
+        }
 
-        .toggle-container { margin-bottom: 60px; display: flex; background: rgba(255, 255, 255, 0.02); padding: 6px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.04); }
-        .toggle-btn { background: transparent; border: none; color: var(--text-muted); padding: 14px 35px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 8px; transition: all 0.3s; }
-        .toggle-btn.active { background: #FFFFFF; color: #000000; box-shadow: 0 10px 25px rgba(255,255,255,0.1); }
+        /* Hero Engine Section */
+        .hero {
+            text-align: center;
+            max-width: 960px;
+            margin: 100px auto 60px auto;
+        }
 
-        /* Symmetrical Matrix Layout */
-        .grid-system { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 85%; max-width: 1400px; margin-bottom: 140px; }
-        .premium-card { background: var(--glass-panel); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid var(--border-glow); border-radius: 24px; padding: 60px 45px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 60px 120px rgba(0, 0, 0, 0.85); position: relative; }
-        .premium-card:hover { border-color: var(--border-premium); transform: translateY(-10px); }
+        .ticker {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
 
-        .card-preview-terminal { background: #04060B; border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 18px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #535A69; margin-bottom: 35px; line-height: 1.6; text-align: left; }
-        .terminal-dot { width: 6px; height: 6px; background: var(--neon-cyan); border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 10px var(--neon-cyan); }
-        .meta-tag { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #666C7A; margin-bottom: 24px; text-align: left; }
-        .card-title { font-size: 30px; font-weight: 700; margin: 0 0 18px 0; line-height: 1.25; letter-spacing: -1px; text-align: left; }
-        .card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 45px; font-weight: 300; text-align: left; }
-        .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 35px; }
-        .price-amt { font-size: 32px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; background: linear-gradient(180deg, #FFFFFF 0%, #9DA2B0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .headline {
+            font-size: 68px;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 28px;
+            background: linear-gradient(180deg, #ffffff 20%, #464b59 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        .btn-acquire { background-color: #FFFFFF; color: #000000; border: none; padding: 18px 40px; font-size: 13px; font-weight: 700; border-radius: 10px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; animation: standardWiggle 4s infinite ease-in-out; transition: all 0.3s; }
-        .btn-acquire:hover { background-color: var(--neon-cyan); box-shadow: 0 0 35px rgba(0, 255, 204, 0.4); transform: scale(1.05); animation-play-state: paused; }
-        @keyframes standardWiggle { 0%, 82%, 100% { transform: translateX(0); } 85% { transform: translateX(-4px); } 88% { transform: translateX(4px); } 91% { transform: translateX(-2px); } 94% { transform: translateX(2px); } }
+        .sub-text {
+            font-size: 19px;
+            font-weight: 300;
+            color: #b4bac9;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-        /* Trust Stats Matrix */
-        .live-volume-metrics { width: 85%; max-width: 1400px; margin-bottom: 120px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 60px; }
-        .metric-block { background: rgba(255,255,255,0.003); border: 1px solid rgba(255,255,255,0.01); border-radius: 16px; padding: 35px; text-align: center; }
-        .metric-num { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: #FFFFFF; letter-spacing: -1px; }
-        .metric-lbl { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-top: 12px; font-weight: 500; }
+        /* Luxury Segment Toggle Swapper */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+        }
 
-        /* 🔄 ⭐ 100% UNBREAKABLE REVIEWS MARQUEE RUNNING ENGINE (NEVER LEAVES BLANK SCENARIO) */
-        .reviews-section-wrapper { width: 100%; overflow: hidden; padding: 110px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); border-bottom: 1px solid rgba(255, 255, 255, 0.04); margin-bottom: 120px; position: relative; }
-        .reviews-heading { font-size: 46px; font-weight: 900; text-align: center; margin-bottom: 80px; letter-spacing: -2px; background: linear-gradient(180deg, #FFF, #4A4E5A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* The Outer Infinite Carousel Box Wrapper */
-        .marquee-infinite-container { display: flex; width: max-content; }
-        
-        /* Two identical blocks running continuously using a 50% translation trick to eliminate whitespace caps */
-        .marquee-block-rail { display: flex; animation: linearInfiniteScroller 24s linear infinite; will-change: transform; }
-        .reviews-section-wrapper:hover .marquee-block-rail { animation-play-state: paused; }
+        .toggle-wrap {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 6px;
+            border-radius: 12px;
+            border: 1px solid var(--panel-border);
+            display: flex;
+            gap: 4px;
+        }
 
-        .review-node-box { width: 440px; background: linear-gradient(180deg, #0b111a 0%, #030509 100%); border: 1px solid rgba(255,255,255,0.03); border-radius: 20px; padding: 45px; margin-right: 35px; flex-shrink: 0; box-shadow: 0 40px 80px rgba(0,0,0,0.5); text-align: left; }
-        .stars-gold { color: var(--neon-cyan); font-size: 15px; margin-bottom: 22px; letter-spacing: 2px; }
-        .review-quote { font-size: 14.5px; color: #C9CED9; line-height: 1.75; font-weight: 300; margin-bottom: 30px; height: 95px; overflow: hidden; }
-        .profile-node { display: flex; align-items: center; gap: 15px; }
-        .profile-avatar-block { width: 44px; height: 44px; background: linear-gradient(135deg, #162235 0%, #0b2e24 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; color: var(--neon-cyan); border: 1px solid rgba(0,255,204,0.2); }
-        .profile-meta h4 { font-size: 15px; font-weight: 700; margin: 0; color: #FFFFFF; }
-        .profile-meta p { font-size: 11px; color: var(--text-muted); margin: 4px 0 0 0; text-transform: uppercase; letter-spacing: 1px; }
+        .tgl-btn {
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            padding: 14px 30px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 8px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-        /* Perfect mathematical translation loop */
-        @keyframes linearInfiniteScroller {
+        .tgl-btn.active {
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        /* High-Ticket Grid Matrix */
+        .grid-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 120px;
+        }
+
+        .luxury-card {
+            background: var(--panel);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .luxury-card:hover {
+            border-color: rgba(0, 255, 204, 0.25);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.03);
+        }
+
+        .card-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #565d6e;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+            line-gradient: linear-gradient(180deg, #fff, #bbb);
+        }
+
+        .terminal-box {
+            background: #050811;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 16px;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 11px;
+            color: #5d6678;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--cyan);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            box-shadow: 0 0 8px var(--cyan);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 30px;
+        }
+
+        .price-display {
+            font-size: 28px;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -1px;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn {
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 16px 32px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: var(--cyan);
+            box-shadow: 0 0 30px var(--cyan-glow);
+            transform: scale(1.02);
+        }
+
+        /* Dynamic Continuous Loop Reviews Section */
+        .marquee-section {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            overflow: hidden;
+            padding: 80px 0;
+            border-top: 1px solid var(--panel-border);
+            border-bottom: 1px solid var(--panel-border);
+            margin-bottom: 120px;
+        }
+
+        .marquee-title {
+            font-size: 38px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(180deg, #ffffff 30%, #525866) 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .marquee-container {
+            display: flex;
+            width: max-content;
+        }
+
+        .marquee-rail {
+            display: flex;
+            animation: infiniteScroll 25s linear infinite;
+        }
+
+        .marquee-section:hover .marquee-rail {
+            animation-play-state: paused;
+        }
+
+        .review-card {
+            width: 400px;
+            background: linear-gradient(180deg, #090f1c 0%, #04070d 100%);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+
+        .rating-stars {
+            color: var(--cyan);
+            font-size: 14px;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .quote-text {
+            font-size: 14px;
+            color: #ced5e3;
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+
+        .user-meta-node {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .avatar-circle {
+            width: 42px;
+            height: 42px;
+            background: #141f33;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--cyan);
+            border: 1px solid rgba(0, 255, 204, 0.15);
+        }
+
+        .user-details h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .user-details p {
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        @keyframes infiniteScroll {
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-100%, 0, 0); }
         }
 
-        /* Structural Specifications Grid Systems */
-        .spec-expansion-section { width: 85%; max-width: 1400px; padding: 120px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); display: grid; grid-template-columns: 1fr 2.5fr; gap: 100px; margin-bottom: 60px; }
-        .spec-sidebar h2 { font-size: 56px; font-weight: 900; letter-spacing: -2.5px; margin: 0; background: linear-gradient(180deg, #FFF, #3D414D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; }
-        .spec-node-box { background: linear-gradient(180deg, #0A0D14 0%, #040508 100%); border: 1px solid rgba(255, 255, 255, 0.02); padding: 45px; border-radius: 20px; text-align: left; }
-        .spec-box-title { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
-        .spec-box-desc { font-size: 14.5px; color: var(--text-muted); line-height: 1.75; font-weight: 300; }
+        /* Scarcity Grid Wrap */
+        .scarcity-panel {
+            background: linear-gradient(135deg, #070d1a 0%, #03050a 100%);
+            border: 1px solid var(--panel-border);
+            border-radius: 24px;
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 120px;
+        }
 
-        /* ⏳ CLEAN CONVERSION SCARCITY TRACKING TIMEOUT MODULE PANEL */
-        .scarcity-panel { width: 85%; max-width: 1400px; background: linear-gradient(135deg, #0A0E16 0%, #020406 100%); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 80px; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 60px; align-items: center; margin-bottom: 140px; box-shadow: 0 60px 140px rgba(0,0,0,0.9); }
-        .scarcity-title { font-size: 46px; font-weight: 700; letter-spacing: -2px; text-align: left; }
-        .scarcity-desc { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; text-align: left; margin-top: 20px; }
-        
-        .metrics-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: center; background: rgba(0,0,0,0.4); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.02); }
-        .metric-wrapper-box { display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .metric-val-live { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; color: var(--neon-rose); text-shadow: 0 0 35px rgba(255,51,102,0.25); }
-        .metric-lbl-live { font-size: 11px; letter-spacing: 2px; color: #5B6170; margin-top: 8px; text-transform: uppercase; }
+        .scarcity-title {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
 
-        footer { width: 85%; max-width: 1400px; padding: 60px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); display: flex; justify-content: space-between; font-size: 12px; color: #414552; }
+        .scarcity-desc {
+            font-size: 15px;
+            color: var(--muted);
+            margin-top: 12px;
+            font-weight: 300;
+            max-width: 650px;
+            line-height: 1.6;
+        }
 
-        @media (max-width: 1100px) { .grid-system, .live-volume-metrics, .spec-grid { grid-template-columns: 1fr 1fr; } .scarcity-panel, .spec-expansion-section { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .grid-system, .live-volume-metrics, .spec-grid { grid-template-columns: 1fr; } .headline { font-size: 46px; } .review-node-box { width: 350px; } }
+        .metrics-box {
+            display: flex;
+            gap: 35px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 25px 50px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .metric-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--rose);
+            text-shadow: 0 0 25px var(--rose-glow);
+        }
+
+        .metric-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #5e6678;
+            margin-top: 6px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Luxury Footer */
+        footer {
+            padding: 50px 0;
+            border-top: 1px solid var(--panel-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #484e5c;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .grid-matrix { grid-template-columns: repeat(2, 1fr); }
+            .scarcity-panel { flex-direction: column; text-align: center; gap: 40px; }
+            .headline { font-size: 52px; }
+        }
+        @media (max-width: 728px) {
+            .grid-matrix { grid-template-columns: 1fr; }
+            .headline { font-size: 38px; }
+            .review-card { width: 320px; padding: 30px; }
+            footer { flex-direction: column; gap: 20px; text-align: center; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="ambient-mesh-1"></div>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
 
-    <header>
-        <div class="logo">Damodar Techcraze Ventures</div>
-        <div class="secure-node">NETWORK PROTOCOL ENGINE v5.0.0 // STATUS: OPERATIONAL</div>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo">Subhash Techcraze Ventures</div>
+            <div class="status-node">PROTOCOL ENGINE v5.0 // ONLINE</div>
+        </header>
 
-    <main class="hero">
-        <div class="status-ticker">Sovereign Computational Architectures & Global Allocation</div>
-        <h1 class="headline">Command Control of Global Distribution Capital</h1>
-        <p class="sub-hook">Immediate validation frameworks deploying automated cloud asset grids engineered explicitly for tier-1 high-ticket operational cashflow velocity.</p>
-    </main>
+        <main class="hero">
+            <div class="ticker">Global Allocation & Infrastructure</div>
+            <h1 class="headline">Command Control of Global Distribution Capital</h1>
+            <p class="sub-text">Immediate validation frameworks deploying automated cloud asset grids engineered explicitly for tier-1 high-ticket operational cashflow velocity.</p>
+        </main>
 
-    <section class="trust-ticker-container">
-        <div class="trust-logos">
-            <span>BLOOMBERG</span><span>TECHCRUNCH</span><span>FORBES</span><span>REUTERS</span>
+        <div class="toggle-container">
+            <div class="toggle-wrap">
+                <button class="tgl-btn active" id="btn-institutional">Institutional Core</button>
+                <button class="tgl-btn" id="btn-venture">Venture Pool</button>
+            </div>
         </div>
-    </section>
 
-    <div class="toggle-container">
-        <button class="toggle-btn active" id="mode-institutional">Institutional Core</button>
-        <button class="toggle-btn" id="mode-venture">Venture Capital Pool</button>
-    </div>
-
-    <!-- Symmetrical Rigid Matrix Layout Grid System -->
-    <div class="grid-system">
-        <!-- Card 1 -->
-        <div class="premium-card">
-            <div>
-                <div class="meta-tag">Deployment Unit 01</div>
-                <h3 class="card-title">Secret 4K Cinematic AI Video Suite</h3>
-                <div class="card-preview-terminal">
-                    <span class="terminal-dot"></span> frame_layer_render.sh<br>
-                    > Tracking core B-Roll arrays... OK<br>
-                    > Processing coordinate matrix... RUNNING
+        <div class="grid-matrix">
+            <div class="luxury-card">
+                <div>
+                    <div class="card-tag">Unit 01</div>
+                    <h3 class="card-title">Secret 4K Cinematic AI Suite</h3>
+                    <div class="terminal-box">
+                        <span class="status-dot"></span> layer_render.sh<br>
+                        > Tracking B-Roll arrays... OK
+                    </div>
+                    <p class="card-desc">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
                 </div>
-                <p class="card-desc">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
-            </div>
-            <div class="card-footer">
-                <div class="price-wrapper"><span class="price-amt" id="pr-1">$4,900</span></div>
-                <button class="btn-acquire">Request Key</button>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="premium-card">
-            <div>
-                <div class="meta-tag">Deployment Unit 02</div>
-                <h3 class="card-title">The Faceless YouTube Blueprints</h3>
-                <div class="card-preview-terminal">
-                    <span class="terminal-dot"></span> anonymity_bypass.cfg<br>
-                    > Masking hardware tracking variables... OK<br>
-                    > Proxy routing initialization... SECURE
+                <div class="card-footer">
+                    <div class="price-display" id="price-card-1">$4,900</div>
+                    <button class="action-btn">Request Key</button>
                 </div>
-                <p class="card-desc">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
             </div>
-            <div class="card-footer">
-                <div class="price-wrapper"><span class="price-amt" id="pr-2">$9,900</span></div>
-                <button class="btn-acquire">Request Key</button>
-            </div>
-        </div>
 
-        <!-- Card 3 -->
-        <div class="premium-card">
-            <div>
-                <div class="meta-tag">Deployment Unit 03</div>
-                <h3 class="card-title">Advanced Instagram Scaling Bot</h3>
-                <div class="card-preview-terminal">
-                    <span class="terminal-dot"></span> interactive_matrix.py<br>
-                    > Scaling user connection graphs... 100%<br>
-                    > Core safety firewall status... ACTIVE
+            <div class="luxury-card">
+                <div>
+                    <div class="card-tag">Unit 02</div>
+                    <h3 class="card-title">The Faceless Blueprints</h3>
+                    <div class="terminal-box">
+                        <span class="status-dot"></span> anonymity.cfg<br>
+                        > Masking hardware variables... OK
+                    </div>
+                    <p class="card-desc">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
                 </div>
-                <p class="card-desc">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
+                <div class="card-footer">
+                    <div class="price-display" id="price-card-2">$9,900</div>
+                    <button class="action-btn">Request Key</button>
+                </div>
             </div>
-            <div class="card-footer">
-                <div class="price-wrapper"><span class="price-amt" id="pr-3">$3,900</span></div>
-                <button class="btn-acquire">Request Key</button>
+
+            <div class="luxury-card">
+                <div>
+                    <div class="card-tag">Unit 03</div>
+                    <h3 class="card-title">Advanced Instagram Bot</h3>
+                    <div class="terminal-box">
+                        <span class="status-dot"></span> interactive.py<br>
+                        > Scaling connection graphs... 100%
+                    </div>
+                    <p class="card-desc">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="price-display" id="price-card-3">$3,900</div>
+                    <button class="action-btn">Request Key</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Volumetric Trust System Modules -->
-    <section class="live-volume-metrics">
-        <div class="metric-block">
-            <div class="metric-num">51,204</div>
-            <div class="metric-lbl">Active System Keys</div>
-        </div>
-        <div class="metric-block">
-            <div class="metric-num">$46.2M</div>
-            <div class="metric-lbl">Processed Liquidity Volume</div>
-        </div>
-        <div class="metric-block">
-            <div class="metric-num">99.99%</div>
-            <div class="metric-lbl">Infrastructure Core Uptime</div>
-        </div>
-        <div class="metric-block">
-            <div class="metric-num">145+</div>
-            <div class="metric-lbl">Regions Synchronized</div>
-        </div>
-    </section>
-
-    <!-- 🔄 ⭐ NEW SEAMLESS 2-BLOCK SYNCED IMMERSIVE TILES CAROUSEL ENGINE -->
-    <section class="reviews-section-wrapper">
-        <h2 class="reviews-heading">Verified Network Evaluations</h2>
-        <div class="marquee-infinite-container">
-            
-            <!-- Rail Array Block 1 -->
-            <div class="marquee-block-rail">
-                <div class="review-node-box">
-                    <div class="stars-gold">★★★★★</div>
-                    <p class="review-quote">"The Faceless YouTube blueprints completely decentralized our media pipelines. Reached over 14 standalone proxy channels within 30 days flawlessly."</p>
-                    <div class="profile-node">
-                        <div class="profile-avatar-block">AM</div>
-                        <div class="profile-meta"><h4>Alexander Miller</h4><p>Venture Partner, Austin TX</p></div>
+        <section class="marquee-section">
+            <h2 class="marquee-title">Verified Network Evaluations</h2>
+            <div class="marquee-container">
+                <div class="marquee-rail">
+                    <div class="review-card">
+                        <div class="rating-stars">★★★★★</div>
+                        <p class="quote-text">"The Faceless blueprints completely decentralized our media pipelines. Reached over 14 proxy channels within 30 days flawlessly."</p>
+                        <div class="user-meta-node">
+                            <div class="avatar-circle">AM</div>
+                            <div class="user-details">
+                                <h4>Alexander M.</h4>
+                                <p>Venture Partner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="rating-stars">★★★★★</div>
+                        <p class="quote-text">"High status execution arrays. The Instagram scaling bot bypasses interaction caps perfectly. Brought an instantaneous shift."</p>
+                        <div class="user-meta-node">
+                            <div class="avatar-circle">HK</div>
+                            <div class="user-details">
+                                <h4>Helena Kael</h4>
+                                <p>Operations Principal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="rating-stars">★★★★★</div>
+                        <p class="quote-text">"Subhash Techcraze has entirely eliminated heavy infrastructure setup debt for our network. These packages execute on autopilot."</p>
+                        <div class="user-meta-node">
+                            <div class="avatar-circle">DR</div>
+                            <div class="user-details">
+                                <h4>David R.</h4>
+                                <p>Managing Director</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="review-node-box">
-                    <div class="stars-gold">★★★★★</div>
-                    <p class="review-quote">"High status execution arrays. The Instagram scaling bot bypasses interaction caps perfectly. Brought an instantaneous scaling graph shift."</p>
-                    <div class="profile-node">
-                        <div class="profile-avatar-block">HK</div>
-                        <div class="profile-meta"><h4>Helena Kael</h4><p>Operations Principal, London</p></div>
-                    </div>
-                </div>
-                <div class="review-node-box">
-                    <div class="stars-gold">★★★★★</div>
-                    <p class="review-quote">"Damodar Techcraze has entirely eliminated heavy infrastructure setup debt for our network. These packages execute seamlessly on autopilot."</p>
-                    <div class="profile-node">
-                        <div class="profile-avatar-block">DR</div>
-                        <div class="profile-meta"><h4>David R.</h4><p>Managing Director, Sydney</p></div>
-                    </div>
-                </div>
-                <div class="review-node-box">
-                    <div class="stars-gold">★★★★★</div>
-                    <p class="review-quote">"Incredible processing speeds. High-ticket monetization configurations are smooth, robust, and exceptionally stable across cross border systems."</p>
-                    <div class="profile-node">
-                        <div clas
+                <div class="marquee-rail">
+                    <div class="review-card">
+                        <div class="rating-stars">★★★★★</div>
+                        <p class="quote-text">"The Faceless blueprints completely decentralized our media pipelines. Reached over 14 proxy
