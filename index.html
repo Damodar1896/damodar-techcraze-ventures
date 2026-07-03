@@ -4,55 +4,264 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Damodar Techcraze Ventures</title>
-    <!-- Premium Google Fonts Lineup -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Syne:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Ultra Luxury Matte Black Canvas */
+        :root {
+            --bg-color: #090A0C;
+            --card-bg: #121418;
+            --accent-glow: rgba(255, 255, 255, 0.03);
+            --text-main: #FFFFFF;
+            --text-muted: #8A8F98;
+        }
+
         body {
-            background-color: #0D0F12;
-            color: #FFFFFF;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            text-align: center;
-            overflow-hidden: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
         }
 
-        /* High Luxury Typography Center Block */
-        .brand-container {
-            padding: 20px;
+        /* Luxury Navbar */
+        header {
+            width: 85%;
+            max-width: 1200px;
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .brand-title {
-            font-size: 54px;
+        .logo {
             font-weight: 800;
-            letter-spacing: -1px;
+            font-size: 18px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin: 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #A3A3A3 100%);
+            background: linear-gradient(90deg, #FFFFFF, #8A8F98);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0px 4px 20px rgba(255, 255, 255, 0.05);
         }
 
-        @media (max-width: 768px) {
-            .brand-title {
-                font-size: 38px;
-            }
+        .status-badge {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            max-width: 900px;
+            margin: 80px auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .tagline {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin: 0 0 24px 0;
+            background: linear-gradient(180deg, #FFFFFF 30%, #A3A8B3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .description {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* Luxury Cards Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: 85%;
+            max-width: 1200px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(255,255,255,0.02);
+        }
+
+        .card-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #A3A8B3;
+            margin-bottom: 16px;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 20px;
+        }
+
+        .price-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .price-value {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .action-btn {
+            background-color: #FFFFFF;
+            color: #000000;
+            border: none;
+            padding: 10px 24px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background-color: #E2E4E9;
+        }
+
+        @media (max-width: 968px) {
+            .grid-container { grid-template-columns: 1fr; }
+            .main-title { font-size: 42px; }
+            header { width: 90%; }
         }
     </style>
 </head>
 <body>
 
-    <div class="brand-container">
-        <h1 class="brand-title">Damodar Techcraze Ventures</h1>
+    <header>
+        <div class="logo">Damodar Techcraze Ventures</div>
+        <div class="status-badge">Autopilot Engine Live</div>
+    </header>
+
+    <main class="hero">
+        <div class="tagline">Institutional Digital Infrastructure</div>
+        <h1 class="main-title">Scale Your Brand Instantly<br>With High-Income AI Assets</h1>
+        <p class="description">Instant deployment to 100% automated monetization matrices, premium developer systems, and custom automated distribution loops engineered for the 2026 economy.</p>
+    </main>
+
+    <div class="grid-container">
+        <!-- Asset 1 -->
+        <div class="card">
+            <div>
+                <div class="card-tag">Premium Pack Architecture</div>
+                <h3 class="card-title">Secret 4K Cinematic AI Video Editing Suite</h3>
+                <p class="card-desc">Complete raw coordinate rendering pipeline and production B-Roll templates for hyper-viral organic retention loops.</p>
+            </div>
+            <div class="card-footer">
+                <div class="price-block">
+                    <span class="price-label">One-Time License</span>
+                    <span class="price-value">₹299</span>
+                </div>
+                <button class="action-btn">Acquire System</button>
+            </div>
+        </div>
+
+        <!-- Asset 2 -->
+        <div class="card">
+            <div>
+                <div class="card-tag">Strategic Architecture</div>
+                <h3 class="card-title">The Faceless YouTube Growth Blueprints</h3>
+                <p class="card-desc">Multi-threaded shadow instance configurations bypass strategies to scale organic platforms with absolute anonymity.</p>
+            </div>
+            <div class="card-footer">
+                <div class="price-block">
+                    <span class="price-label">Full Access Framework</span>
+                    <span class="price-value">₹499</span>
+                </div>
+                <button class="action-btn">Acquire System</button>
+            </div>
+        </div>
+
+        <!-- Asset 3 -->
+        <div class="card">
+            <div>
+                <div class="card-tag">Automation System</div>
+                <h3 class="card-title">Advanced Instagram Reels Scaling Bot</h3>
+                <p class="card-desc">Custom programmatic interaction matrices built to secure high retention graphs without structural shadowbans.</p>
+            </div>
+            <div class="card-footer">
+                <div class="price-block">
+                    <span class="price-label">Enterprise Daemon</span>
+                    <span class="price-value">₹199</span>
+                </div>
+                <button class="action-btn">Acquire System</button>
+            </div>
+        </div>
     </div>
 
 </body>
