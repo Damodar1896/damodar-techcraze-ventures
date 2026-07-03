@@ -4,217 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Damodar Techcraze Ventures | Sovereign Institutional Engine</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #02040a;
-            --panel: rgba(8, 14, 27, 0.85);
-            --border-silver: rgba(255, 255, 255, 0.05);
-            --cyan: #00ffcc;
-            --cyan-glow: rgba(0, 255, 204, 0.3);
-            --rose: #ff3366;
-            --rose-glow: rgba(255, 51, 102, 0.3);
-            --slate-muted: #848f9f;
-            --white: #ffffff;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { background-color: var(--bg); color: var(--white); font-family: 'Montserrat', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        :root { --bg: #02040a; --glass: rgba(10, 20, 42, 0.85); --cyan: #00f3ff; --rose: #ff2a5f; --muted: #8e98a8; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg); color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
         
-        body::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px); background-size: 70px 70px; pointer-events: none; z-index: 1; }
+        /* Master Layout Frame */
+        .page-container { width: 90%; max-width: 1400px; margin: 0 auto; position: relative; }
         
-        .ambient-layer-glow { position: absolute; width: 1400px; height: 850px; background: radial-gradient(circle, rgba(0, 255, 204, 0.06) 0%, transparent 75%); filter: blur(130px); pointer-events: none; z-index: 0; }
-        .g-top { top: -200px; left: 50%; transform: translateX(-50%); }
-        .g-mid { top: 2500px; left: -200px; background: radial-gradient(circle, rgba(255, 51, 102, 0.04) 0%, transparent 70%); }
-
-        .layout-frame { width: 92%; max-width: 1340px; margin: 0 auto; position: relative; z-index: 2; padding-bottom: 120px; }
-
-        header { padding: 45px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-silver); }
-        .brand-logo { font-weight: 900; font-size: 25px; letter-spacing: 5px; text-transform: uppercase; background: linear-gradient(180deg, #ffffff 30%, #555e70 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .status-badge-token { font-family: 'Space Grotesk', monospace; font-size: 11px; color: var(--cyan); background: rgba(0, 255, 204, 0.02); border: 1px solid rgba(0, 255, 204, 0.15); padding: 8px 16px; border-radius: 6px; }
-
-        .hero-section { text-align: center; max-width: 1100px; margin: 150px auto 100px auto; }
-        .system-ticker { font-size: 13px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: var(--cyan); margin-bottom: 25px; }
-        .hero-headline-main { font-size: 82px; font-weight: 900; line-height: 1.05; letter-spacing: -2.5px; margin-bottom: 35px; background: linear-gradient(180deg, #ffffff 40%, #3a414d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-paragraph-sub { font-size: 21px; font-weight: 300; color: #b4bdcd; line-height: 1.8; max-width: 900px; margin: 0 auto; }
-
-        .authority-strip { width: 100%; padding: 45px 0; border-bottom: 1px solid rgba(255,255,255,0.02); margin-bottom: 120px; }
-        .strip-row-flex { display: flex; justify-content: center; gap: 95px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #434c5c; letter-spacing: 6px; font-weight: 700; text-transform: uppercase; }
-
-        .catalog-header-panel { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
-        .catalog-headline-title { font-size: 36px; font-weight: 900; letter-spacing: -1.5px; }
-        .tabs-pill-rail { background: rgba(255, 255, 255, 0.02); padding: 6px; border-radius: 12px; border: 1px solid var(--border-silver); display: flex; gap: 5px; }
-        .tab-trigger-btn { background: transparent; border: none; color: var(--slate-muted); padding: 12px 24px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 8px; transition: 0.3s; }
-        .tab-trigger-btn.active { background: #ffffff; color: #000000; }
-
-        /* 125 Product Container System Grid */
-        .matrix-grid-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 50px; min-height: 450px; }
-        .luxury-product-card { background: var(--panel-glass); backdrop-filter: blur(35px); -webkit-backdrop-filter: blur(35px); border: 1px solid var(--border-silver); border-radius: 24px; padding: 50px 40px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; transition: all 0.4s ease; }
-        .luxury-product-card:hover { border-color: rgba(0, 255, 204, 0.35); transform: translateY(-8px); }
+        /* Professional Nav */
+        header { padding: 40px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { font-weight: 900; font-size: 24px; letter-spacing: 5px; text-transform: uppercase; background: linear-gradient(to bottom, #fff, #555); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 30px; font-family: 'Space Grotesk'; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
         
-        .card-top-meta-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .card-index-serial { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: var(--cyan); letter-spacing: 2px; font-weight: 700; }
-        .card-tier-badge { font-family: 'Space Grotesk', sans-serif; font-size: 9px; background: rgba(255,255,255,0.03); padding: 4px 8px; border-radius: 4px; color: var(--slate-muted); border: 1px solid rgba(255,255,255,0.05); }
-        .card-core-heading { font-size: 24px; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.5px; line-height: 1.25; }
+        /* Hero Section */
+        .hero { text-align: center; margin: 150px 0; }
+        .hero-title { font-size: 80px; font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 30px; }
         
-        .card-terminal-log-panel { background: #040812; border-radius: 10px; padding: 16px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #5c687a; margin-bottom: 20px; line-height: 1.5; }
-        .pulse-node-indicator { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 8px var(--cyan); }
-        .card-narrative-desc { font-size: 14px; color: var(--slate-muted); line-height: 1.65; margin-bottom: 35px; font-weight: 300; }
+        /* 125 Assets Grid - Scalable */
+        .grid-matrix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 80px; }
+        .card-luxury { background: var(--panel-glass); border: 1px solid rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; transition: 0.3s; }
+        .card-luxury:hover { border-color: var(--cyan); transform: translateY(-10px); }
+        .card-price { font-size: 28px; font-weight: 700; font-family: 'Space Grotesk'; margin: 20px 0; }
         
-        .card-footer-action-block { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 20px; }
-        .card-price-display { font-size: 26px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
-        .card-gate-cta-btn { background: #ffffff; color: #000000; border: none; padding: 14px 32px; font-size: 11px; font-weight: 700; border-radius: 10px; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
-        .card-gate-cta-btn:hover { background: var(--cyan); box-shadow: 0 0 25px var(--cyan-glow); }
+        /* Marquee Reviews Engine */
+        .marquee-section { width: 100vw; overflow: hidden; padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        .marquee-track { display: flex; animation: scroll 40s linear infinite; }
+        .review-node { width: 400px; background: #060b16; padding: 30px; border-radius: 15px; margin-right: 30px; flex-shrink: 0; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        .pagination-container-row { display: flex; justify-content: center; margin-bottom: 160px; }
-        .matrix-expand-trigger-btn { background: rgba(255,255,255,0.01); color: var(--white); border: 1px solid var(--border-silver); padding: 18px 50px; border-radius: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
-        .matrix-expand-trigger-btn:hover { background: #ffffff; color: #000000; }
-
-        .counters-grid-matrix { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 160px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
-        .counter-card-shell { background: linear-gradient(180deg, #050a15 0%, #020409 100%); border-radius: 20px; padding: 45px; text-align: center; border: 1px solid rgba(255,255,255,0.01); }
-        .counter-digits-val { font-family: 'Space Grotesk', sans-serif; font-size: 50px; font-weight: 700; color: #ffffff; letter-spacing: -1px; }
-        .counter-caption-lbl { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--slate-muted); margin-top: 14px; font-weight: 500; }
-
-        .protocols-structural-section { display: grid; grid-template-columns: 1fr 2.5fr; gap: 80px; margin-bottom: 160px; border-top: 1px solid var(--border-silver); padding-top: 80px; }
-        .protocol-sticky-left h2 { font-size: 48px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; background: linear-gradient(180deg, #ffffff, #4a5463); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .protocol-grid-right { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .protocol-node-box { background: linear-gradient(180deg, #08132b 0%, #030612 100%); border: 1px solid rgba(255,255,255,0.02); padding: 45px; border-radius: 20px; }
-        .protocol-node-flag { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--cyan); margin-bottom: 15px; font-weight: 700; }
-        .protocol-node-title { font-size: 21px; font-weight: 700; margin-bottom: 12px; }
-        .protocol-node-desc { font-size: 14.5px; color: var(--slate-muted); line-height: 1.7; font-weight: 300; }
-
-        /* 🔄 HARDWARE INFINITE SCROLL CAROUSEL MARQUEE TRACKS */
-        .marquee-viewport-shuttle { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 110px 0; border-top: 1px solid var(--border-silver); border-bottom: 1px solid var(--border-silver); margin-bottom: 160px; }
-        .marquee-viewport-title { font-size: 44px; font-weight: 900; text-align: center; margin-bottom: 75px; background: linear-gradient(180deg, #ffffff 30%, #464c5a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .marquee-track-rail-wrap { display: flex; width: max-content; margin-bottom: 40px; }
-        .marquee-track-rail-wrap.reverse-motion .marquee-hardware-track { animation-direction: reverse; animation-duration: 45s; }
-        .marquee-hardware-track { display: flex; animation: marqueeGlowScrollLoop 38s linear infinite; will-change: transform; }
-        .marquee-viewport-shuttle:hover .marquee-hardware-track { animation-play-state: paused; }
-
-        .marquee-evaluation-box { width: 430px; background: linear-gradient(180deg, #070d1a 0%, #020409 100%); border: 1px solid rgba(255, 255, 255, 0.02); border-radius: 24px; padding: 50px; margin-right: 35px; flex-shrink: 0; box-shadow: 0 40px 90px rgba(0,0,0,0.6); }
-        .stars-matrix-string { color: var(--cyan); font-size: 14px; margin-bottom: 22px; letter-spacing: 2px; }
-        .quote-narrative-text { font-size: 14.5px; color: #d1d8e6; line-height: 1.75; font-weight: 300; margin-bottom: 35px; height: 75px; overflow: hidden; }
-        .profile-node-row { display: flex; align-items: center; gap: 15px; }
-        .avatar-shell-circle { width: 44px; height: 44px; background: #132036; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15); }
-        .profile-meta-details h4 { font-size: 16px; font-weight: 700; color: #ffffff; }
-        .profile-meta-details p { font-size: 11px; color: var(--slate-muted); text-transform: uppercase; margin-spacing: 1px; }
-
-        @keyframes marqueeGlowScrollLoop { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
-
-        .scarcity-lockdown-panel { background: linear-gradient(135deg, #08142c 0%, #01040a 100%); border: 1px solid var(--border-silver); border-radius: 28px; padding: 65px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 140px; }
-        .scarcity-left-text h3 { font-size: 36px; font-weight: 700; letter-spacing: -1px; }
-        .scarcity-left-text p { font-size: 14.5px; color: var(--slate-muted); margin-top: 12px; font-weight: 300; max-width: 680px; line-height: 1.65; }
-        .scarcity-timer-display-box { display: flex; gap: 35px; background: rgba(0, 0, 0, 0.5); padding: 20px 50px; border-radius: 16px; }
-        .scarcity-digits-val { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: var(--rose); text-shadow: 0 0 25px rgba(255, 51, 102, 0.25); }
-        .scarcity-digits-lbl { font-size: 10px; letter-spacing: 2px; color: #4b5563; margin-top: 6px; text-transform: uppercase; }
-
-        .modal-terminal-overlay { position: fixed; inset: 0; background: rgba(1, 3, 6, 0.96); z-index: 99999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(20px); }
-        .modal-terminal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-terminal-box { background: #0a1224; border: 1px solid var(--cyan); max-width: 500px; width: 90%; padding: 45px; border-radius: 24px; text-align: center; box-shadow: 0 0 50px rgba(0,243,255,0.15); }
-        .modal-terminal-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 15px; color: var(--cyan); }
-        .modal-terminal-input { width: 100%; background: #02040a; border: 1px solid var(--border-silver); padding: 16px; border-radius: 10px; color: #fff; font-family: 'Space Grotesk', monospace; font-size: 13px; margin-bottom: 25px; text-align: center; outline: none; }
-        .modal-terminal-btn { background: var(--cyan); color: #000; border: none; padding: 14px 35px; border-radius: 10px; font-size: 11px; font-weight: 700; text-transform: uppercase; cursor: pointer; }
-
-        footer { padding: 50px 0; border-top: 1px solid var(--border-silver); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #434c5c; font-family: 'Space Grotesk', sans-serif; }
-
-        @media (max-width: 1200px) { .matrix-grid-layout, .protocols-structural-section { grid-template-columns: repeat(2, 1fr); } .scarcity-lockdown-panel { flex-direction: column; text-align: center; gap: 35px; } }
-        @media (max-width: 768px) { .matrix-grid-layout, .protocol-grid-right { grid-template-columns: 1fr; } .hero-headline { font-size: 42px; } .marquee-evaluation-box { width: 330px; } .protocols-structural-section { grid-template-columns: 1fr; } }
+        /* Scarcity Countdown */
+        .scarcity-block { padding: 60px; background: #0a1122; border-radius: 25px; display: flex; justify-content: space-between; align-items: center; }
     </style>
 </head>
 <body>
-
-    <div class="ambient-layer glow-top"></div>
-    <div class="ambient-layer glow-mid"></div>
-
-    <div class="layout-frame">
+    <div class="page-container">
         <header>
-            <div class="identity-logo">Damodar Techcraze Ventures</div>
-            <div class="status-badge-token">PLATINUM INFRASTRUCTURE ENGINE // 100% SECURE BOUNDS</div>
+            <div class="logo">Damodar Techcraze Ventures</div>
+            <div class="nav-links">PROTOCOL ENGINE // ONLINE</div>
         </header>
 
-        <main class="hero-section">
-            <div class="ticker-layer">Next-Gen Media Scaling & Infrastructure Tunnels</div>
-            <h1 class="headline-text">High-Class Digital Architecture For Elite Asset Control</h1>
-            <p class="subhook-text">Bypassing standard interaction rate frameworks through multi-threaded deployment nodes, anonymous cloud vectors, and programmatic media automation pipelines.</p>
-        </main>
-
-        <section class="authority-strip">
-            <div class="strip-row-flex">
-                <span>DAMODAR ENGINE</span><span>STRIPE ASSETS</span><span>FORBES LOGISTICS</span><span>REUTERS LABS</span>
-            </div>
+        <section class="hero">
+            <h1 class="hero-title">Command Control of Global Distribution Capital</h1>
+            <p>Sovereign-grade asset variation matrix engineered for elite institutional exploration.</p>
         </section>
 
-        <section class="catalog-header-panel">
-            <div class="catalog-main-title">Sovereign Asset Grid Matrix (125 Variations Indexed)</div>
-            <div class="tabs-pill-rail">
-                <button class="tab-trigger-btn active" id="btn-institutional-trigger">Institutional Core</button>
-                <button class="tab-trigger-btn" id="btn-venture-trigger">Venture Portfolio</button>
-            </div>
+        <div class="grid-matrix" id="assets-grid"></div>
+
+        <section class="marquee-section">
+            <h2 style="text-align:center; margin-bottom:50px;">Verified Network Evaluations</h2>
+            <div class="marquee-track" id="reviews-track"></div>
         </section>
 
-        <div class="matrix-grid-layout" id="hardware-grid-root"></div>
-
-        <div class="pagination-container-row">
-            <button class="matrix-expand-trigger-btn" id="btn-expand-matrix-trigger">Deploy Next Execution Array (Remaining 125 Items)</button>
-        </div>
-
-        <section class="counters-grid-matrix">
-            <div class="counter-card-shell"><div class="counter-digits-val" id="ticker-1-node">0</div><div class="counter-caption-lbl">Active Tunnel Tokens</div></div>
-            <div class="counter-card-shell"><div class="counter-digits-val" id="ticker-2-node">0</div><div class="counter-caption-lbl">Liquidity Routed</div></div>
-            <div class="counter-card-shell"><div class="counter-digits-val">99.99%</div><div class="counter-caption-lbl">Operational Core Match</div></div>
-            <div class="counter-card-shell"><div class="counter-digits-val">240+</div><div class="counter-caption-lbl">Encrypted Cloud Zones</div></div>
+        <section class="scarcity-block">
+            <div><h3>94.2% Regional Allocation Reached</h3></div>
+            <div id="timer" style="font-size:40px; font-family:monospace; color:var(--rose);">15:00</div>
         </section>
-
-        <section class="protocols-structural-section">
-            <div class="protocol-sticky-left"><h2>Sovereign Architecture</h2></div>
-            <div class="protocol-grid-right">
-                <div class="protocol-node-box">
-                    <div class="protocol-node-flag">PROTOCOL // 01</div>
-                    <div class="protocol-node-title">Decentralized Telemetry Scrubbing</div>
-                    <div class="protocol-node-desc">All incoming data flows drop telemetry headers completely at proxy boundaries, blocking public tracking metrics.</div>
-                </div>
-                <div class="protocol-node-box">
-                    <div class="protocol-node-flag">PROTOCOL // 02</div>
-                    <div class="protocol-node-title">Concurrent Cross-Region Failovers</div>
-                    <div class="protocol-node-desc">Computational nodes maintain synchronized parallel data tunnels across Germany, London, and Singapore clusters instantly.</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="marquee-viewport-shuttle">
-            <h2 class="marquee-viewport-title">Verified Global Infrastructure Audits</h2>
-            <div class="marquee-track-rail-wrap"><div class="marquee-hardware-track" id="track-1-root-injector"></div></div>
-            <div class="marquee-track-rail-wrap reverse-motion"><div class="marquee-hardware-track" id="track-2-root-injector"></div></div>
-        </section>
-
-        <section class="scarcity-lockdown-panel">
-            <div class="scarcity-left-text">
-                <h3>94.2% International Infrastructure Cap Reached</h3>
-                <p>Corporate allocation capacity functions under strict regional distribution rules. Request execution security keys immediately before automatic lockdown terms apply.</p>
-            </div>
-            <div class="scarcity-timer-display-box">
-                <div><div class="scarcity-digits-val">94.2%</div><div class="scarcity-label">Allocation Cap</div></div>
-                <div><div class="scarcity-digits-val" id="countdown-clock-digits-node">15:00</div><div class="scarcity-label">Bypass Window</div></div>
-            </div>
-        </section>
-
-        <footer>
-            <div>©️ 2026 Damodar Techcraze Ventures. Global Systems Operations Inc. All Rights Reserved.</div>
-            <div>STATUS SYSTEM: SECURITY ACCREDITED // ID-7731X</div>
-        </footer>
-    </div>
-
-    <div class="modal-terminal-overlay" id="allocation-modal-root-layer">
-        <div class="modal-terminal-box">
-            <div class="modal-terminal-title">> SECURE KEY DEPLOYMENT PROTOCOL</div>
-            <input type="text" class="modal-terminal-input" value="DAMODAR_VENTURES_SECURE_NODE_ACTIVE" readonly>
-            <button class="modal-terminal-btn" id="btn-close-modal-trigger">Confirm Entry</button>
-        </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const institutionalDataPool = [
-                { title: "Secret 4K Cinematic AI Video Suite", tag: "System 01", tier: "Tier-1 Asset", file: "layer_render.sh", log: "Binding stream hooks... READY", desc: "Automated hyper-retention cinematic execution pipelines deploying organic visual hooks optimized explicitly for maximum algorithmic visibility p
+        // Data Injection Engine
+        const assets = Array.from({length: 125}, (_, i) => ({
+            id: i + 1, title: `Asset Matrix ${i+1}`, price: `$${(Math.random()*10000).toFixed(0)}`
+        }));
+
+        function renderAssets() {
+            const grid = document.getElementById('assets-grid');
+            assets.slice(0, 9).forEach(item => {
+                grid.innerHTML += `
+                    <div class="card-luxury">
+                        <h4>Unit ${item.id}</h4>
+                        <h3 class="card-title">${item.title}</h3>
+                        <div class="card-price">${item.price}</div>
+                        <button style="padding:10px 20px;">Request Key</button>
+                    </div>`;
+            });
+        }
+
+        function renderReviews() {
+            const track = document.getElementById('reviews-track');
+            for(let i=0; i<10; i++) {
+                track.innerHTML += `<div class="review-node">★★★★★<p>Damodar Techcraze Ventures scales our pipelines flawlessly.</p></div>`;
+            }
+        }
+
+        renderAssets();
+        renderReviews();
+        setInterval(() => { /* Timer Logic */ }, 1000);
+    </script>
+</body>
+</html>
