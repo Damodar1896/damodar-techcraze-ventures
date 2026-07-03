@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damodar Techcraze Ventures | Sovereign Allocation Matrix</title>
+    <title>Damodar Techcraze Ventures | Sovereign Infrastructure Network</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-obsidian: #030509;
-            --glass-panel: rgba(10, 18, 32, 0.85);
+            --bg-obsidian: #020408;
+            --glass-panel: rgba(9, 14, 26, 0.75);
             --border-glow: rgba(255, 255, 255, 0.04);
-            --border-premium: rgba(0, 255, 204, 0.3);
+            --border-premium: rgba(0, 255, 204, 0.22);
             --text-pure: #FFFFFF;
-            --text-muted: #8E96A7;
+            --text-muted: #878E9C;
             --neon-cyan: #00FFCC;
             --neon-rose: #FF3366;
-            --luxury-slate: #131A26;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,24 +28,24 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Ambient Light Glow Layers */
+        /* Luxury Cyber Ambient Layers */
         .ambient-mesh-1 {
-            position: absolute; top: -15%; left: 50%; transform: translateX(-50%);
-            width: 1300px; height: 800px;
-            background: radial-gradient(circle, rgba(19, 26, 38, 0.4) 0%, rgba(0, 255, 204, 0.03) 45%, transparent 75%);
-            z-index: -2; pointer-events: none; filter: blur(90px);
+            position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+            width: 1400px; height: 800px;
+            background: radial-gradient(circle, rgba(16, 24, 40, 0.4) 0%, rgba(0, 255, 204, 0.02) 45%, transparent 75%);
+            z-index: -2; pointer-events: none; filter: blur(100px);
         }
         
         body::after {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px);
-            background-size: 75px 70px; z-index: -1; pointer-events: none;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.002) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.002) 1px, transparent 1px);
+            background-size: 80px 80px; z-index: -1; pointer-events: none;
         }
 
         header {
             width: 85%; max-width: 1400px; padding: 50px 0;
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
         .logo { font-weight: 900; font-size: 24px; letter-spacing: 5px; text-transform: uppercase; background: linear-gradient(180deg, #FFFFFF 0%, #767B88 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .secure-node { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--neon-cyan); background: rgba(0, 255, 204, 0.02); padding: 12px 24px; border-radius: 8px; border: 1px solid rgba(0, 255, 204, 0.15); box-shadow: 0 0 30px rgba(0, 255, 204, 0.05); }
@@ -63,9 +62,9 @@
         .toggle-btn { background: transparent; border: none; color: var(--text-muted); padding: 14px 35px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 8px; transition: all 0.3s; }
         .toggle-btn.active { background: #FFFFFF; color: #000000; box-shadow: 0 10px 25px rgba(255,255,255,0.1); }
 
-        /* Strict Symmetrical Layout Matrix */
+        /* Symmetrical Matrix Layout */
         .grid-system { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 85%; max-width: 1400px; margin-bottom: 140px; }
-        .premium-card { background: var(--glass-panel); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid var(--border-glow); border-radius: 24px; padding: 60px 45px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 60px 120px rgba(0, 0, 0, 0.85); transition: all 0.4s ease; }
+        .premium-card { background: var(--glass-panel); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid var(--border-glow); border-radius: 24px; padding: 60px 45px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 60px 120px rgba(0, 0, 0, 0.85); position: relative; }
         .premium-card:hover { border-color: var(--border-premium); transform: translateY(-10px); }
 
         .card-preview-terminal { background: #04060B; border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 18px; font-family: 'Space Grotesk', monospace; font-size: 11px; color: #535A69; margin-bottom: 35px; line-height: 1.6; text-align: left; }
@@ -80,20 +79,23 @@
         .btn-acquire:hover { background-color: var(--neon-cyan); box-shadow: 0 0 35px rgba(0, 255, 204, 0.4); transform: scale(1.05); animation-play-state: paused; }
         @keyframes standardWiggle { 0%, 82%, 100% { transform: translateX(0); } 85% { transform: translateX(-4px); } 88% { transform: translateX(4px); } 91% { transform: translateX(-2px); } 94% { transform: translateX(2px); } }
 
-        /* Trust Stats Blocks */
+        /* Trust Stats Matrix */
         .live-volume-metrics { width: 85%; max-width: 1400px; margin-bottom: 120px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 60px; }
         .metric-block { background: rgba(255,255,255,0.003); border: 1px solid rgba(255,255,255,0.01); border-radius: 16px; padding: 35px; text-align: center; }
         .metric-num { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: #FFFFFF; letter-spacing: -1px; }
         .metric-lbl { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-top: 12px; font-weight: 500; }
 
-        /* 🔄 ⭐ THE 100% SEAMLESS REVIEWS INFINITE LOOP SYSTEM */
-        .reviews-section-wrapper { width: 100%; overflow: hidden; padding: 110px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); border-bottom: 1px solid rgba(255, 255, 255, 0.04); margin-bottom: 120px; position: relative; text-align: center; }
-        .reviews-heading { font-size: 46px; font-weight: 900; margin-bottom: 80px; letter-spacing: -2px; background: linear-gradient(180deg, #FFF, #4A4E5A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* 🔄 ⭐ 100% UNBREAKABLE REVIEWS MARQUEE RUNNING ENGINE (NEVER LEAVES BLANK SCENARIO) */
+        .reviews-section-wrapper { width: 100%; overflow: hidden; padding: 110px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); border-bottom: 1px solid rgba(255, 255, 255, 0.04); margin-bottom: 120px; position: relative; }
+        .reviews-heading { font-size: 46px; font-weight: 900; text-align: center; margin-bottom: 80px; letter-spacing: -2px; background: linear-gradient(180deg, #FFF, #4A4E5A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Continuous Moving Track */
-        .carousel-infinite-rail { display: flex; width: max-content; animation: hardwareTrueGlide 28s linear infinite; will-change: transform; }
-        .carousel-infinite-rail:hover { animation-play-state: paused; }
+        /* The Outer Infinite Carousel Box Wrapper */
+        .marquee-infinite-container { display: flex; width: max-content; }
         
+        /* Two identical blocks running continuously using a 50% translation trick to eliminate whitespace caps */
+        .marquee-block-rail { display: flex; animation: linearInfiniteScroller 24s linear infinite; will-change: transform; }
+        .reviews-section-wrapper:hover .marquee-block-rail { animation-play-state: paused; }
+
         .review-node-box { width: 440px; background: linear-gradient(180deg, #0b111a 0%, #030509 100%); border: 1px solid rgba(255,255,255,0.03); border-radius: 20px; padding: 45px; margin-right: 35px; flex-shrink: 0; box-shadow: 0 40px 80px rgba(0,0,0,0.5); text-align: left; }
         .stars-gold { color: var(--neon-cyan); font-size: 15px; margin-bottom: 22px; letter-spacing: 2px; }
         .review-quote { font-size: 14.5px; color: #C9CED9; line-height: 1.75; font-weight: 300; margin-bottom: 30px; height: 95px; overflow: hidden; }
@@ -102,13 +104,13 @@
         .profile-meta h4 { font-size: 15px; font-weight: 700; margin: 0; color: #FFFFFF; }
         .profile-meta p { font-size: 11px; color: var(--text-muted); margin: 4px 0 0 0; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Flawless Translation Keyframes with absolute index replication */
-        @keyframes hardwareTrueGlide {
+        /* Perfect mathematical translation loop */
+        @keyframes linearInfiniteScroller {
             0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(calc(-475px * 5), 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
         }
 
-        /* Core Protocols Specifications */
+        /* Structural Specifications Grid Systems */
         .spec-expansion-section { width: 85%; max-width: 1400px; padding: 120px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); display: grid; grid-template-columns: 1fr 2.5fr; gap: 100px; margin-bottom: 60px; }
         .spec-sidebar h2 { font-size: 56px; font-weight: 900; letter-spacing: -2.5px; margin: 0; background: linear-gradient(180deg, #FFF, #3D414D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; }
@@ -116,7 +118,7 @@
         .spec-box-title { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
         .spec-box-desc { font-size: 14.5px; color: var(--text-muted); line-height: 1.75; font-weight: 300; }
 
-        /* ⏳ ACTIVE TIMER & SCARCITY BOX */
+        /* ⏳ CLEAN CONVERSION SCARCITY TRACKING TIMEOUT MODULE PANEL */
         .scarcity-panel { width: 85%; max-width: 1400px; background: linear-gradient(135deg, #0A0E16 0%, #020406 100%); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 80px; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 60px; align-items: center; margin-bottom: 140px; box-shadow: 0 60px 140px rgba(0,0,0,0.9); }
         .scarcity-title { font-size: 46px; font-weight: 700; letter-spacing: -2px; text-align: left; }
         .scarcity-desc { font-size: 16px; color: var(--text-muted); line-height: 1.8; font-weight: 300; text-align: left; margin-top: 20px; }
@@ -138,13 +140,13 @@
 
     <header>
         <div class="logo">Damodar Techcraze Ventures</div>
-        <div class="secure-node">NETWORK PROTOCOL NODE // STATUS: SECURE</div>
+        <div class="secure-node">NETWORK PROTOCOL ENGINE v5.0.0 // STATUS: OPERATIONAL</div>
     </header>
 
     <main class="hero">
-        <div class="status-ticker">Sovereign Cloud Networks & Strategic Allocation</div>
+        <div class="status-ticker">Sovereign Computational Architectures & Global Allocation</div>
         <h1 class="headline">Command Control of Global Distribution Capital</h1>
-        <p class="sub-hook">Immediate validation frameworks deploying automated asset grids engineered explicitly for tier-1 premium operational cashflow velocity.</p>
+        <p class="sub-hook">Immediate validation frameworks deploying automated cloud asset grids engineered explicitly for tier-1 high-ticket operational cashflow velocity.</p>
     </main>
 
     <section class="trust-ticker-container">
@@ -158,7 +160,9 @@
         <button class="toggle-btn" id="mode-venture">Venture Capital Pool</button>
     </div>
 
+    <!-- Symmetrical Rigid Matrix Layout Grid System -->
     <div class="grid-system">
+        <!-- Card 1 -->
         <div class="premium-card">
             <div>
                 <div class="meta-tag">Deployment Unit 01</div>
@@ -176,6 +180,7 @@
             </div>
         </div>
 
+        <!-- Card 2 -->
         <div class="premium-card">
             <div>
                 <div class="meta-tag">Deployment Unit 02</div>
@@ -193,6 +198,7 @@
             </div>
         </div>
 
+        <!-- Card 3 -->
         <div class="premium-card">
             <div>
                 <div class="meta-tag">Deployment Unit 03</div>
@@ -211,6 +217,7 @@
         </div>
     </div>
 
+    <!-- Volumetric Trust System Modules -->
     <section class="live-volume-metrics">
         <div class="metric-block">
             <div class="metric-num">51,204</div>
@@ -230,46 +237,39 @@
         </div>
     </section>
 
+    <!-- 🔄 ⭐ NEW SEAMLESS 2-BLOCK SYNCED IMMERSIVE TILES CAROUSEL ENGINE -->
     <section class="reviews-section-wrapper">
         <h2 class="reviews-heading">Verified Network Evaluations</h2>
-        <div class="carousel-infinite-rail">
-            <div class="review-node-box">
-                <div class="stars-gold">★★★★★</div>
-                <p class="review-quote">"The Faceless YouTube blueprints completely decentralized our media pipelines. Reached over 14 standalone proxy channels within 30 days flawlessly."</p>
-                <div class="profile-node">
-                    <div class="profile-avatar-block">AM</div>
-                    <div class="profile-meta"><h4>Alexander Miller</h4><p>Venture Partner, Austin TX</p></div>
+        <div class="marquee-infinite-container">
+            
+            <!-- Rail Array Block 1 -->
+            <div class="marquee-block-rail">
+                <div class="review-node-box">
+                    <div class="stars-gold">★★★★★</div>
+                    <p class="review-quote">"The Faceless YouTube blueprints completely decentralized our media pipelines. Reached over 14 standalone proxy channels within 30 days flawlessly."</p>
+                    <div class="profile-node">
+                        <div class="profile-avatar-block">AM</div>
+                        <div class="profile-meta"><h4>Alexander Miller</h4><p>Venture Partner, Austin TX</p></div>
+                    </div>
                 </div>
-            </div>
-            <div class="review-node-box">
-                <div class="stars-gold">★★★★★</div>
-                <p class="review-quote">"High status execution arrays. The Instagram scaling bot bypasses interaction caps perfectly. Brought an instantaneous scaling graph shift."</p>
-                <div class="profile-node">
-                    <div class="profile-avatar-block">HK</div>
-                    <div class="profile-meta"><h4>Helena Kael</h4><p>Operations Principal, London</p></div>
+                <div class="review-node-box">
+                    <div class="stars-gold">★★★★★</div>
+                    <p class="review-quote">"High status execution arrays. The Instagram scaling bot bypasses interaction caps perfectly. Brought an instantaneous scaling graph shift."</p>
+                    <div class="profile-node">
+                        <div class="profile-avatar-block">HK</div>
+                        <div class="profile-meta"><h4>Helena Kael</h4><p>Operations Principal, London</p></div>
+                    </div>
                 </div>
-            </div>
-            <div class="review-node-box">
-                <div class="stars-gold">★★★★★</div>
-                <p class="review-quote">"Damodar Techcraze has entirely eliminated heavy infrastructure setup debt for our network. These packages execute seamlessly on autopilot."</p>
-                <div class="profile-node">
-                    <div class="profile-avatar-block">DR</div>
-                    <div class="profile-meta"><h4>David R.</h4><p>Managing Director, Sydney</p></div>
+                <div class="review-node-box">
+                    <div class="stars-gold">★★★★★</div>
+                    <p class="review-quote">"Damodar Techcraze has entirely eliminated heavy infrastructure setup debt for our network. These packages execute seamlessly on autopilot."</p>
+                    <div class="profile-node">
+                        <div class="profile-avatar-block">DR</div>
+                        <div class="profile-meta"><h4>David R.</h4><p>Managing Director, Sydney</p></div>
+                    </div>
                 </div>
-            </div>
-            <div class="review-node-box">
-                <div class="stars-gold">★★★★★</div>
-                <p class="review-quote">"Incredible processing speeds. High-ticket monetization configurations are smooth, robust, and exceptionally stable across cross border systems."</p>
-                <div class="profile-node">
-                    <div class="profile-avatar-block">MV</div>
-                    <div class="profile-meta"><h4>Marcus Vance</h4><p>Media Architect, New York</p></div>
-                </div>
-            </div>
-            <div class="review-node-box">
-                <div class="stars-gold">★★★★★</div>
-                <p class="review-quote">"The 4K AI cinematic pipeline saved our group thousands in manual editing hours. Retention loops shot up inside the very first week."</p>
-                <div class="profile-node">
-                    <div class="profile-avatar-block">SC</div>
-                    <div class="profile-meta"><h4>Sophia Chang</h4><p>Growth Director, Singapore</p></div>
-                </div>
-            </div
+                <div class="review-node-box">
+                    <div class="stars-gold">★★★★★</div>
+                    <p class="review-quote">"Incredible processing speeds. High-ticket monetization configurations are smooth, robust, and exceptionally stable across cross border systems."</p>
+                    <div class="profile-node">
+                        <div clas
